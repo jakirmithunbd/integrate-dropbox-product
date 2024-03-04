@@ -1,0 +1,886 @@
+// Colors //
+$primary: #3573ff;
+$secondary: #2e2e2e;
+$text: #fff;
+$body: #616161;
+// Font //
+$rob: "Roboto", sans-serif;
+$pop: "Poppins", sans-serif;
+// Global CSS //
+@import "./mixin";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+}
+
+html {
+    width: 100%;
+    max-width: 100%;
+    font-size: 100%;
+}
+
+html,
+body {
+    height: 100%;
+    background-color: $primary;
+}
+
+body {
+    font-size: 16px;
+    line-height: 26px;
+    color: $body;
+    font-family: $pop;
+}
+
+/* #####################################
+*           GLOBAL STYLE
+* ##################################### 
+*/
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1356px;
+    padding: 0 25px;
+}
+
+.transition {
+    transition: all 0.3s ease;
+}
+
+.gradent-text {
+    background: linear-gradient(to right, rgba(0, 168, 253), #fff 35%, #e00a95);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 3s linear infinite alternate;
+}
+@keyframes gradient {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 100%;
+    }
+}
+.btn {
+    @include font(18, 28);
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 70px;
+    border: 1px solid $text;
+    position: relative;
+    z-index: 1;
+    font-weight: 500;
+    color: #ffffff;
+    text-align: center;
+
+    &:hover,
+    &:focus {
+        background: $text;
+        color: $secondary;
+    }
+}
+
+.f-btn {
+    @include font(18, 28);
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 70px;
+    border: 1px solid $text;
+    position: relative;
+    z-index: 1;
+    font-weight: 500;
+    color: #ffffff;
+    text-align: center;
+    background: linear-gradient(142.51deg, #0061fe 10.59%, #5f96ff 81.5%);
+    width: fit-content;
+    &:hover,
+    &:focus {
+        background: linear-gradient(200deg, #0061fe 10.59%, #5f96ff 81.5%);
+    }
+}
+
+.post-btn {
+    font-size: 16px;
+    line-height: 24px;
+    font-family: $pop;
+    font-weight: 600;
+    position: relative;
+    background: var(
+        --Gradient-3,
+        linear-gradient(
+            180deg,
+            #89a3ff -12.76%,
+            #6083ff 38.44%,
+            #476df4 139.29%
+        )
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    img {
+        position: absolute;
+        top: calc(50% - 6.5px);
+        right: -20px;
+        transition: all 0.3s ease;
+    }
+
+    &:hover {
+        img {
+            right: -30px;
+        }
+    }
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+.p-relative {
+    position: relative;
+}
+
+.p-absolute {
+    position: absolute;
+}
+.justify-content-end {
+    justify-content: flex-end;
+}
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.d-flex {
+    display: flex;
+}
+.d-grid {
+    display: grid;
+}
+.align-center {
+    align-items: center;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.flex-col {
+    flex-direction: column;
+}
+.flex-row {
+    flex-direction: row;
+}
+.flex-wrap {
+    flex-wrap: wrap;
+}
+.flex-nowrap {
+    flex-wrap: nowrap;
+}
+
+.unstyle {
+    padding: 0;
+    margin: 0;
+
+    li {
+        list-style: none;
+    }
+}
+.section-title {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 30px 0;
+
+    h2 {
+        padding: 0 20px;
+        color: $secondary;
+        margin-bottom: 25px;
+        span {
+            padding: 0 5px;
+            color: $text;
+            background: $primary;
+        }
+    }
+    h5 {
+        color: $body;
+    }
+}
+
+.divider {
+    border-right: solid 2px $body;
+    height: 24px;
+    margin: 7px 18px;
+    justify-content: center;
+
+    @include breakpoint(880) {
+        margin: 7px 9px;
+    }
+}
+
+.coverbg {
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+.moving-circle-small {
+    span {
+        display: block;
+        height: 100px;
+        width: 100px;
+        border-radius: 500px;
+        background-color: rgba(255, 255, 255, 0.1);
+        animation: ripple 5s linear infinite;
+    }
+}
+.wave-circle {
+    position: absolute;
+    height: 350px;
+    width: 350px;
+    span {
+        display: block;
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        border-radius: 500px;
+        background-color: rgba(255, 255, 255, 0.08);
+        top: calc(50% - 25px);
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        animation: ripple 6s linear infinite;
+
+        &:nth-child(2) {
+            height: 125px;
+            width: 125px;
+            background-color: rgba(255, 255, 255, 0.08);
+            top: calc(50% - 62.5px);
+            animation-delay: 0.2s;
+        }
+        &:nth-child(3) {
+            height: 200px;
+            width: 200px;
+            background-color: rgba(255, 255, 255, 0.08);
+            top: calc(50% - 100px);
+            animation-delay: 0.2s;
+        }
+        &:nth-child(4) {
+            height: 275px;
+            width: 275px;
+            background-color: rgba(255, 255, 255, 0.08);
+            top: calc(50% - 137.5px);
+            animation-delay: 0.2s;
+        }
+        &:nth-child(5) {
+            height: 350px;
+            width: 350px;
+            background-color: rgba(255, 255, 255, 0.08);
+            top: calc(50% - 175px);
+            animation-delay: 0.2s;
+        }
+    }
+}
+
+// @keyframes waterflow {
+//     0% {
+//         transform: rotate(0deg);
+//     }
+//     100% {
+//         transform: rotate(360deg);
+//     }
+// }
+
+@keyframes waterflow {
+    0% {
+        border-radius: 41% 59% 39% 61% / 20% 17% 83% 80%;
+    }
+    25% {
+        border-radius: 29% 71% 86% 14% / 46% 43% 57% 54%;
+    }
+    50% {
+        border-radius: 22% 78% 23% 77% / 69% 68% 32% 31%;
+    }
+    75% {
+        border-radius: 72% 28% 23% 77% / 46% 43% 57% 54%;
+    }
+    100% {
+        border-radius: 55% 45% 51% 49% / 15% 14% 86% 85%;
+    }
+}
+.features-logo-bg {
+    @include height-width(65, 65);
+    margin: 0 auto;
+    padding: 18px;
+
+    &::after,
+    &::before {
+        content: "";
+        position: absolute;
+
+        border-radius: 46% 53% 42% 45% / 81% 79% 19% 16%;
+        top: calc(100% - 65px);
+        right: calc(100% - 65px);
+    }
+    &::after {
+        @include height-width(65, 65);
+        background: linear-gradient(
+                0deg,
+                rgba(0, 97, 254, 0.12),
+                rgba(0, 97, 254, 0.12)
+            ),
+            linear-gradient(
+                180deg,
+                rgba(59, 134, 255, 0.2) 0%,
+                rgba(185, 194, 208, 0.2) 38.55%,
+                rgba(147, 188, 255, 0.2) 100%
+            );
+
+        animation: waterflow 5s linear infinite alternate;
+    }
+
+    &::before {
+        @include height-width(60, 60);
+        background: linear-gradient(142.51deg, #0061fe 10.59%, #5f96ff 81.5%);
+        animation: waterflow 5s linear infinite alternate-reverse;
+    }
+    img {
+        position: relative;
+        z-index: 1;
+    }
+}
+/* #####################################
+*          TYPOGRAPHY SETTINGS
+* ##################################### 
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $rob;
+}
+
+a {
+    font-family: $pop;
+}
+
+h1 {
+    font-size: 55px;
+    line-height: 80px;
+    font-weight: 700;
+    color: #fff;
+}
+
+h2 {
+    font-size: 48px;
+    line-height: 56px;
+    font-weight: 700;
+    color: $text;
+}
+
+h3 {
+    font-size: 40px;
+    line-height: 54px;
+    font-weight: 700;
+    color: $text;
+}
+
+h4 {
+    font-size: 20px;
+    line-height: 27px;
+    font-weight: 500;
+    color: $secondary;
+}
+
+h5 {
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 400;
+}
+
+h6 {
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: 400;
+}
+
+p {
+    font-family: $pop;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+}
+// _____________________________//
+// ****** Key-Fream-Start ****** //
+// Clouds //
+@keyframes moveclouds {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 22%;
+    }
+}
+
+@keyframes moveclouds-reverse {
+    0% {
+        left: calc(100% - 300px);
+    }
+    100% {
+        left: calc(30px);
+    }
+}
+
+@keyframes moveclouds-reverse-2 {
+    0% {
+        left: calc(100% - 300px);
+    }
+    100% {
+        left: 55%;
+    }
+}
+
+@keyframes moveclouds-small {
+    0% {
+        left: 43.5%;
+    }
+    100% {
+        left: 44.5%;
+    }
+}
+
+@keyframes moveclouds-small-2 {
+    0% {
+        left: 30px;
+        bottom: 50%;
+    }
+    25% {
+        left: 400px;
+        bottom: 65%;
+    }
+    50% {
+        left: 700px;
+        bottom: 50%;
+    }
+    75% {
+        left: 350px;
+        bottom: 35%;
+    }
+    100% {
+        left: 30px;
+        bottom: 50%;
+    }
+}
+
+@keyframes moveclouds-mini-star {
+    0% {
+        left: 20%;
+    }
+    100% {
+        left: 40%;
+    }
+}
+@keyframes moveclouds-mini-moon {
+    0% {
+        left: 70%;
+    }
+    100% {
+        left: 50%;
+    }
+}
+// For Revarse //
+@keyframes moveclouds-mini-star-revarse {
+    0% {
+        left: 50%;
+    }
+    100% {
+        left: 70%;
+    }
+}
+@keyframes moveclouds-mini-moon-revarse {
+    0% {
+        left: 40%;
+    }
+    100% {
+        left: 20%;
+    }
+}
+// For Revarse //
+
+// Hero Circle //
+@keyframes ripple {
+    0% {
+        opacity: 1;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: scale(0);
+        transform: scale(2);
+    }
+}
+
+// Moon //
+@keyframes fadeIn {
+    0%,
+    100% {
+        opacity: 0.2;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+// Hero Rokect //
+@keyframes UPDOWN {
+    to {
+        transform: translate(-50px, -50px);
+    }
+}
+// Togol-Vibat //
+@keyframes togol-vibator-1 {
+    to {
+        transform: translate(30px, 30px);
+    }
+}
+
+// Wave-Hero //
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+}
+
+// ****** Key-Fream-End ****** //
+// ____________________________//
+// Dropbox Header Section Start //
+.cc-dropbox-header {
+    padding: 20px 10px;
+    .container {
+        border-radius: 170px;
+        background: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.27) 0%,
+            rgba(255, 255, 255, 0.0702) 100%
+        );
+        overflow: hidden;
+
+        .header-menu-wrap {
+            padding: 15px 0;
+            .mobile-menu-wrapper {
+                @include breakpoint(768) {
+                    width: 100%;
+                }
+
+                .logo-wrapper {
+                    .logo {
+                        gap: 12px;
+                        .dropbox-logo {
+                            @include height-width(37, 37);
+                            padding: 7px;
+                            background: $text;
+                            border-radius: 50%;
+                        }
+                        span {
+                            @include font(22, 25);
+                            color: $text;
+                            @include breakpoint(880) {
+                                @include font(18, 22);
+                            }
+                            @include breakpoint(575) {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+                .mobile-togger {
+                    display: none;
+                    width: 25px;
+                    @extend .transition;
+
+                    span {
+                        transition: all 0.5s ease;
+                        @include height-width(3, 25);
+                        background-color: $text;
+                        display: block;
+                    }
+                    @include breakpoint(768) {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
+                        justify-content: center;
+                    }
+                    &.bar-active {
+                        span {
+                            &:nth-child(2) {
+                                opacity: 0;
+                                scale: 0.2;
+                            }
+
+                            &:nth-child(1) {
+                                transform-origin: 100%;
+                                transform: rotate(47deg) translate(13px, 14px);
+                            }
+                            &:nth-child(3) {
+                                transform-origin: 0%;
+                                transform: rotate(-48deg) translate(2px, 7px);
+                            }
+                        }
+                    }
+                }
+            }
+            .main-header-menu {
+                gap: 20px;
+                @include breakpoint(880) {
+                    gap: 10px;
+                }
+                @include breakpoint(880) {
+                    gap: 5px;
+                }
+                @include breakpoint(768) {
+                    display: none;
+                }
+
+                li {
+                    position: relative;
+                    .menu-link {
+                        color: $text;
+                        padding: 5px 10px;
+                        @extend .transition;
+                    }
+                    &:not(:last-child) {
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            @include height-width(20, 20);
+                            background: $text;
+                            border-radius: 50%;
+                            right: calc(50% - 10px);
+                            transform: translateY(70px);
+                            transition: all 0.3s
+                                cubic-bezier(0.9, 2.37, 0.61, 0.63);
+                        }
+                    }
+
+                    &:hover {
+                        &:not(:last-child) {
+                            .menu-link {
+                                color: $primary;
+                                background-color: #fff;
+                                border-radius: 20px;
+                            }
+                            &::after {
+                                transform: translateY(45px);
+                            }
+                        }
+                    }
+                }
+
+                .buy-now-btn {
+                    margin-left: 30px;
+                    padding: 8px 15px;
+                    background-color: #0061fe;
+                    border-radius: 50px;
+                    @include breakpoint(880) {
+                        margin-left: 10px;
+                    }
+                    @include breakpoint(820) {
+                        padding: 5px 8px;
+                    }
+
+                    .menu-link {
+                        gap: 8px;
+                    }
+                    svg {
+                        filter: drop-shadow(2px 4px 6px $body);
+                    }
+                    &:hover {
+                        background-color: $text;
+                        .menu-link {
+                            svg {
+                                path {
+                                    fill: $primary;
+                                }
+                            }
+                            span {
+                                color: $primary;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .mobile-sidebar {
+                display: none;
+            }
+
+            &.show-menu {
+                .mobile-sidebar {
+                    display: block;
+                    background-color: #fd84ff;
+                    top: 50%;
+                }
+            }
+        }
+    }
+}
+// Dropbox Header Section End //
+
+// _____________________________//
+//           Hero Area          //
+// -----------------------------//
+.cc-dropbox-hero {
+    overflow: hidden;
+    .dropbox-hero-content {
+        gap: 45px;
+        max-width: 950px;
+        width: 100%;
+        h5 {
+            padding: 0 50px;
+            color: $text;
+        }
+        .hero-button-wrapper {
+            gap: 20px;
+        }
+    }
+    .hero-canvas-dropbox {
+        .canvas-dropbox {
+            margin-bottom: -155px;
+        }
+        .db-canvas-bg {
+            &:nth-child(1) {
+                bottom: 22px;
+                left: -26px;
+            }
+            &:nth-child(3) {
+                bottom: 58px;
+                right: -14px;
+            }
+        }
+    }
+}
+
+.db-canvas-bg {
+    @include height-width(407, 407);
+    background-image: url(./../images/hero-canvas-bg.svg);
+    @extend .coverbg;
+    @extend .p-absolute;
+    z-index: -1;
+    filter: opacity(0.8);
+    &.revers {
+        transform: rotateY(180deg);
+    }
+}
+// Hero Area End //
+
+//Dropbox Feature Area Start//
+.dropbox-features-area {
+    background: $text;
+    padding: 30px;
+    border-radius: 150px 150px 0 0;
+    .special-feature-wrapper {
+        padding: 40px 0;
+        gap: 20px;
+        justify-content: center;
+
+        .sp-features-card {
+            max-width: 420px;
+            width: 100%;
+            gap: 15px;
+            text-align: center;
+            border-radius: 16px;
+            background-color: #edfaff;
+            padding: 40px;
+        }
+    }
+    .integration-features-area {
+        max-width: 1440px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 40px 20px;
+        .dropbox-features-section {
+            gap: 70px;
+            .feature-wrap {
+                gap: 20px;
+                align-items: center;
+                padding: 30px 0;
+                &:nth-child(2n) {
+                    flex-direction: row-reverse;
+                }
+                .feature-image {
+                    width: 40%;
+                    img {
+                        filter: drop-shadow(46px 55px 60px #1256d454);
+                    }
+                }
+                .feature-meta {
+                    width: 50%;
+                    gap: 30px;
+                    .feature-title {
+                        gap: 20px;
+                        .fe-logo {
+                            @include height-width(60, 60);
+                            background: linear-gradient(
+                                142.51deg,
+                                #0061fe 10.59%,
+                                #5f96ff 81.5%
+                            );
+                            border-radius: 50px;
+                        }
+                        h2 {
+                            color: $secondary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+//Dropbox Feature Area End//
+
+// Single Feature Section Start //
+
+// Single Feature Section End //
+
+// Dropbox Plugin Section Start //
+
+// Dropbox Plugin Section End //
+// Dropbox Review Section start //
+
+// Dropbox Review Section End //
+// Call To Action Start //
+
+// Call To Action End //
+
+@import "./pricing";
