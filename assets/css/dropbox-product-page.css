@@ -146,7 +146,7 @@ img {
   position: relative;
 }
 
-.p-absolute, .db-canvas-bg {
+.p-absolute, .dropbox-user-manual .dropbox-user-layout .direction-manual-part .direction-content::before, .db-canvas-bg {
   position: absolute;
 }
 
@@ -332,6 +332,10 @@ img {
   top: calc(50% - 175px);
   -webkit-animation-delay: 0.2s;
           animation-delay: 0.2s;
+}
+
+.white-bg {
+  background: #fff;
 }
 
 @-webkit-keyframes waterflow {
@@ -951,9 +955,13 @@ p {
 }
 
 .dropbox-features-area {
-  background: #fff;
   padding: 30px;
   border-radius: 150px 150px 0 0;
+}
+@media only screen and (max-width: 820px) {
+  .dropbox-features-area {
+    padding: 15px;
+  }
 }
 .dropbox-features-area .special-feature-wrapper {
   padding: 40px 0;
@@ -987,11 +995,27 @@ p {
           align-items: center;
   padding: 30px 0;
 }
+@media only screen and (max-width: 768px) {
+  .dropbox-features-area .integration-features-area .dropbox-features-section .feature-wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
 .dropbox-features-area .integration-features-area .dropbox-features-section .feature-wrap:nth-child(2n) {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
+}
+@media only screen and (max-width: 768px) {
+  .dropbox-features-area .integration-features-area .dropbox-features-section .feature-wrap:nth-child(2n) {
+    -webkit-box-orient: inherit;
+    -webkit-box-direction: inherit;
+        -ms-flex-direction: inherit;
+            flex-direction: inherit;
+  }
 }
 .dropbox-features-area .integration-features-area .dropbox-features-section .feature-wrap .feature-image {
   width: 40%;
@@ -1000,9 +1024,30 @@ p {
   -webkit-filter: drop-shadow(46px 55px 60px rgba(18, 86, 212, 0.3294117647));
           filter: drop-shadow(46px 55px 60px rgba(18, 86, 212, 0.3294117647));
 }
+@media only screen and (max-width: 768px) {
+  .dropbox-features-area .integration-features-area .dropbox-features-section .feature-wrap .feature-image {
+    width: 80%;
+  }
+}
 .dropbox-features-area .integration-features-area .dropbox-features-section .feature-wrap .feature-meta {
   width: 50%;
   gap: 30px;
+}
+@media only screen and (max-width: 768px) {
+  .dropbox-features-area .integration-features-area .dropbox-features-section .feature-wrap .feature-meta {
+    width: 100%;
+    text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 20px;
+  }
+  .dropbox-features-area .integration-features-area .dropbox-features-section .feature-wrap .feature-meta .feature-title {
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 .dropbox-features-area .integration-features-area .dropbox-features-section .feature-wrap .feature-meta .feature-title {
   gap: 20px;
@@ -1017,6 +1062,97 @@ p {
 }
 .dropbox-features-area .integration-features-area .dropbox-features-section .feature-wrap .feature-meta .feature-title h2 {
   color: #2e2e2e;
+}
+
+.background-circle, .dropbox-user-manual::before, .dropbox-extra-features-area::before {
+  position: absolute;
+  height: 60%;
+  width: 100%;
+  background-color: rgba(242, 182, 243, 0.3882352941);
+  border-radius: 50%;
+  -webkit-filter: blur(100px);
+          filter: blur(100px);
+  top: 30%;
+}
+
+.dropbox-extra-features-area {
+  padding-top: 50px;
+}
+.dropbox-extra-features-area::before {
+  content: "";
+}
+.dropbox-extra-features-area .extra-feature-wrapper {
+  grid-template-columns: repeat(auto-fit, minmax(345px, 1fr));
+  gap: 15px;
+  padding: 50px 20px;
+}
+@media only screen and (max-width: 820px) {
+  .dropbox-extra-features-area .extra-feature-wrapper {
+    padding: 30px 10px;
+  }
+}
+.dropbox-extra-features-area .extra-feature-wrapper .feature-card {
+  gap: 20px;
+  padding: 40px;
+  border-radius: 16px;
+  background: #fff;
+}
+.dropbox-extra-features-area .extra-feature-wrapper .feature-card h4 {
+  padding: 0 10px;
+}
+
+.dropbox-user-manual::before {
+  content: "";
+}
+.dropbox-user-manual .dropbox-user-layout {
+  gap: 40px;
+}
+.dropbox-user-manual .dropbox-user-layout .direction-manual-part {
+  gap: 20px;
+}
+.dropbox-user-manual .dropbox-user-layout .direction-manual-part:nth-child(2n) {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+.dropbox-user-manual .dropbox-user-layout .direction-manual-part:nth-child(2n) .direction-content::before {
+  left: -25px;
+  right: inherit;
+}
+.dropbox-user-manual .dropbox-user-layout .direction-manual-part .direction-content {
+  width: 40%;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+}
+.dropbox-user-manual .dropbox-user-layout .direction-manual-part .direction-content::before {
+  content: "";
+  max-width: 50px;
+  width: 100%;
+  height: 50px;
+  max-height: 100%;
+  background-color: #fff;
+  right: -24px;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  -webkit-transform: rotate(315deg);
+          transform: rotate(315deg);
+  border-radius: 3% 26% 4% 26%/3% 26% 4% 26%;
+}
+.dropbox-user-manual .dropbox-user-layout .direction-manual-part .direction-logo {
+  width: 10%;
+}
+.dropbox-user-manual .dropbox-user-layout .direction-manual-part .direction-logo .dotted-line {
+  height: 123px;
+  border-right: dotted 2px red;
+  top: 39px;
+  right: 34px;
+  border-right: dotted 2px red;
+}
+.dropbox-user-manual .dropbox-user-layout .direction-manual-part .empty {
+  width: 40%;
 }
 
 .margin-0 h1, .plan-option-wrapper .planing-section .features-meta .priceing-wrapper .plan-priceing .dusky-general-price .price-off h1,

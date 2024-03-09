@@ -304,6 +304,10 @@ img {
     }
 }
 
+.white-bg {
+    background: $text;
+}
+
 // @keyframes waterflow {
 //     0% {
 //         transform: rotate(0deg);
@@ -806,9 +810,11 @@ p {
 
 //Dropbox Feature Area Start//
 .dropbox-features-area {
-    background: $text;
     padding: 30px;
     border-radius: 150px 150px 0 0;
+    @include breakpoint(820) {
+        padding: 15px;
+    }
     .special-feature-wrapper {
         padding: 40px 0;
         gap: 20px;
@@ -829,24 +835,46 @@ p {
         width: 100%;
         margin: 0 auto;
         padding: 40px 20px;
+
         .dropbox-features-section {
             gap: 70px;
             .feature-wrap {
                 gap: 20px;
                 align-items: center;
                 padding: 30px 0;
+                @include breakpoint(768) {
+                    flex-direction: column;
+                }
                 &:nth-child(2n) {
                     flex-direction: row-reverse;
+                    @include breakpoint(768) {
+                        flex-direction: inherit;
+                    }
                 }
+
                 .feature-image {
                     width: 40%;
                     img {
                         filter: drop-shadow(46px 55px 60px #1256d454);
                     }
+                    @include breakpoint(768) {
+                        width: 80%;
+                    }
                 }
                 .feature-meta {
                     width: 50%;
                     gap: 30px;
+
+                    @include breakpoint(768) {
+                        width: 100%;
+                        text-align: center;
+                        align-items: center;
+                        gap: 20px;
+                        .feature-title {
+                            width: 100%;
+                            justify-content: center;
+                        }
+                    }
                     .feature-title {
                         gap: 20px;
                         .fe-logo {
@@ -869,9 +897,98 @@ p {
 }
 //Dropbox Feature Area End//
 
-// Single Feature Section Start //
+.background-circle {
+    position: absolute;
+    height: 60%;
+    width: 100%;
+    background-color: #f2b6f363;
+    border-radius: 50%;
+    filter: blur(100px);
+    top: 30%;
+}
 
-// Single Feature Section End //
+// Extra Feature Section Start //
+.dropbox-extra-features-area {
+    padding-top: 50px;
+    &::before {
+        content: "";
+        @extend .background-circle;
+    }
+    .extra-feature-wrapper {
+        grid-template-columns: repeat(auto-fit, minmax(345px, 1fr));
+        gap: 15px;
+        padding: 50px 20px;
+        @include breakpoint(820) {
+            padding: 30px 10px;
+        }
+        .feature-card {
+            gap: 20px;
+            padding: 40px;
+            border-radius: 16px;
+            background: $text;
+            h4 {
+                padding: 0 10px;
+            }
+        }
+    }
+}
+// Extra Feature Section End //
+
+// Dropbox User Manual Start //
+.dropbox-user-manual {
+    &::before {
+        content: "";
+        @extend .background-circle;
+    }
+    .dropbox-user-layout {
+        gap: 40px;
+        .direction-manual-part {
+            gap: 20px;
+
+            &:nth-child(2n) {
+                flex-direction: row-reverse;
+                .direction-content {
+                    &::before {
+                        left: -25px;
+                        right: inherit;
+                    }
+                }
+            }
+            .direction-content {
+                width: 40%;
+                padding: 20px;
+                background-color: white;
+                border-radius: 8px;
+                &::before {
+                    content: "";
+                    @extend .p-absolute;
+                    @include height-width(50, 50);
+                    background-color: $text;
+                    right: -24px;
+                    margin: auto;
+                    top: 0;
+                    bottom: 0;
+                    transform: rotate(315deg);
+                    border-radius: 3% 26% 4% 26% / 3% 26% 4% 26%;
+                }
+            }
+            .direction-logo {
+                width: 10%;
+                .dotted-line {
+                    height: 123px;
+                    border-right: dotted 2px red;
+                    top: 39px;
+                    right: 34px;
+                    border-right: dotted 2px red;
+                }
+            }
+            .empty {
+                width: 40%;
+            }
+        }
+    }
+}
+// Dropbox User Manual End //
 
 // Dropbox Plugin Section Start //
 
