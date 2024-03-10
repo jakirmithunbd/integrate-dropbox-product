@@ -52,6 +52,9 @@ img {
     margin: 0 auto;
     max-width: 1356px;
     padding: 0 25px;
+    @include breakpoint(575) {
+        padding: 0 15px;
+    }
 }
 
 .transition {
@@ -223,6 +226,12 @@ img {
             color: $text;
             background: $primary;
         }
+
+        @include breakpoint(575) {
+            padding: inherit;
+            @include font(35, 42);
+            margin: 0;
+        }
     }
     h5 {
         color: $body;
@@ -308,6 +317,16 @@ img {
     background: $text;
 }
 
+.dashed-line {
+    right: 50%;
+    top: calc(100% - 45px);
+    @include height-width(160, 5);
+    background-image: url("./../images/Dashed-line.svg");
+
+    @include breakpoint(820) {
+        display: none;
+    }
+}
 // @keyframes waterflow {
 //     0% {
 //         transform: rotate(0deg);
@@ -338,6 +357,11 @@ img {
     @include height-width(65, 65);
     margin: 0 auto;
     padding: 18px;
+    z-index: 1;
+
+    @include breakpoint(375) {
+        margin: inherit;
+    }
 
     &::after,
     &::before {
@@ -758,6 +782,9 @@ p {
             }
         }
     }
+
+    &.sticky {
+    }
 }
 // Dropbox Header Section End //
 
@@ -774,8 +801,24 @@ p {
             padding: 0 50px;
             color: $text;
         }
+        @include breakpoint(575) {
+            gap: 25px;
+            h1 {
+                @include font(52, 59);
+            }
+            h5 {
+                padding: 0 20px;
+            }
+        }
         .hero-button-wrapper {
             gap: 20px;
+            @include breakpoint(575) {
+                gap: 10px;
+
+                .btn {
+                    padding: 10px 15px;
+                }
+            }
         }
     }
     .hero-canvas-dropbox {
@@ -814,6 +857,11 @@ p {
     border-radius: 150px 150px 0 0;
     @include breakpoint(820) {
         padding: 15px;
+        border-radius: 80px 80px 0 0;
+    }
+    @include breakpoint(575) {
+        padding: 5px;
+        border-radius: 50px 50px 0 0;
     }
     .special-feature-wrapper {
         padding: 40px 0;
@@ -828,6 +876,9 @@ p {
             border-radius: 16px;
             background-color: #edfaff;
             padding: 40px;
+            @include breakpoint(575) {
+                padding: 12px;
+            }
         }
     }
     .integration-features-area {
@@ -870,13 +921,15 @@ p {
                         text-align: center;
                         align-items: center;
                         gap: 20px;
-                        .feature-title {
-                            width: 100%;
-                            justify-content: center;
-                        }
                     }
                     .feature-title {
                         gap: 20px;
+                        @include breakpoint(768) {
+                            width: 100%;
+                            justify-content: center;
+                            align-items: center;
+                            gap: 10px;
+                        }
                         .fe-logo {
                             @include height-width(60, 60);
                             background: linear-gradient(
@@ -888,6 +941,9 @@ p {
                         }
                         h2 {
                             color: $secondary;
+                            @include breakpoint(575) {
+                                @include font(35, 42);
+                            }
                         }
                     }
                 }
@@ -915,7 +971,7 @@ p {
         @extend .background-circle;
     }
     .extra-feature-wrapper {
-        grid-template-columns: repeat(auto-fit, minmax(345px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
         gap: 15px;
         padding: 50px 20px;
         @include breakpoint(820) {
@@ -926,6 +982,9 @@ p {
             padding: 40px;
             border-radius: 16px;
             background: $text;
+            @include breakpoint(768) {
+                padding: 20px;
+            }
             h4 {
                 padding: 0 10px;
             }
@@ -936,29 +995,60 @@ p {
 
 // Dropbox User Manual Start //
 .dropbox-user-manual {
+    padding: 70px 0;
     &::before {
         content: "";
         @extend .background-circle;
     }
     .dropbox-user-layout {
         gap: 40px;
+
+        @include breakpoint(820) {
+            gap: inherit;
+        }
         .direction-manual-part {
             gap: 20px;
-
+            @include breakpoint(820) {
+                gap: inherit;
+            }
             &:nth-child(2n) {
                 flex-direction: row-reverse;
                 .direction-content {
                     &::before {
                         left: -25px;
                         right: inherit;
+                        @include breakpoint(768) {
+                            left: -10px;
+                        }
                     }
                 }
+                .empty {
+                    transform: rotateY(180deg);
+                }
+            }
+
+            &:last-child {
+                .dashed-line {
+                    display: none;
+                }
+                @include breakpoint(820) {
+                    .empty {
+                        display: none;
+                    }
+                }
+            }
+            @include breakpoint(820) {
+                flex-wrap: wrap;
             }
             .direction-content {
                 width: 40%;
                 padding: 20px;
                 background-color: white;
                 border-radius: 8px;
+                @include breakpoint(820) {
+                    max-width: 70%;
+                    width: 100%;
+                }
                 &::before {
                     content: "";
                     @extend .p-absolute;
@@ -970,31 +1060,51 @@ p {
                     bottom: 0;
                     transform: rotate(315deg);
                     border-radius: 3% 26% 4% 26% / 3% 26% 4% 26%;
+                    @include breakpoint(768) {
+                        right: -10px;
+                    }
                 }
             }
             .direction-logo {
-                width: 10%;
-                .dotted-line {
-                    height: 123px;
-                    border-right: dotted 2px red;
-                    top: 39px;
-                    right: 34px;
-                    border-right: dotted 2px red;
-                }
+                width: 100px;
             }
+
             .empty {
                 width: 40%;
+                @include breakpoint(820) {
+                    width: 80%;
+                    height: 70px;
+                    background-image: url("./../images/Curved-line.svg");
+                    filter: invert(1);
+                    margin: 0 auto;
+                    background-size: contain;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
             }
         }
     }
 }
 // Dropbox User Manual End //
 
-// Dropbox Plugin Section Start //
-
-// Dropbox Plugin Section End //
 // Dropbox Review Section start //
-
+.dropbox-review-area {
+    padding: 70px 0;
+    &::before {
+        content: "";
+        @extend .background-circle;
+    }
+    .dropbox-review-slider-area {
+        .dropbox-review-wrapper {
+            gap: 10px;
+            justify-content: center;
+            .review-card {
+                @include height-width(150, 300);
+                background: #fd84ff;
+            }
+        }
+    }
+}
 // Dropbox Review Section End //
 // Call To Action Start //
 

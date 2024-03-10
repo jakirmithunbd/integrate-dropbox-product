@@ -60,3 +60,13 @@ window.addEventListener("load", codeConfigOnLoad);
 // // Initially show the first price
 // document.querySelector(".plan-pro .regular-price").classList.add("active");
 // document.querySelector(".plan-pro .license-btn").classList.add("active");
+
+(function ($) {
+    $(document).ready(function () {
+        $(".dropbox-review-wrapper").slick({
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            autoplay: false,
+        });
+    });
+})(jQuery);
