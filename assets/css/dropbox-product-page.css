@@ -49,7 +49,7 @@ img {
   }
 }
 
-.transition, .cc-dropbox-header .container .header-menu-wrap .main-header-menu li .menu-link, .cc-dropbox-header .container .header-menu-wrap .mobile-menu-wrapper .mobile-togger {
+.transition, .dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-arrow, .cc-dropbox-header .container .header-menu-wrap .main-header-menu li .menu-link, .cc-dropbox-header .container .header-menu-wrap .mobile-menu-wrapper .mobile-togger {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -147,7 +147,7 @@ img {
   cursor: pointer;
 }
 
-.p-relative {
+.p-relative, .dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-arrow {
   position: relative;
 }
 
@@ -169,7 +169,7 @@ img {
   text-align: right;
 }
 
-.d-flex {
+.d-flex, .dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-list .slick-track, .dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -180,7 +180,7 @@ img {
   display: grid;
 }
 
-.align-center {
+.align-center, .dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -251,7 +251,8 @@ img {
 .section-title h2 span {
   padding: 0 5px;
   color: #fff;
-  background: #3573ff;
+  background: linear-gradient(142.51deg, #0061fe 10.59%, #5f96ff 81.5%);
+  border-radius: 5px;
 }
 @media only screen and (max-width: 575px) {
   .section-title h2 {
@@ -1293,21 +1294,196 @@ p {
 .dropbox-review-area {
   padding: 70px 0;
 }
+@media only screen and (max-width: 820px) {
+  .dropbox-review-area {
+    padding: 40px 0;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .dropbox-review-area {
+    padding: 20px 0;
+  }
+}
 .dropbox-review-area::before {
   content: "";
 }
 .dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper {
-  gap: 10px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  gap: 40px;
 }
-.dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .review-card {
-  max-width: 300px;
+.dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-prev,
+.dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-next {
+  left: inherit;
+  right: inherit;
+  -webkit-transform: inherit;
+          transform: inherit;
+}
+@media only screen and (max-width: 575px) {
+  .dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-prev,
+  .dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-next {
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: -150px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-prev {
+    right: 70px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-next {
+    right: -70px;
+  }
+}
+@media only screen and (max-width: 880px) {
+  .dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper {
+    gap: 20px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper {
+    gap: 10px;
+  }
+}
+.dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-arrow {
+  max-width: 50px;
   width: 100%;
-  height: 150px;
+  height: 50px;
   max-height: 100%;
-  background: #fd84ff;
+  background: linear-gradient(142.51deg, #0061fe 10.59%, #5f96ff 81.5%);
+  border-radius: 50%;
+  z-index: 11;
+}
+@media only screen and (max-width: 575px) {
+  .dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-arrow {
+    max-width: 40px;
+    width: 100%;
+    height: 40px;
+    max-height: 100%;
+    position: absolute;
+  }
+}
+.dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-arrow::before {
+  content: "";
+  position: absolute;
+  max-width: 10px;
+  width: 100%;
+  height: 10px;
+  max-height: 100%;
+  border: 2px solid;
+  border-color: transparent transparent white white;
+  margin: auto;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+@media only screen and (max-width: 575px) {
+  .dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-arrow::before {
+    left: 17px;
+  }
+}
+.dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-arrow:nth-child(3)::before {
+  border-color: white white transparent transparent;
+  left: inherit;
+  right: 20px;
+}
+@media only screen and (max-width: 575px) {
+  .dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-arrow:nth-child(3)::before {
+    right: 8px;
+  }
+}
+.dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-arrow:hover,
+.dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-arrow :focus {
+  -webkit-box-shadow: 1px 1px 30px rgba(102, 51, 153, 0.5607843137);
+          box-shadow: 1px 1px 30px rgba(102, 51, 153, 0.5607843137);
+}
+.dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-list {
+  padding: 40px 0;
+}
+@media only screen and (max-width: 880px) {
+  .dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-list {
+    padding: 20px 0;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-list {
+    padding: 20px 0 60px;
+  }
+}
+.dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-list .slick-track {
+  gap: 21px;
+}
+@media only screen and (max-width: 575px) {
+  .dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-list .slick-track {
+    gap: 15px;
+  }
+}
+.dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-list .slick-track .review-card {
+  padding: 90px 30px 30px;
+  background-color: #fff;
+  border-radius: 20px;
+  -webkit-box-shadow: -4px 6px 10px rgba(244, 200, 228, 0.5803921569);
+          box-shadow: -4px 6px 10px rgba(244, 200, 228, 0.5803921569);
+}
+.dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-list .slick-track .review-card .dropbox-reviewer-meta::after,
+.dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-list .slick-track .review-card .dropbox-reviewer-meta ::before {
+  content: "";
+  position: absolute;
+  background-image: url("./../images/quat-mark.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  max-width: 40px;
+  width: 100%;
+  height: 40px;
+  max-height: 100%;
+  top: -60px;
+}
+.dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-list .slick-track .review-card .dropbox-reviewer-meta::after {
+  max-width: 15px;
+  width: 100%;
+  height: 15px;
+  max-height: 100%;
+  right: 0;
+  bottom: -20px;
+  top: inherit;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-list .slick-track .review-card .reviewer-profile {
+  margin-top: 50px;
+}
+.dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-list .slick-track .review-card .reviewer-profile .reviewer-title {
+  display: contents;
+}
+.dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-list .slick-track .review-card .reviewer-profile .reviewer-title .rev-profile {
+  max-width: 35px;
+  width: 100%;
+  height: 35px;
+  max-height: 100%;
+  border-radius: 50px;
+  margin-right: 10px;
+}
+.dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-list .slick-track .review-card .reviewer-profile .reviewer-title h5 {
+  font-weight: 700;
+}
+.dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-list .slick-track .review-card .reviewer-profile .rev-divider {
+  max-width: 1px;
+  width: 100%;
+  height: 25px;
+  max-height: 100%;
+  border-radius: 5px;
+  background: -webkit-gradient(linear, left top, right top, color-stop(10.59%, #0061fe), color-stop(81.5%, #5f96ff));
+  background: linear-gradient(90deg, #0061fe 10.59%, #5f96ff 81.5%);
+  margin: 0 20px;
+}
+@media only screen and (max-width: 575px) {
+  .dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-list .slick-track .review-card .reviewer-profile .rev-divider {
+    margin: 0 10px;
+  }
 }
 
 .margin-0 h1, .plan-option-wrapper .planing-section .features-meta .priceing-wrapper .plan-priceing .dusky-general-price .price-off h1,

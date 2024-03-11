@@ -224,7 +224,12 @@ img {
         span {
             padding: 0 5px;
             color: $text;
-            background: $primary;
+            background: linear-gradient(
+                142.51deg,
+                #0061fe 10.59%,
+                #5f96ff 81.5%
+            );
+            border-radius: 5px;
         }
 
         @include breakpoint(575) {
@@ -1090,17 +1095,169 @@ p {
 // Dropbox Review Section start //
 .dropbox-review-area {
     padding: 70px 0;
+    @include breakpoint(820) {
+        padding: 40px 0;
+    }
+    @include breakpoint(575) {
+        padding: 20px 0;
+    }
+
     &::before {
         content: "";
         @extend .background-circle;
     }
     .dropbox-review-slider-area {
         .dropbox-review-wrapper {
-            gap: 10px;
-            justify-content: center;
-            .review-card {
-                @include height-width(150, 300);
-                background: #fd84ff;
+            @extend .d-flex, .align-center;
+            .slick-prev,
+            .slick-next {
+                left: inherit;
+                right: inherit;
+                transform: inherit;
+                @include breakpoint(575) {
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    bottom: -150px;
+                }
+            }
+            .slick-prev {
+                @include breakpoint(575) {
+                    right: 70px;
+                }
+            }
+            .slick-next {
+                @include breakpoint(575) {
+                    right: -70px;
+                }
+            }
+
+            gap: 40px;
+
+            @include breakpoint(880) {
+                gap: 20px;
+            }
+            @include breakpoint(768) {
+                gap: 10px;
+            }
+
+            .slick-arrow {
+                @include height-width(50, 50);
+                background: linear-gradient(
+                    142.51deg,
+                    #0061fe 10.59%,
+                    #5f96ff 81.5%
+                );
+                border-radius: 50%;
+                z-index: 11;
+                @extend .p-relative, .transition;
+                @include breakpoint(575) {
+                    @include height-width(40, 40);
+                    position: absolute;
+                }
+                &::before {
+                    content: "";
+                    position: absolute;
+                    @include height-width(10, 10);
+                    border: 2px solid;
+                    border-color: transparent transparent white white;
+                    margin: auto;
+                    left: 20px;
+                    top: 0;
+                    bottom: 0;
+                    transform: rotate(45deg);
+                    @include breakpoint(575) {
+                        left: 17px;
+                    }
+                }
+
+                &:nth-child(3) {
+                    &::before {
+                        border-color: white white transparent transparent;
+                        left: inherit;
+                        right: 20px;
+                        @include breakpoint(575) {
+                            right: 8px;
+                        }
+                    }
+                }
+
+                &:hover,
+                :focus {
+                    box-shadow: 1px 1px 30px #6633998f;
+                }
+            }
+            .slick-list {
+                padding: 40px 0;
+                @include breakpoint(880) {
+                    padding: 20px 0;
+                }
+                @include breakpoint(575) {
+                    padding: 20px 0 60px;
+                }
+                .slick-track {
+                    @extend .d-flex;
+                    gap: 21px;
+                    @include breakpoint(575) {
+                        gap: 15px;
+                    }
+                    .review-card {
+                        padding: 90px 30px 30px;
+                        background-color: $text;
+                        border-radius: 20px;
+                        box-shadow: -4px 6px 10px #f4c8e494;
+                        .dropbox-reviewer-meta {
+                            &::after,
+                            ::before {
+                                content: "";
+                                position: absolute;
+                                background-image: url("./../images/quat-mark.svg");
+                                background-position: center;
+                                background-repeat: no-repeat;
+                                background-size: contain;
+                                @include height-width(40, 40);
+                                top: -60px;
+                            }
+
+                            &::after {
+                                @include height-width(15, 15);
+                                right: 0;
+                                bottom: -20px;
+                                top: inherit;
+                                transform: rotate(180deg);
+                            }
+                        }
+                        .reviewer-profile {
+                            margin-top: 50px;
+
+                            .reviewer-title {
+                                display: contents;
+
+                                .rev-profile {
+                                    @include height-width(35, 35);
+                                    border-radius: 50px;
+                                    margin-right: 10px;
+                                }
+                                h5 {
+                                    font-weight: 700;
+                                }
+                            }
+                            .rev-divider {
+                                @include height-width(25, 1);
+                                border-radius: 5px;
+                                background: linear-gradient(
+                                    90deg,
+                                    #0061fe 10.59%,
+                                    #5f96ff 81.5%
+                                );
+                                margin: 0 20px;
+                                @include breakpoint(575) {
+                                    margin: 0 10px;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }

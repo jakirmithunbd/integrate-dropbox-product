@@ -66,7 +66,18 @@ window.addEventListener("load", codeConfigOnLoad);
         $(".dropbox-review-wrapper").slick({
             slidesToShow: 2,
             slidesToScroll: 1,
-            autoplay: false,
+            autoplay: true,
+            Infinity: true,
+            responsive: [
+                {
+                    breakpoint: 980,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        infinite: true,
+                    },
+                },
+            ],
         });
     });
 })(jQuery);
