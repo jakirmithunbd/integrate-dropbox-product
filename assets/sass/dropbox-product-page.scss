@@ -89,6 +89,8 @@ img {
     font-weight: 500;
     color: #ffffff;
     text-align: center;
+    width: fit-content;
+    @extend .transition;
 
     &:hover,
     &:focus {
@@ -270,50 +272,30 @@ img {
         animation: ripple 5s linear infinite;
     }
 }
-.wave-circle {
+.solar-circle {
     position: absolute;
-    height: 350px;
-    width: 350px;
+    height: 100%;
+    // width: 100%;
+    left: 30%;
+    right: 0;
+    top: 0;
+    bottom: 24%;
+    margin: auto;
+    z-index: -1;
     span {
         display: block;
         position: absolute;
-        height: 50px;
-        width: 50px;
-        border-radius: 500px;
-        background-color: rgba(255, 255, 255, 0.08);
-        top: calc(50% - 25px);
-        right: 0;
-        left: 0;
-        margin: 0 auto;
+        height: calc(100% + 100px);
+        width: calc(50%);
+        border: 1px solid #c6d9f7;
+        border-radius: 50%;
         animation: ripple 6s linear infinite;
 
-        &:nth-child(2) {
-            height: 125px;
-            width: 125px;
-            background-color: rgba(255, 255, 255, 0.08);
-            top: calc(50% - 62.5px);
-            animation-delay: 0.2s;
-        }
-        &:nth-child(3) {
-            height: 200px;
-            width: 200px;
-            background-color: rgba(255, 255, 255, 0.08);
-            top: calc(50% - 100px);
-            animation-delay: 0.2s;
-        }
-        &:nth-child(4) {
-            height: 275px;
-            width: 275px;
-            background-color: rgba(255, 255, 255, 0.08);
-            top: calc(50% - 137.5px);
-            animation-delay: 0.2s;
-        }
-        &:nth-child(5) {
-            height: 350px;
-            width: 350px;
-            background-color: rgba(255, 255, 255, 0.08);
-            top: calc(50% - 175px);
-            animation-delay: 0.2s;
+        @for $i from 2 through 4 {
+            &:nth-child(#{$i}) {
+                // top: 30px * ($i - 1);
+                animation-duration: 5s * ($i - 1);
+            }
         }
     }
 }
@@ -332,14 +314,6 @@ img {
         display: none;
     }
 }
-// @keyframes waterflow {
-//     0% {
-//         transform: rotate(0deg);
-//     }
-//     100% {
-//         transform: rotate(360deg);
-//     }
-// }
 
 @keyframes waterflow {
     0% {
@@ -470,112 +444,14 @@ p {
 }
 // _____________________________//
 // ****** Key-Fream-Start ****** //
-// Clouds //
-@keyframes moveclouds {
-    0% {
-        left: 0;
-    }
-    100% {
-        left: 22%;
-    }
-}
-
-@keyframes moveclouds-reverse {
-    0% {
-        left: calc(100% - 300px);
-    }
-    100% {
-        left: calc(30px);
-    }
-}
-
-@keyframes moveclouds-reverse-2 {
-    0% {
-        left: calc(100% - 300px);
-    }
-    100% {
-        left: 55%;
-    }
-}
-
-@keyframes moveclouds-small {
-    0% {
-        left: 43.5%;
-    }
-    100% {
-        left: 44.5%;
-    }
-}
-
-@keyframes moveclouds-small-2 {
-    0% {
-        left: 30px;
-        bottom: 50%;
-    }
-    25% {
-        left: 400px;
-        bottom: 65%;
-    }
-    50% {
-        left: 700px;
-        bottom: 50%;
-    }
-    75% {
-        left: 350px;
-        bottom: 35%;
-    }
-    100% {
-        left: 30px;
-        bottom: 50%;
-    }
-}
-
-@keyframes moveclouds-mini-star {
-    0% {
-        left: 20%;
-    }
-    100% {
-        left: 40%;
-    }
-}
-@keyframes moveclouds-mini-moon {
-    0% {
-        left: 70%;
-    }
-    100% {
-        left: 50%;
-    }
-}
-// For Revarse //
-@keyframes moveclouds-mini-star-revarse {
-    0% {
-        left: 50%;
-    }
-    100% {
-        left: 70%;
-    }
-}
-@keyframes moveclouds-mini-moon-revarse {
-    0% {
-        left: 40%;
-    }
-    100% {
-        left: 20%;
-    }
-}
-// For Revarse //
 
 // Hero Circle //
 @keyframes ripple {
     0% {
-        opacity: 1;
-        -webkit-transform: scale(0);
-        transform: scale(0);
+        transform: rotate(0deg);
     }
     100% {
-        opacity: 0;
-        -webkit-transform: scale(0);
-        transform: scale(2);
+        transform: rotate(360deg);
     }
 }
 
@@ -910,6 +786,7 @@ p {
 
                 .feature-image {
                     width: 40%;
+                    z-index: 11;
                     img {
                         filter: drop-shadow(46px 55px 60px #1256d454);
                     }
@@ -920,7 +797,14 @@ p {
                 .feature-meta {
                     width: 50%;
                     gap: 30px;
-
+                    &::before {
+                        content: "";
+                        @extend .background-circle;
+                        height: 70% !important;
+                        width: 70% !important;
+                        top: 8% !important;
+                        left: -13% !important;
+                    }
                     @include breakpoint(768) {
                         width: 100%;
                         text-align: center;
@@ -929,6 +813,7 @@ p {
                     }
                     .feature-title {
                         gap: 20px;
+
                         @include breakpoint(768) {
                             width: 100%;
                             justify-content: center;
@@ -1108,7 +993,17 @@ p {
     }
     .dropbox-review-slider-area {
         .dropbox-review-wrapper {
+            gap: 40px;
+
+            @include breakpoint(880) {
+                gap: 20px;
+            }
+            @include breakpoint(768) {
+                gap: 10px;
+            }
+
             @extend .d-flex, .align-center;
+
             .slick-prev,
             .slick-next {
                 left: inherit;
@@ -1130,15 +1025,6 @@ p {
                 @include breakpoint(575) {
                     right: -70px;
                 }
-            }
-
-            gap: 40px;
-
-            @include breakpoint(880) {
-                gap: 20px;
-            }
-            @include breakpoint(768) {
-                gap: 10px;
             }
 
             .slick-arrow {
@@ -1266,5 +1152,5 @@ p {
 // Call To Action Start //
 
 // Call To Action End //
-
+@import "./footer";
 @import "./pricing";
