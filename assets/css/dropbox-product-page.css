@@ -49,7 +49,7 @@ img {
   }
 }
 
-.transition, .dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-arrow, .cc-dropbox-header .container .header-menu-wrap .main-header-menu li .menu-link, .cc-dropbox-header .container .header-menu-wrap .mobile-menu-wrapper .mobile-togger, .btn {
+.transition, .dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-arrow, .play-button .icon, .cc-dropbox-header .container .header-menu-wrap .main-header-menu li .menu-link, .cc-dropbox-header .container .header-menu-wrap .mobile-menu-wrapper .mobile-togger, .btn {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -747,17 +747,22 @@ p {
   top: 50%;
 }
 .cc-dropbox-header.sticky {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
 }
-.cc-dropbox-header.sticky .header-menu-wrap {
-  padding: 8px 0;
+.cc-dropbox-header.sticky .container {
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.231372549);
 }
-.cc-dropbox-header.sticky .header-menu-wrap .main-header-menu li:hover::after {
+.cc-dropbox-header.sticky .container .header-menu-wrap {
+  padding: 10px 0;
+}
+.cc-dropbox-header.sticky .container .header-menu-wrap .main-header-menu li:hover::after {
   -webkit-transform: translateY(35px) !important;
           transform: translateY(35px) !important;
 }
-.cc-dropbox-header.sticky .header-menu-wrap .main-header-menu .buy-now-btn {
+.cc-dropbox-header.sticky .container .header-menu-wrap .main-header-menu .buy-now-btn {
   padding: 3px 15px;
 }
 
@@ -868,6 +873,10 @@ p {
   width: 100%;
   height: 60px;
   max-height: 100%;
+}
+.play-button .icon:hover svg {
+  -webkit-filter: drop-shadow(2px 4px 6px black);
+          filter: drop-shadow(2px 4px 6px black);
 }
 .play-button .button-motion {
   max-width: 200px;

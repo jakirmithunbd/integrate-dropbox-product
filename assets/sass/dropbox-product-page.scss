@@ -658,19 +658,22 @@ p {
     }
 
     &.sticky {
-        transform: translateY(0);
-
-        .header-menu-wrap {
-            padding: 8px 0;
-            .main-header-menu {
-                li:hover {
-                    &::after {
-                        transform: translateY(35px) !important;
+        transform: translateY(10px);
+        .container {
+            backdrop-filter: blur(10px);
+            background: #0000003b;
+            .header-menu-wrap {
+                padding: 10px 0;
+                .main-header-menu {
+                    li:hover {
+                        &::after {
+                            transform: translateY(35px) !important;
+                        }
                     }
-                }
 
-                .buy-now-btn {
-                    padding: 3px 15px;
+                    .buy-now-btn {
+                        padding: 3px 15px;
+                    }
                 }
             }
         }
@@ -781,6 +784,12 @@ p {
         border-radius: 50px;
         z-index: 11;
         @include height-width(60, 60);
+        @extend .transition;
+        &:hover {
+            svg {
+                filter: drop-shadow(2px 4px 6px black);
+            }
+        }
     }
     .button-motion {
         @include height-width(200, 200);
