@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dropbox Product Page</title>
+        <link rel="stylesheet" href="./assets/fonts/google-fonts.css" />
+        <link rel="stylesheet" href="./assets/css/slick.css" />
+        <link rel="stylesheet" href="./assets/css/dropbox-product-page.css" />
+    </head>
+    <body>
+        <!-- Dropbox Header Section Start -->
+        <header class="cc-dropbox-header transition">
+            <div class="container">
+                <div
+                    class="header-menu-wrap d-flex space-between align-center transition"
+                >
+                    <div class="mobile-menu-wrapper d-flex space-between">
+                        <div class="logo-wrapper d-flex align-center">
+                            <a
+                                href="#"
+                                class="logo d-flex align-center transition"
+                            >
+                                <img
+                                    src="./assets/images/CodeConfig-logo.svg"
+                                    alt="CodeConfig Logo"
+                                />
+                            </a>
+
+                            <div class="divider"></div>
+
+                            <a
+                                href="#"
+                                class="logo d-flex align-center transition"
+                            >
+                                <div class="dropbox-logo flex-center">
+                                    <img
+                                        src="./assets/images/dropbox-logo.svg"
+                                        alt="Dropbox Logo"
+                                    />
+                                </div>
+                                <span>Integrate Dropbox</span>
+                            </a>
+                        </div>
+
+                        <div class="mobile-togger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <ul class="main-header-menu unstyle d-flex align-center">
+                        <li>
+                            <a href="#" class="menu-link">Home</a>
+                        </li>
+                        <li>
+                            <a href="#" class="menu-link">Try Demo</a>
+                        </li>
+                        <li>
+                            <a href="#" class="menu-link">Pricing</a>
+                        </li>
+                        <li class="buy-now-btn">
+                            <a href="#" class="menu-link d-flex align-center">
+                                <svg
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 20 20"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M18.7312 5.77688L16.975 12.8031C16.8356 13.3606 16.3369 13.75 15.7619 13.75H4.93125C4.29688 13.75 3.76312 13.275 3.69 12.645L2.42437 2.5H1.5625C1.04438 2.5 0.625 2.08063 0.625 1.5625C0.625 1.04438 1.04438 0.625 1.5625 0.625H3.24187C3.71062 0.625 4.10687 0.97125 4.17062 1.435L4.65938 5H18.125C18.5312 5 18.83 5.3825 18.7312 5.77688Z"
+                                        fill="#F7F5F2"
+                                    />
+                                    <path
+                                        d="M4.375 16.875C4.375 17.9088 5.21625 18.75 6.25 18.75C7.28375 18.75 8.125 17.9088 8.125 16.875C8.125 15.8412 7.28375 15 6.25 15C5.21625 15 4.375 15.8412 4.375 16.875Z"
+                                        fill="#F7F5F2"
+                                    />
+                                    <path
+                                        d="M15.625 16.875C15.625 15.8412 14.7838 15 13.75 15C12.7162 15 11.875 15.8412 11.875 16.875C11.875 17.9088 12.7162 18.75 13.75 18.75C14.7838 18.75 15.625 17.9088 15.625 16.875Z"
+                                        fill="#F7F5F2"
+                                    />
+                                </svg>
+
+                                <span>Buy Now</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="mobile-sidebar unstyle p-absolute">
+                        <li>
+                            <a href="#" class="menu-link">Home</a>
+                        </li>
+                        <li>
+                            <a href="#" class="menu-link">Try Demo</a>
+                        </li>
+                        <li>
+                            <a href="#" class="menu-link">Pricing</a>
+                        </li>
+                        <li class="buy-now-btn">
+                            <a href="#" class="menu-link d-flex align-center">
+                                <svg
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 20 20"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M18.7312 5.77688L16.975 12.8031C16.8356 13.3606 16.3369 13.75 15.7619 13.75H4.93125C4.29688 13.75 3.76312 13.275 3.69 12.645L2.42437 2.5H1.5625C1.04438 2.5 0.625 2.08063 0.625 1.5625C0.625 1.04438 1.04438 0.625 1.5625 0.625H3.24187C3.71062 0.625 4.10687 0.97125 4.17062 1.435L4.65938 5H18.125C18.5312 5 18.83 5.3825 18.7312 5.77688Z"
+                                        fill="#F7F5F2"
+                                    />
+                                    <path
+                                        d="M4.375 16.875C4.375 17.9088 5.21625 18.75 6.25 18.75C7.28375 18.75 8.125 17.9088 8.125 16.875C8.125 15.8412 7.28375 15 6.25 15C5.21625 15 4.375 15.8412 4.375 16.875Z"
+                                        fill="#F7F5F2"
+                                    />
+                                    <path
+                                        d="M15.625 16.875C15.625 15.8412 14.7838 15 13.75 15C12.7162 15 11.875 15.8412 11.875 16.875C11.875 17.9088 12.7162 18.75 13.75 18.75C14.7838 18.75 15.625 17.9088 15.625 16.875Z"
+                                        fill="#F7F5F2"
+                                    />
+                                </svg>
+
+                                <span>Buy Now</span>
+                            </a>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="header_gutter"></div>
+        <!-- Dropbox Header Section End -->
+
+        <!-- Dropbox Hero Section Start -->
+
+        <section class="cc-dropbox-hero p-relative">
+            <div class="container d-flex align-center flex-col p-relative">
+                <div
+                    class="dropbox-hero-content d-flex flex-col align-center text-center"
+                >
+                    <h1>
+                        Easily <span class="gradent-text">manage</span> your
+                        <span class="gradent-text">Dropbox</span> files from
+                        <span class="gradent-text">WordPress</span> dashboard by
+                        using Integrate Dropbox
+                        <span class="gradent-text">Plugin!</span>
+                    </h1>
+
+                    <h5>
+                        The Integrate Dropbox plugin seamlessly connects
+                        WordPress with Dropbox, simplifying file management
+                        between the two platforms.
+                    </h5>
+                    <div class="hero-button-wrapper d-flex">
+                        <a href="#" class="btn">Try Live Demo</a>
+                        <a href="#" class="btn">Buy Now</a>
+                    </div>
+                </div>
+                <img
+                    class="motion-logo p-absolute"
+                    src="./assets/images/hero-cloud.svg"
+                    alt=""
+                />
+                <img
+                    class="motion-logo p-absolute"
+                    src="./assets/images/hero-cloud.svg"
+                    alt=""
+                />
+                <img
+                    class="motion-logo p-absolute"
+                    src="./assets/images/hero-cloud.svg"
+                    alt=""
+                />
+                <img
+                    class="motion-logo p-absolute"
+                    src="./assets/images/hero-cloud.svg"
+                    alt=""
+                />
+                <div class="hero-canvas-dropbox d-flex p-relative">
+                    <div class="db-canvas-bg revers"></div>
+                    <div class="canvas-dropbox p-relative">
+                        <div class="play-button flex-center p-absolute">
+                            <div class="icon flex-center">
+                                <svg
+                                    width="30"
+                                    height="32"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M5.80695.705575C2.92197-.949291.583008.406395.583008 3.73116V28.2665c0 3.3281 2.338962 4.682 5.223942 3.0287L27.2521 18.9966c2.8859-1.6555 2.8859-4.3375 0-5.9926L5.80695.705575Z"
+                                        fill="#fff"
+                                    />
+                                </svg>
+                            </div>
+                            <div class="button-motion p-absolute">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <img
+                            src="./assets/images/hero-canvas.svg"
+                            alt="Dropbox Hero_Canvas"
+                        />
+                    </div>
+
+                    <div class="db-canvas-bg"></div>
+                </div>
+            </div>
+        </section>
+        <!-- Dropbox Hero Section End -->
+
+        <!-- Feature Area Start -->
+        <section class="dropbox-features-area white-bg">
+            <div class="container">
+                <div class="special-feature-wrapper d-flex flex-wrap">
+                    <div class="sp-features-card d-flex flex-col">
+                        <div class="features-logo-bg p-relative">
+                            <img
+                                src="./assets/images/dropbox-logo.svg"
+                                alt="Features"
+                            />
+                        </div>
+                        <h4>Effortless Integration</h4>
+                        <h6>
+                            Integrates Dropbox functionality into the WordPress
+                            dashboard, eliminating the need to switch between
+                            platforms.
+                        </h6>
+                    </div>
+                    <div class="sp-features-card d-flex flex-col">
+                        <div class="features-logo-bg p-relative">
+                            <img
+                                src="./assets/images/dropbox-logo.svg"
+                                alt="Features"
+                            />
+                        </div>
+                        <h4>Effortless Integration</h4>
+                        <h6>
+                            Integrates Dropbox functionality into the WordPress
+                            dashboard, eliminating the need to switch between
+                            platforms.
+                        </h6>
+                    </div>
+                    <div class="sp-features-card d-flex flex-col">
+                        <div class="features-logo-bg p-relative">
+                            <img
+                                src="./assets/images/dropbox-logo.svg"
+                                alt="Features"
+                            />
+                        </div>
+                        <h4>Effortless Integration</h4>
+                        <h6>
+                            Integrates Dropbox functionality into the WordPress
+                            dashboard, eliminating the need to switch between
+                            platforms.
+                        </h6>
+                    </div>
+                </div>
+            </div>
+            <div class="integration-features-area">
+                <div class="section-title">
+                    <h2>Awesome <span>Integration Features</span></h2>
+                    <h5>
+                        Discover how our standout features effortlessly enhance
+                        your experience of integrating and managing your Dropbox
+                        account within WordPress.
+                    </h5>
+                </div>
+                <div class="dropbox-features-section d-flex flex-col">
+                    <div class="feature-wrap d-flex space-between">
+                        <div class="feature-image p-relative">
+                            <img
+                                src="./assets/images/features-area/file-browser.png"
+                                alt=""
+                            />
+
+                            <div class="solar-circle">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+
+                        <div class="feature-meta d-flex flex-col p-relative">
+                            <div class="feature-title d-flex">
+                                <div class="fe-logo flex-center">
+                                    <img
+                                        src="./assets/images/file-logo.svg"
+                                        alt=""
+                                    />
+                                </div>
+                                <h2>File Browser</h2>
+                            </div>
+                            <h6>
+                                Explore Dropbox's wide range of files and
+                                folders effortlessly using our user-friendly
+                                File Browser feature. With just a few clicks,
+                                locate and access specific documents, images,
+                                and media files, saving valuable time and
+                                enhancing your productivity.
+                            </h6>
+                            <a class="f-btn" href="#">View Demo</a>
+                        </div>
+                    </div>
+                    <div class="feature-wrap d-flex space-between">
+                        <div class="feature-image p-relative">
+                            <img
+                                src="./assets/images/features-area/file-browser.png"
+                                alt=""
+                            />
+
+                            <div class="solar-circle">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+
+                        <div class="feature-meta d-flex flex-col p-relative">
+                            <div class="feature-title d-flex">
+                                <div class="fe-logo flex-center">
+                                    <img
+                                        src="./assets/images/file-logo.svg"
+                                        alt=""
+                                    />
+                                </div>
+                                <h2>File Browser</h2>
+                            </div>
+                            <h6>
+                                Explore Dropbox's wide range of files and
+                                folders effortlessly using our user-friendly
+                                File Browser feature. With just a few clicks,
+                                locate and access specific documents, images,
+                                and media files, saving valuable time and
+                                enhancing your productivity.
+                            </h6>
+                            <a class="f-btn" href="#">View Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Feature Area End -->
+        <!-- Extra Features Area Start -->
+        <section class="dropbox-extra-features-area white-bg p-relative">
+            <div class="container p-relative">
+                <div class="section-title">
+                    <h2>Don't Miss The <span> Extra Features</span></h2>
+                    <h5>
+                        Discover how our standout features effortlessly enhance
+                        your experience of integrating and managing your Dropbox
+                        account within WordPress.
+                    </h5>
+                </div>
+
+                <div class="extra-feature-wrapper d-grid">
+                    <div class="feature-card d-flex flex-col text-center">
+                        <div class="features-logo-bg p-relative">
+                            <img
+                                src="./assets/images/dropbox-logo.svg"
+                                alt=""
+                            />
+                        </div>
+                        <h4>Gutenberg Dark Mode Toggle Switch Block</h4>
+                        <h6>
+                            Embed a dark mode switch directly within the
+                            Gutenberg editor for easy reader access.Embed
+                            Gutenberg editor
+                        </h6>
+                    </div>
+                    <div class="feature-card d-flex flex-col text-center">
+                        <div class="features-logo-bg p-relative">
+                            <img
+                                src="./assets/images/dropbox-logo.svg"
+                                alt=""
+                            />
+                        </div>
+                        <h4>Gutenberg Dark Mode Toggle Switch Block</h4>
+                        <h6>
+                            Embed a dark mode switch directly within the
+                            Gutenberg editor for easy reader access.Embed
+                            Gutenberg editor
+                        </h6>
+                    </div>
+                    <div class="feature-card d-flex flex-col text-center">
+                        <div class="features-logo-bg p-relative">
+                            <img
+                                src="./assets/images/dropbox-logo.svg"
+                                alt=""
+                            />
+                        </div>
+                        <h4>Gutenberg Dark Mode Toggle Switch Block</h4>
+                        <h6>
+                            Embed a dark mode switch directly within the
+                            Gutenberg editor for easy reader access.Embed
+                            Gutenberg editor
+                        </h6>
+                    </div>
+                    <div class="feature-card d-flex flex-col text-center">
+                        <div class="features-logo-bg p-relative">
+                            <img
+                                src="./assets/images/dropbox-logo.svg"
+                                alt=""
+                            />
+                        </div>
+                        <h4>Gutenberg Dark Mode Toggle Switch Block</h4>
+                        <h6>
+                            Embed a dark mode switch directly within the
+                            Gutenberg editor for easy reader access.Embed
+                            Gutenberg editor
+                        </h6>
+                    </div>
+                    <div class="feature-card d-flex flex-col text-center">
+                        <div class="features-logo-bg p-relative">
+                            <img
+                                src="./assets/images/dropbox-logo.svg"
+                                alt=""
+                            />
+                        </div>
+                        <h4>Gutenberg Dark Mode Toggle Switch Block</h4>
+                        <h6>
+                            Embed a dark mode switch directly within the
+                            Gutenberg editor for easy reader access.Embed
+                            Gutenberg editor
+                        </h6>
+                    </div>
+                    <div class="feature-card d-flex flex-col text-center">
+                        <div class="features-logo-bg p-relative">
+                            <img
+                                src="./assets/images/dropbox-logo.svg"
+                                alt=""
+                            />
+                        </div>
+                        <h4>Gutenberg Dark Mode Toggle Switch Block</h4>
+                        <h6>
+                            Embed a dark mode switch directly within the
+                            Gutenberg editor for easy reader access.Embed
+                            Gutenberg editor
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Extra Features Area End -->
+        <!-- User Manual Dropbox Start  -->
+        <section class="dropbox-user-manual white-bg p-relative">
+            <div class="container p-relative">
+                <div class="section-title">
+                    <h2>How To use <span>Dropbox</span></h2>
+                    <h5>
+                        Experience streamlined efficiency by installing the
+                        Integrate Dropbox plugin and following our simple
+                        step-by-step process below to learn how to use it
+                        effectively.
+                    </h5>
+                </div>
+                <div class="dropbox-user-layout d-flex flex-col">
+                    <div
+                        class="direction-manual-part d-flex space-between align-center p-relative"
+                    >
+                        <div class="direction-content p-relative">
+                            <h4 class="p-relative">Download & Install</h4>
+                            <h6 class="p-relative">
+                                Grab the WordPress plugin from the repository
+                                and breeze through the installation via your
+                                admin dashboard.
+                            </h6>
+                        </div>
+                        <div class="features-logo-bg p-relative direction-logo">
+                            <img src="./assets/images/file-logo.svg" alt="" />
+                        </div>
+                        <div
+                            class="dashed-line p-absolute coverbg logo-line"
+                        ></div>
+                        <div class="empty"></div>
+                    </div>
+                    <div
+                        class="direction-manual-part d-flex space-between align-center p-relative"
+                    >
+                        <div class="direction-content p-relative">
+                            <h4 class="p-relative">Download & Install</h4>
+                            <h6 class="p-relative">
+                                Grab the WordPress plugin from the repository
+                                and breeze through the installation via your
+                                admin dashboard.
+                            </h6>
+                        </div>
+                        <div class="features-logo-bg p-relative direction-logo">
+                            <img src="./assets/images/file-logo.svg" alt="" />
+                        </div>
+                        <div
+                            class="dashed-line p-absolute coverbg logo-line"
+                        ></div>
+                        <div class="empty"></div>
+                    </div>
+                    <div
+                        class="direction-manual-part d-flex space-between align-center p-relative"
+                    >
+                        <div class="direction-content p-relative">
+                            <h4 class="p-relative">Download & Install</h4>
+                            <h6 class="p-relative">
+                                Grab the WordPress plugin from the repository
+                                and breeze through the installation via your
+                                admin dashboard.
+                            </h6>
+                        </div>
+                        <div class="features-logo-bg p-relative direction-logo">
+                            <img src="./assets/images/file-logo.svg" alt="" />
+                        </div>
+                        <div
+                            class="dashed-line p-absolute coverbg logo-line"
+                        ></div>
+                        <div class="empty coverbg"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- User Manual Dropbox End  -->
+        <!-- Dropbox Review Section Start -->
+        <section class="dropbox-review-area white-bg p-relative">
+            <div class="container p-relative">
+                <div class="section-title">
+                    <h2>Integrate Dropbox <span>Wins Hearts</span></h2>
+                    <h5>
+                        You can check how our Integrate Dropbox plugin wins
+                        users' hearts and discover its core. Let's take a look
+                        below at the user opinions.
+                    </h5>
+                </div>
+                <div class="dropbox-review-slider-area">
+                    <div class="dropbox-review-wrapper">
+                        <div class="review-card">
+                            <div class="dropbox-reviewer-meta p-relative">
+                                <h5>
+                                    Integrate Dropbox has been a game-changer
+                                    for my business! As a photographer, I rely
+                                    on Dropbox to store and organize my large
+                                    image files. With this plugin, I can
+                                    seamlessly access and manage.
+                                </h5>
+                            </div>
+
+                            <div class="reviewer-profile d-flex align-center">
+                                <div class="reviewer-title">
+                                    <img
+                                        class="rev-profile"
+                                        src="./assets/images/hero-boy.svg"
+                                        alt=""
+                                    />
+                                    <h5>John Doe</h5>
+                                </div>
+                                <div class="rev-divider"></div>
+                                <div class="reviewer-profession">
+                                    <h6>Photographer</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-card">
+                            <div class="dropbox-reviewer-meta p-relative">
+                                <h5>
+                                    Integrate Dropbox has been a game-changer
+                                    for my business! As a photographer, I rely
+                                    on Dropbox to store and organize my large
+                                    image files. With this plugin, I can
+                                    seamlessly access and manage.
+                                </h5>
+                            </div>
+
+                            <div class="reviewer-profile d-flex align-center">
+                                <div class="reviewer-title">
+                                    <img
+                                        class="rev-profile"
+                                        src="./assets/images/hero-boy.svg"
+                                        alt=""
+                                    />
+                                    <h5>John Doe</h5>
+                                </div>
+                                <div class="rev-divider"></div>
+                                <div class="reviewer-profession">
+                                    <h6>Photographer</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-card">
+                            <div class="dropbox-reviewer-meta p-relative">
+                                <h5>
+                                    Integrate Dropbox has been a game-changer
+                                    for my business! As a photographer, I rely
+                                    on Dropbox to store and organize my large
+                                    image files. With this plugin, I can
+                                    seamlessly access and manage.
+                                </h5>
+                            </div>
+
+                            <div class="reviewer-profile d-flex align-center">
+                                <div class="reviewer-title">
+                                    <img
+                                        class="rev-profile"
+                                        src="./assets/images/hero-boy.svg"
+                                        alt=""
+                                    />
+                                    <h5>John Doe</h5>
+                                </div>
+                                <div class="rev-divider"></div>
+                                <div class="reviewer-profession">
+                                    <h6>Photographer</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Dropbox Review Section End -->
+        <!-- Dropbox Footer Section Start -->
+        <footer class="dropbox-footer-area white-bg">
+            <div class="container">
+                <div class="footer-top p-relative">
+                    <div
+                        class="top-content-area d-flex flex-col align-center text-center"
+                    >
+                        <h3>Meet Your WordPress With Dropbox</h3>
+                        <h5>
+                            It's time to explore WordPress from a different
+                            perspective by integrating the Dropbox Plugin. Make
+                            your file management system easier by integrating
+                            this plugin into WordPress.
+                        </h5>
+                        <div class="btn">Let’s Explore</div>
+                    </div>
+                </div>
+            </div>
+            <div class="carved-bg">
+                <div class="container">
+                    <div class="footer-main">
+                        <div class="d-flex space-between flex-wrap">
+                            <div class="left-side">
+                                <a href="index.html" class="footer-logo"
+                                    ><img
+                                        src="./assets/images/cc-color-logo.svg"
+                                        alt=""
+                                /></a>
+                                <h4 class="subscribe-title">
+                                    <strong>Subscribe </strong>to our newslatter
+                                </h4>
+                                <div class="subscribe-form">
+                                    <form
+                                        action=""
+                                        method="post"
+                                        class="wpcf7-form init"
+                                        aria-label="Contact form"
+                                        novalidate="novalidate"
+                                        data-status="init"
+                                    >
+                                        <div
+                                            class="d-flex space-between align-center"
+                                        >
+                                            <div class="email">
+                                                <p>
+                                                    <span data-name="your-email"
+                                                        ><input
+                                                            aria-required="true"
+                                                            aria-invalid="false"
+                                                            value=""
+                                                            type="email"
+                                                            name="your-email"
+                                                            placeholder="Email Address" /></span
+                                                    ><br />
+                                                </p>
+                                            </div>
+                                            <div class="submit-btn">
+                                                <p>
+                                                    <input
+                                                        type="submit"
+                                                        value="Send"
+                                                    />
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="social-icons">
+                                    <ul class="unstyle d-flex">
+                                        <li>
+                                            <a
+                                                class="flex-center transition"
+                                                href="#"
+                                                ><img
+                                                    src="./assets/images/socal-logo-f.svg"
+                                                    alt=""
+                                            /></a>
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="flex-center transition"
+                                                href="#"
+                                                ><img
+                                                    src="./assets/images/socal-logo-f.svg"
+                                                    alt=""
+                                            /></a>
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="flex-center transition"
+                                                href="#"
+                                                ><img
+                                                    src="./assets/images/socal-logo-f.svg"
+                                                    alt=""
+                                            /></a>
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="flex-center transition"
+                                                href="#"
+                                                ><img
+                                                    src="./assets/images/socal-logo-f.svg"
+                                                    alt=""
+                                            /></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="right-side d-flex space-between">
+                                <div class="footer-menu company">
+                                    <h4>Company</h4>
+                                    <ul>
+                                        <li><a href="#">About Us</a></li>
+                                        <li><a href="#">Testomonial</a></li>
+                                        <li><a href="#">Affiliates</a></li>
+                                        <li>
+                                            <a href="#">Affiliate Policy</a>
+                                        </li>
+                                        <li><a href="#">Contact Us</a></li>
+                                        <li>
+                                            <a href="#">Life at CodeConfig</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="footer-menu resources">
+                                    <h4>Resources</h4>
+                                    <ul>
+                                        <li><a href="#">About Us</a></li>
+                                        <li><a href="#">Testomonial</a></li>
+                                        <li><a href="#">Affiliates</a></li>
+                                        <li>
+                                            <a href="#">Affiliate Policy</a>
+                                        </li>
+                                        <li><a href="#">Contact Us</a></li>
+                                        <li>
+                                            <a href="#">Life at CodeConfig</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="footer-menu products">
+                                    <h4>Products</h4>
+                                    <ul>
+                                        <li>
+                                            <a href="#"
+                                                ><span
+                                                    ><img
+                                                        src="./assets/images/dusky-color-logo.svg"
+                                                        alt="" /></span
+                                                >Dusky Dark Mode</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a href="#"
+                                                ><span
+                                                    ><img
+                                                        src="./assets/images/dusky-color-logo.svg"
+                                                        alt="" /></span
+                                                >Dusky Dark Mode</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a href="#"
+                                                ><span
+                                                    ><img
+                                                        src="./assets/images/dusky-color-logo.svg"
+                                                        alt="" /></span
+                                                >Dusky Dark Mode</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright white-bg">
+                <p>© 2024 CodeConfig . All Right Reserved.</p>
+            </div>
+        </footer>
+        <!-- Dropbox Footer Section End -->
+
+        <script
+            type="text/javascript"
+            src="//code.jquery.com/jquery-1.11.0.min.js"
+        ></script>
+        <script
+            type="text/javascript"
+            src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
+        ></script>
+
+        <script type="text/javascript" src="./assets/js/slick.min.js"></script>
+        <script
+            type="text/javascript"
+            src="./assets/js/dropbox-scripts.js"
+        ></script>
+    </body>
+</html>
