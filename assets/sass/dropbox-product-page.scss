@@ -377,6 +377,10 @@ img {
         position: relative;
         z-index: 1;
     }
+    span {
+        position: relative;
+        z-index: 1;
+    }
 }
 /* #####################################
 *          TYPOGRAPHY SETTINGS
@@ -471,13 +475,21 @@ p {
 }
 
 // Wave-Hero //
-@keyframes move-forever {
+@keyframes bgposition {
     0% {
-        transform: translate3d(-90px, 0, 0);
+        background-position: 1% 9%;
     }
-
+    25% {
+        background-position: 60% 5%;
+    }
+    50% {
+        background-position: 30% 20%;
+    }
+    75% {
+        background-position: 3% 78%;
+    }
     100% {
-        transform: translate3d(85px, 0, 0);
+        background-position: 9% 39%;
     }
 }
 
@@ -690,6 +702,7 @@ p {
     padding-top: 80px;
     background-image: url(../images/hero-bg.svg);
     background-position: 39% 39%;
+    animation: bgposition 20s linear infinite alternate-reverse;
     .dropbox-hero-content {
         gap: 45px;
         max-width: 950px;
@@ -701,7 +714,7 @@ p {
         @include breakpoint(575) {
             gap: 25px;
             h1 {
-                @include font(52, 59);
+                @include font(49, 50);
             }
             h5 {
                 padding: 0 20px;
@@ -1002,12 +1015,16 @@ p {
 // Dropbox User Manual Start //
 .dropbox-user-manual {
     padding: 70px 0;
+    background-image: url(../images/carved-line-bg.svg);
+    @extend .coverbg;
+
     &::before {
         content: "";
         @extend .background-circle;
     }
     .dropbox-user-layout {
         gap: 40px;
+        counter-reset: section;
 
         @include breakpoint(820) {
             gap: inherit;
@@ -1073,6 +1090,15 @@ p {
             }
             .direction-logo {
                 width: 100px;
+                .count-number::before {
+                    counter-increment: section;
+                    content: "0" counter(section);
+                    position: absolute;
+                    z-index: 1;
+                    font-size: 20px;
+                    font-weight: 700;
+                    color: $text;
+                }
             }
 
             .empty {

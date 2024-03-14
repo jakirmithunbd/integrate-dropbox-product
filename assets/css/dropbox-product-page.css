@@ -283,7 +283,7 @@ img {
   }
 }
 
-.coverbg, .db-canvas-bg {
+.coverbg, .dropbox-user-manual, .db-canvas-bg {
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
@@ -429,6 +429,10 @@ img {
   position: relative;
   z-index: 1;
 }
+.features-logo-bg span {
+  position: relative;
+  z-index: 1;
+}
 
 /* #####################################
 *          TYPOGRAPHY SETTINGS
@@ -543,24 +547,38 @@ p {
             transform: rotateY(15deg) rotateX(-10deg) rotateZ(34deg) translate(-9px, 10px);
   }
 }
-@-webkit-keyframes move-forever {
+@-webkit-keyframes bgposition {
   0% {
-    -webkit-transform: translate3d(-90px, 0, 0);
-            transform: translate3d(-90px, 0, 0);
+    background-position: 1% 9%;
+  }
+  25% {
+    background-position: 60% 5%;
+  }
+  50% {
+    background-position: 30% 20%;
+  }
+  75% {
+    background-position: 3% 78%;
   }
   100% {
-    -webkit-transform: translate3d(85px, 0, 0);
-            transform: translate3d(85px, 0, 0);
+    background-position: 9% 39%;
   }
 }
-@keyframes move-forever {
+@keyframes bgposition {
   0% {
-    -webkit-transform: translate3d(-90px, 0, 0);
-            transform: translate3d(-90px, 0, 0);
+    background-position: 1% 9%;
+  }
+  25% {
+    background-position: 60% 5%;
+  }
+  50% {
+    background-position: 30% 20%;
+  }
+  75% {
+    background-position: 3% 78%;
   }
   100% {
-    -webkit-transform: translate3d(85px, 0, 0);
-            transform: translate3d(85px, 0, 0);
+    background-position: 9% 39%;
   }
 }
 .cc-dropbox-header {
@@ -771,6 +789,7 @@ p {
   padding-top: 80px;
   background-image: url(../images/hero-bg.svg);
   background-position: 39% 39%;
+  animation: bgposition 20s linear infinite alternate-reverse;
 }
 .cc-dropbox-hero .dropbox-hero-content {
   gap: 45px;
@@ -786,8 +805,8 @@ p {
     gap: 25px;
   }
   .cc-dropbox-hero .dropbox-hero-content h1 {
-    font-size: 52px;
-    line-height: 59px;
+    font-size: 49px;
+    line-height: 50px;
   }
   .cc-dropbox-hero .dropbox-hero-content h5 {
     padding: 0 20px;
@@ -1133,12 +1152,14 @@ p {
 
 .dropbox-user-manual {
   padding: 70px 0;
+  background-image: url(../images/carved-line-bg.svg);
 }
 .dropbox-user-manual::before {
   content: "";
 }
 .dropbox-user-manual .dropbox-user-layout {
   gap: 40px;
+  counter-reset: section;
 }
 @media only screen and (max-width: 820px) {
   .dropbox-user-manual .dropbox-user-layout {
@@ -1220,6 +1241,15 @@ p {
 }
 .dropbox-user-manual .dropbox-user-layout .direction-manual-part .direction-logo {
   width: 100px;
+}
+.dropbox-user-manual .dropbox-user-layout .direction-manual-part .direction-logo .count-number::before {
+  counter-increment: section;
+  content: "0" counter(section);
+  position: absolute;
+  z-index: 1;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
 }
 .dropbox-user-manual .dropbox-user-layout .direction-manual-part .empty {
   width: 40%;

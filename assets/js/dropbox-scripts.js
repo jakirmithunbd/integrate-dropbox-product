@@ -42,6 +42,8 @@ function codeConfigOnLoad() {
 
 window.addEventListener("load", codeConfigOnLoad);
 
+const LenthNumber = document.querySelectorAll(".direction-manual-part");
+
 // document.querySelectorAll(".plan-pro .license-btn").forEach((button, index) => {
 //     button.addEventListener("click", () => {
 //         document
