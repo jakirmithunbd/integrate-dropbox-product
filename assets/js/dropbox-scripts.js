@@ -18,7 +18,9 @@ function Toggler() {
 // Header gutter for adjusting header height
 function HeaderGutter() {
     const header = document.querySelector(".cc-dropbox-header");
-    const headerGutter = document.querySelector(".header_gutter");
+    const headerGutter = document.querySelector(
+        ".cc-dropbox-hero .header_gutter"
+    );
     headerGutter.style.height = header.clientHeight + "px";
 }
 
