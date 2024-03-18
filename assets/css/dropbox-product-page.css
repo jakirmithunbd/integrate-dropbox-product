@@ -49,7 +49,7 @@ img {
   }
 }
 
-.transition, .dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-arrow, .play-button .icon, .cc-dropbox-header .container .header-menu-wrap .main-header-menu li .menu-link, .cc-dropbox-header .container .header-menu-wrap .mobile-menu-wrapper .mobile-togger, .btn {
+.transition, .dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-arrow, .play-button .icon, .cc-dropbox-hero .db-hero-popup .close-logo::before, .cc-dropbox-hero .db-hero-popup .close-logo::after, .cc-dropbox-hero .db-hero-popup .close-logo, .cc-dropbox-hero .db-hero-popup, .cc-dropbox-header .container .header-menu-wrap .main-header-menu li .menu-link, .cc-dropbox-header .container .header-menu-wrap .mobile-menu-wrapper .mobile-togger, .btn {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -146,6 +146,14 @@ img {
   right: -30px;
 }
 
+.mid-align, .play-button .button-motion span, .play-button, .cc-dropbox-hero .db-hero-popup .close-logo::before, .cc-dropbox-hero .db-hero-popup .close-logo::after, .cc-dropbox-hero .db-hero-popup {
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -229,6 +237,11 @@ img {
 .flex-nowrap {
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
+}
+
+.scroll-off {
+  height: 100%;
+  overflow: hidden;
 }
 
 .unstyle {
@@ -549,7 +562,7 @@ p {
 }
 @-webkit-keyframes bgposition {
   0% {
-    background-position: 1% 9%;
+    background-position: 48% 10%;
   }
   25% {
     background-position: 60% 5%;
@@ -558,15 +571,15 @@ p {
     background-position: 30% 20%;
   }
   75% {
-    background-position: 3% 78%;
+    background-position: 50% 5%;
   }
   100% {
-    background-position: 9% 39%;
+    background-position: 38% 13%;
   }
 }
 @keyframes bgposition {
   0% {
-    background-position: 1% 9%;
+    background-position: 48% 10%;
   }
   25% {
     background-position: 60% 5%;
@@ -575,10 +588,10 @@ p {
     background-position: 30% 20%;
   }
   75% {
-    background-position: 3% 78%;
+    background-position: 50% 5%;
   }
   100% {
-    background-position: 9% 39%;
+    background-position: 38% 13%;
   }
 }
 .cc-dropbox-header {
@@ -789,7 +802,8 @@ p {
   padding-top: 80px;
   background-image: url(../images/hero-bg.svg);
   background-position: 39% 39%;
-  animation: bgposition 20s linear infinite alternate-reverse;
+  -webkit-animation: bgposition 20s linear infinite alternate;
+          animation: bgposition 20s linear infinite alternate;
 }
 .cc-dropbox-hero .dropbox-hero-content {
   gap: 45px;
@@ -802,7 +816,7 @@ p {
 }
 @media only screen and (max-width: 575px) {
   .cc-dropbox-hero .dropbox-hero-content {
-    gap: 25px;
+    gap: 20px;
   }
   .cc-dropbox-hero .dropbox-hero-content h1 {
     font-size: 49px;
@@ -820,6 +834,8 @@ p {
     gap: 10px;
   }
   .cc-dropbox-hero .dropbox-hero-content .hero-button-wrapper .btn {
+    font-size: 16px;
+    line-height: 18px;
     padding: 10px 15px;
   }
 }
@@ -830,6 +846,110 @@ p {
 .cc-dropbox-hero .dropbox-hero-content .hero-button-wrapper .btn:nth-child(2):hover {
   color: #fff;
   background: transparent;
+}
+.cc-dropbox-hero .db-hero-popup {
+  max-width: 1024px;
+  width: 100%;
+  height: 500px;
+  max-height: 100%;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  background-image: url(../images/hero-bg.svg);
+  -webkit-animation: bgposition 20s linear infinite alternate;
+          animation: bgposition 20s linear infinite alternate;
+  -webkit-box-shadow: 13px 12px 40px rgba(0, 0, 0, 0.4235294118);
+          box-shadow: 13px 12px 40px rgba(0, 0, 0, 0.4235294118);
+  padding: 10px 20px 20px;
+  border-radius: 15px;
+  z-index: 99;
+  gap: 20px;
+  opacity: 0;
+  visibility: hidden;
+}
+.cc-dropbox-hero .db-hero-popup .close-logo {
+  max-width: 40px;
+  width: 100%;
+  height: 45px;
+  max-height: 100%;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  border-radius: 50%;
+  background-color: rgba(39, 100, 236, 0.5019607843);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+.cc-dropbox-hero .db-hero-popup .close-logo::before, .cc-dropbox-hero .db-hero-popup .close-logo::after {
+  position: absolute;
+  content: " ";
+  height: 25px;
+  width: 2px;
+  background-color: #8d8787;
+  left: -1px;
+}
+.cc-dropbox-hero .db-hero-popup .close-logo::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.cc-dropbox-hero .db-hero-popup .close-logo::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.cc-dropbox-hero .db-hero-popup .close-logo:hover {
+  -webkit-box-shadow: 0 0 10px rgba(151, 131, 131, 0.521);
+          box-shadow: 0 0 10px rgba(151, 131, 131, 0.521);
+}
+.cc-dropbox-hero .db-hero-popup .close-logo:hover::before, .cc-dropbox-hero .db-hero-popup .close-logo:hover::after {
+  background-color: #dad7d7;
+}
+.cc-dropbox-hero .db-hero-popup .close-logo:hover::before {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+.cc-dropbox-hero .db-hero-popup .close-logo:hover::after {
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+.cc-dropbox-hero .db-hero-popup .popup-content {
+  float: none;
+  clear: both;
+  width: 100%;
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 25px;
+  height: 0;
+  border-radius: 10px;
+}
+.cc-dropbox-hero .db-hero-popup .popup-content iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.cc-dropbox-hero.active-popup {
+  height: 100%;
+  overflow: hidden;
+}
+.cc-dropbox-hero.active-popup .blur-bg {
+  top: 0;
+  opacity: 1;
+}
+.cc-dropbox-hero.active-popup .db-hero-popup {
+  bottom: 20%;
+  opacity: 1;
+  visibility: visible;
+}
+.cc-dropbox-hero .blur-bg {
+  top: -100%;
+  width: 100%;
+  height: 100%;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.541);
+  z-index: 11;
+  opacity: 0;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
 }
 .cc-dropbox-hero .hero-canvas-dropbox .canvas-dropbox {
   margin-bottom: -155px;
@@ -872,11 +992,6 @@ p {
 }
 
 .play-button {
-  margin: auto;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
   max-width: 200px;
   width: 100%;
   height: 200px;
@@ -906,11 +1021,6 @@ p {
 .play-button .button-motion span {
   display: block;
   position: absolute;
-  margin: auto;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 97, 254, 0.12)), to(rgba(0, 97, 254, 0.12))), -webkit-gradient(linear, left top, left bottom, from(rgba(59, 134, 255, 0.2)), color-stop(38.55%, rgba(185, 194, 208, 0.2)), to(rgba(147, 188, 255, 0.2)));
   background: linear-gradient(0deg, rgba(0, 97, 254, 0.12), rgba(0, 97, 254, 0.12)), linear-gradient(180deg, rgba(59, 134, 255, 0.2) 0%, rgba(185, 194, 208, 0.2) 38.55%, rgba(147, 188, 255, 0.2) 100%);
   border-radius: 50%;
@@ -1527,12 +1637,12 @@ p {
   padding-top: 80px;
 }
 .dropbox-footer-area .footer-top {
-  background-image: url(../images/footer-top-bg.svg), linear-gradient(142.51deg, #0061fe 10.59%, #5f96ff 81.5%);
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-image: url(../images/hero-bg.svg), linear-gradient(142.51deg, #0061fe 10.59%, #5f96ff 81.5%);
   margin-bottom: -200px;
   padding: 70px 30px;
   border-radius: 30px;
+  -webkit-animation: bgposition 15s linear infinite alternate;
+          animation: bgposition 15s linear infinite alternate;
 }
 @media only screen and (max-width: 768px) {
   .dropbox-footer-area .footer-top {

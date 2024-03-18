@@ -150,7 +150,13 @@ img {
         }
     }
 }
-
+.mid-align {
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
 .cursor-pointer {
     cursor: pointer;
 }
@@ -203,7 +209,10 @@ img {
 .flex-nowrap {
     flex-wrap: nowrap;
 }
-
+.scroll-off {
+    height: 100%;
+    overflow: hidden;
+}
 .unstyle {
     padding: 0;
     margin: 0;
@@ -474,10 +483,10 @@ p {
     }
 }
 
-// Wave-Hero //
+// Wave-bg //
 @keyframes bgposition {
     0% {
-        background-position: 1% 9%;
+        background-position: 48% 10%;
     }
     25% {
         background-position: 60% 5%;
@@ -486,10 +495,10 @@ p {
         background-position: 30% 20%;
     }
     75% {
-        background-position: 3% 78%;
+        background-position: 50% 5%;
     }
     100% {
-        background-position: 9% 39%;
+        background-position: 38% 13%;
     }
 }
 
@@ -692,8 +701,7 @@ p {
     }
 }
 // Dropbox Header Section End //
-.header_gutter {
-}
+
 // _____________________________//
 //           Hero Area          //
 // -----------------------------//
@@ -702,7 +710,8 @@ p {
     padding-top: 80px;
     background-image: url(../images/hero-bg.svg);
     background-position: 39% 39%;
-    animation: bgposition 20s linear infinite alternate-reverse;
+    animation: bgposition 20s linear infinite alternate;
+
     .dropbox-hero-content {
         gap: 45px;
         max-width: 950px;
@@ -712,7 +721,7 @@ p {
             color: $text;
         }
         @include breakpoint(575) {
-            gap: 25px;
+            gap: 20px;
             h1 {
                 @include font(49, 50);
             }
@@ -722,10 +731,12 @@ p {
         }
         .hero-button-wrapper {
             gap: 20px;
+
             @include breakpoint(575) {
                 gap: 10px;
 
                 .btn {
+                    @include font(16, 18);
                     padding: 10px 15px;
                 }
             }
@@ -740,6 +751,105 @@ p {
                 }
             }
         }
+    }
+    .db-hero-popup {
+        @extend .mid-align, .transition;
+        @include height-width(500, 1024);
+        backdrop-filter: blur(5px);
+        background-image: url(../images/hero-bg.svg);
+        animation: bgposition 20s linear infinite alternate;
+        box-shadow: 13px 12px 40px #0000006c;
+        padding: 10px 20px 20px;
+        border-radius: 15px;
+        z-index: 99;
+        gap: 20px;
+        opacity: 0;
+        visibility: hidden;
+
+        .close-logo {
+            @include height-width(45, 40);
+            align-self: flex-end;
+            border-radius: 50%;
+            background-color: #2764ec80;
+            backdrop-filter: blur(10px);
+
+            @extend .transition;
+
+            &::before,
+            &::after {
+                position: absolute;
+                content: " ";
+                height: 25px;
+                width: 2px;
+                background-color: #8d8787;
+                left: -1px;
+
+                @extend .mid-align, .transition;
+            }
+            &::before {
+                transform: rotate(45deg);
+            }
+            &::after {
+                transform: rotate(-45deg);
+            }
+
+            &:hover {
+                box-shadow: 0 0 10px rgba(151, 131, 131, 0.521);
+                &::before,
+                &::after {
+                    background-color: #dad7d7;
+                }
+                &::before {
+                    transform: rotate(135deg);
+                }
+                &::after {
+                    transform: rotate(-135deg);
+                }
+            }
+        }
+
+        .popup-content {
+            float: none;
+            clear: both;
+            width: 100%;
+            position: relative;
+            padding-bottom: 56.25%;
+            padding-top: 25px;
+            height: 0;
+            border-radius: 10px;
+
+            iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    &.active-popup {
+        height: 100%;
+        overflow: hidden;
+        .blur-bg {
+            top: 0;
+            opacity: 1;
+        }
+        .db-hero-popup {
+            bottom: 20%;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    .blur-bg {
+        top: -100%;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(10px);
+        background: rgba(0, 0, 0, 0.541);
+        z-index: 11;
+        opacity: 0;
+        transition: all 1s ease;
     }
     .hero-canvas-dropbox {
         .canvas-dropbox {
@@ -783,11 +893,7 @@ p {
     }
 }
 .play-button {
-    margin: auto;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
+    @extend .mid-align;
 
     @include height-width(200, 200);
     .icon {
@@ -809,11 +915,7 @@ p {
         span {
             display: block;
             position: absolute;
-            margin: auto;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
+            @extend .mid-align;
 
             background: linear-gradient(
                     0deg,
@@ -993,6 +1095,7 @@ p {
         grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
         gap: 15px;
         padding: 50px 20px;
+
         @include breakpoint(820) {
             padding: 30px 10px;
         }

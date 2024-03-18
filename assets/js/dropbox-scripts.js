@@ -36,10 +36,42 @@ function DuskySwitcher() {
     }
 }
 
+function DropboxPopupSection() {
+    const popupIframe = document.querySelector(
+        ".hero-canvas-dropbox .canvas-dropbox .play-button .icon"
+    );
+    const parentElement = document.querySelector(".cc-dropbox-hero");
+    const bodyElement = document.querySelector("body");
+    const closeElement = document.querySelector(
+        ".cc-dropbox-hero .db-hero-popup .close-logo"
+    );
+    const iFrameIntro = document.querySelector(
+        ".cc-dropbox-hero .db-hero-popup .popup-content iframe"
+    );
+
+    popupIframe.addEventListener("click", function () {
+        parentElement.classList.add("active-popup");
+        bodyElement.classList.add("scroll-off");
+        window.scroll(0, 0);
+    });
+
+    closeElement.addEventListener("click", function () {
+        parentElement.classList.remove("active-popup");
+        bodyElement.classList.remove("scroll-off");
+
+        if (iFrameIntro) {
+            iFrameIntro.src = iFrameIntro.src;
+        }
+    });
+
+    console.log(iFrameIntro);
+}
+
 function codeConfigOnLoad() {
     Toggler();
     HeaderGutter();
     DuskySwitcher();
+    DropboxPopupSection();
 }
 
 window.addEventListener("load", codeConfigOnLoad);

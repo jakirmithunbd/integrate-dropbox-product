@@ -73,13 +73,13 @@
 .dropbox-footer-area {
     padding-top: 80px;
     .footer-top {
-        background-image: url(../images/footer-top-bg.svg),
+        background-image: url(../images/hero-bg.svg),
             linear-gradient(142.51deg, #0061fe 10.59%, #5f96ff 81.5%);
-        background-size: cover;
-        background-repeat: no-repeat;
         margin-bottom: -200px;
         padding: 70px 30px;
         border-radius: 30px;
+        animation: bgposition 15s linear infinite alternate;
+
         @include breakpoint(768) {
             padding: 30px;
         }
