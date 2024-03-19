@@ -716,6 +716,7 @@ p {
         gap: 45px;
         max-width: 950px;
         width: 100%;
+        z-index: 1;
         h5 {
             padding: 0 50px;
             color: $text;
@@ -754,7 +755,7 @@ p {
     }
     .db-hero-popup {
         @extend .mid-align, .transition;
-        @include height-width(500, 1024);
+        @include height-width(650, 1024);
         backdrop-filter: blur(5px);
         background-image: url(../images/hero-bg.svg);
         animation: bgposition 20s linear infinite alternate;
@@ -762,9 +763,10 @@ p {
         padding: 10px 20px 20px;
         border-radius: 15px;
         z-index: 99;
-        gap: 20px;
+        gap: 15px;
         opacity: 0;
         visibility: hidden;
+        height: fit-content;
 
         .close-logo {
             @include height-width(45, 40);
@@ -782,7 +784,6 @@ p {
                 height: 25px;
                 width: 2px;
                 background-color: #8d8787;
-                left: -1px;
 
                 @extend .mid-align, .transition;
             }
@@ -813,8 +814,8 @@ p {
             clear: both;
             width: 100%;
             position: relative;
-            padding-bottom: 56.25%;
-            padding-top: 25px;
+            padding-bottom: 56%;
+            padding-top: 15px;
             height: 0;
             border-radius: 10px;
 
@@ -852,17 +853,30 @@ p {
         transition: all 1s ease;
     }
     .hero-canvas-dropbox {
+        justify-content: center;
         .canvas-dropbox {
-            margin-bottom: -155px;
+            padding-top: 20px;
+            margin-bottom: -15px;
+            z-index: 11;
+            width: 90%;
         }
         .db-canvas-bg {
+            z-index: 1;
             &:nth-child(1) {
                 bottom: 22px;
                 left: -26px;
+                @include breakpoint(768) {
+                    bottom: 3px;
+                    left: -6px;
+                }
             }
             &:nth-child(3) {
                 bottom: 58px;
                 right: -14px;
+                @include breakpoint(768) {
+                    bottom: 11px;
+                    right: -6px;
+                }
             }
         }
     }
@@ -870,25 +884,41 @@ p {
         animation: dancing 9s infinite alternate;
 
         &:nth-child(2) {
-            right: 10%;
+            right: 7%;
             top: 5%;
             animation-direction: alternate-reverse;
+
+            @include breakpoint(1024) {
+                filter: opacity(0.5);
+            }
         }
         &:nth-child(3) {
-            left: 10%;
+            left: 7%;
             top: 5%;
             animation-direction: alternate;
             animation-delay: 2s;
+
+            @include breakpoint(1024) {
+                filter: opacity(0.5);
+            }
         }
         &:nth-child(4) {
-            right: 22%;
-            top: 37%;
+            right: 20%;
+            top: 39%;
+
+            @include breakpoint(820) {
+                filter: opacity(0.5);
+            }
         }
         &:nth-child(5) {
-            left: 22%;
-            top: 37%;
+            left: 20%;
+            top: 42%;
             animation-direction: alternate-reverse;
             animation-delay: 2s;
+
+            @include breakpoint(820) {
+                filter: opacity(0.5);
+            }
         }
     }
 }
@@ -951,12 +981,21 @@ p {
     }
 }
 .db-canvas-bg {
-    @include height-width(407, 407);
+    @include height-width(380, 407);
     background-image: url(./../images/hero-canvas-bg.svg);
-    @extend .coverbg;
-    @extend .p-absolute;
+    @extend .coverbg, .p-absolute;
     z-index: -1;
     filter: opacity(0.8);
+    @include breakpoint(880) {
+        @include height-width(270, 307);
+    }
+    @include breakpoint(768) {
+        @include height-width(220, 250);
+    }
+    @include breakpoint(575) {
+        @include height-width(130, 150);
+    }
+
     &.revers {
         transform: rotateY(180deg);
     }
@@ -1258,7 +1297,7 @@ p {
                     left: 0;
                     right: 0;
                     margin: auto;
-                    bottom: -150px;
+                    bottom: -190px;
                 }
             }
             .slick-prev {
@@ -1394,8 +1433,6 @@ p {
     }
 }
 // Dropbox Review Section End //
-// Call To Action Start //
 
-// Call To Action End //
 @import "./footer";
 @import "./pricing";

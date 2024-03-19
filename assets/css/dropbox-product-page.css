@@ -809,6 +809,7 @@ p {
   gap: 45px;
   max-width: 950px;
   width: 100%;
+  z-index: 1;
 }
 .cc-dropbox-hero .dropbox-hero-content h5 {
   padding: 0 50px;
@@ -850,7 +851,7 @@ p {
 .cc-dropbox-hero .db-hero-popup {
   max-width: 1024px;
   width: 100%;
-  height: 500px;
+  height: 650px;
   max-height: 100%;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
@@ -862,9 +863,12 @@ p {
   padding: 10px 20px 20px;
   border-radius: 15px;
   z-index: 99;
-  gap: 20px;
+  gap: 15px;
   opacity: 0;
   visibility: hidden;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 .cc-dropbox-hero .db-hero-popup .close-logo {
   max-width: 40px;
@@ -884,7 +888,6 @@ p {
   height: 25px;
   width: 2px;
   background-color: #8d8787;
-  left: -1px;
 }
 .cc-dropbox-hero .db-hero-popup .close-logo::before {
   -webkit-transform: rotate(45deg);
@@ -914,8 +917,8 @@ p {
   clear: both;
   width: 100%;
   position: relative;
-  padding-bottom: 56.25%;
-  padding-top: 25px;
+  padding-bottom: 56%;
+  padding-top: 15px;
   height: 0;
   border-radius: 10px;
 }
@@ -951,44 +954,91 @@ p {
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
 }
+.cc-dropbox-hero .hero-canvas-dropbox {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
 .cc-dropbox-hero .hero-canvas-dropbox .canvas-dropbox {
-  margin-bottom: -155px;
+  padding-top: 20px;
+  margin-bottom: -15px;
+  z-index: 11;
+  width: 90%;
+}
+.cc-dropbox-hero .hero-canvas-dropbox .db-canvas-bg {
+  z-index: 1;
 }
 .cc-dropbox-hero .hero-canvas-dropbox .db-canvas-bg:nth-child(1) {
   bottom: 22px;
   left: -26px;
 }
+@media only screen and (max-width: 768px) {
+  .cc-dropbox-hero .hero-canvas-dropbox .db-canvas-bg:nth-child(1) {
+    bottom: 3px;
+    left: -6px;
+  }
+}
 .cc-dropbox-hero .hero-canvas-dropbox .db-canvas-bg:nth-child(3) {
   bottom: 58px;
   right: -14px;
+}
+@media only screen and (max-width: 768px) {
+  .cc-dropbox-hero .hero-canvas-dropbox .db-canvas-bg:nth-child(3) {
+    bottom: 11px;
+    right: -6px;
+  }
 }
 .cc-dropbox-hero .motion-logo {
   -webkit-animation: dancing 9s infinite alternate;
           animation: dancing 9s infinite alternate;
 }
 .cc-dropbox-hero .motion-logo:nth-child(2) {
-  right: 10%;
+  right: 7%;
   top: 5%;
   animation-direction: alternate-reverse;
 }
+@media only screen and (max-width: 1024px) {
+  .cc-dropbox-hero .motion-logo:nth-child(2) {
+    -webkit-filter: opacity(0.5);
+            filter: opacity(0.5);
+  }
+}
 .cc-dropbox-hero .motion-logo:nth-child(3) {
-  left: 10%;
+  left: 7%;
   top: 5%;
   -webkit-animation-direction: alternate;
           animation-direction: alternate;
   -webkit-animation-delay: 2s;
           animation-delay: 2s;
 }
+@media only screen and (max-width: 1024px) {
+  .cc-dropbox-hero .motion-logo:nth-child(3) {
+    -webkit-filter: opacity(0.5);
+            filter: opacity(0.5);
+  }
+}
 .cc-dropbox-hero .motion-logo:nth-child(4) {
-  right: 22%;
-  top: 37%;
+  right: 20%;
+  top: 39%;
+}
+@media only screen and (max-width: 820px) {
+  .cc-dropbox-hero .motion-logo:nth-child(4) {
+    -webkit-filter: opacity(0.5);
+            filter: opacity(0.5);
+  }
 }
 .cc-dropbox-hero .motion-logo:nth-child(5) {
-  left: 22%;
-  top: 37%;
+  left: 20%;
+  top: 42%;
   animation-direction: alternate-reverse;
   -webkit-animation-delay: 2s;
           animation-delay: 2s;
+}
+@media only screen and (max-width: 820px) {
+  .cc-dropbox-hero .motion-logo:nth-child(5) {
+    -webkit-filter: opacity(0.5);
+            filter: opacity(0.5);
+  }
 }
 
 .play-button {
@@ -1064,12 +1114,36 @@ p {
 .db-canvas-bg {
   max-width: 407px;
   width: 100%;
-  height: 407px;
+  height: 380px;
   max-height: 100%;
   background-image: url(./../images/hero-canvas-bg.svg);
   z-index: -1;
   -webkit-filter: opacity(0.8);
           filter: opacity(0.8);
+}
+@media only screen and (max-width: 880px) {
+  .db-canvas-bg {
+    max-width: 307px;
+    width: 100%;
+    height: 270px;
+    max-height: 100%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .db-canvas-bg {
+    max-width: 250px;
+    width: 100%;
+    height: 220px;
+    max-height: 100%;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .db-canvas-bg {
+    max-width: 150px;
+    width: 100%;
+    height: 130px;
+    max-height: 100%;
+  }
 }
 .db-canvas-bg.revers {
   -webkit-transform: rotateY(180deg);
@@ -1420,7 +1494,7 @@ p {
     left: 0;
     right: 0;
     margin: auto;
-    bottom: -150px;
+    bottom: -190px;
   }
 }
 @media only screen and (max-width: 575px) {
