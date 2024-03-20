@@ -18,9 +18,7 @@ function Toggler() {
 // Header gutter for adjusting header height
 function HeaderGutter() {
     const header = document.querySelector(".cc-dropbox-header");
-    const headerGutter = document.querySelector(
-        ".cc-dropbox-hero .header_gutter"
-    );
+    const headerGutter = document.querySelector(".header_gutter");
     headerGutter.style.height = header.clientHeight + "px";
 }
 
@@ -41,23 +39,22 @@ function DropboxPopupSection() {
         ".hero-canvas-dropbox .canvas-dropbox .play-button .icon"
     );
     const parentElement = document.querySelector(".cc-dropbox-hero");
-    const bodyElement = document.querySelector("body");
+
     const closeElement = document.querySelector(
-        ".cc-dropbox-hero .db-hero-popup .close-logo"
+        ".cc-dropbox-hero .db-popup-wrapper .db-hero-popup .close-logo"
     );
+
     const iFrameIntro = document.querySelector(
-        ".cc-dropbox-hero .db-hero-popup .popup-content iframe"
+        ".cc-dropbox-hero .db-popup-wrapper .db-hero-popup .popup-content iframe"
     );
 
     popupIframe.addEventListener("click", function () {
         parentElement.classList.add("active-popup");
-        bodyElement.classList.add("scroll-off");
         window.scroll(0, 0);
     });
 
     closeElement.addEventListener("click", function () {
         parentElement.classList.remove("active-popup");
-        bodyElement.classList.remove("scroll-off");
 
         if (iFrameIntro) {
             iFrameIntro.src = iFrameIntro.src;
