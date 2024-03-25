@@ -2151,7 +2151,7 @@ p {
 
 .dropbox-pricing-hero {
   overflow: hidden;
-  padding: 80px 0 430px;
+  padding: 80px 0 400px;
   background-image: url(../images/hero-bg.svg);
   background-position: 39% 39%;
   -webkit-animation: bgposition 20s linear infinite alternate;
@@ -2166,11 +2166,11 @@ p {
   border-radius: 150px 150px 0 0;
 }
 .dropbox-pricing-area .dropbox-pricing-wrapper {
-  -webkit-transform: translateY(-300px);
-          transform: translateY(-300px);
+  -webkit-transform: translateY(-400px);
+          transform: translateY(-400px);
 }
 .dropbox-pricing-area .dropbox-pricing-wrapper .pricing-checkbox {
-  margin: 50px auto;
+  margin: 70px auto;
   gap: 20px;
 }
 @media only screen and (max-width: 575px) {
@@ -2181,6 +2181,10 @@ p {
 .dropbox-pricing-area .dropbox-pricing-wrapper .pricing-checkbox .checkbox-label-after {
   color: #fff;
   -webkit-text-fill-color: #fff;
+  left: 0;
+}
+.dropbox-pricing-area .dropbox-pricing-wrapper .pricing-checkbox .checkbox-label-before {
+  right: 0;
 }
 .dropbox-pricing-area .dropbox-pricing-wrapper .pricing-checkbox .checkbox-label-before h4 {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(-12.76%, #89a3ff), color-stop(60.94%, #5967ff), color-stop(139.29%, #443a96));
@@ -2188,31 +2192,14 @@ p {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.dropbox-pricing-area .dropbox-pricing-wrapper .pricing-checkbox .dusky-checkbox-button {
-  width: 63px;
-  height: 33px;
+.dropbox-pricing-area .dropbox-pricing-wrapper .pricing-checkbox .dropbox-checkbox-button {
+  width: 250px;
+  height: 55px;
   border-radius: 50px;
   background-color: #443a96;
 }
-.dropbox-pricing-area .dropbox-pricing-wrapper .pricing-checkbox .dusky-checkbox-button::after {
-  content: "";
-  position: absolute;
-  height: 25px;
-  width: 25px;
-  border-radius: 50%;
-  background-color: #fff;
-  top: 4px;
-  left: 4px;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
 .dropbox-pricing-area .dropbox-pricing-wrapper .pricing-checkbox.active-switcher .dusky-checkbox-button {
   background-color: #6b34e2;
-}
-.dropbox-pricing-area .dropbox-pricing-wrapper .pricing-checkbox.active-switcher .dusky-checkbox-button::after {
-  -webkit-transform: translateX(30px);
-          transform: translateX(30px);
-  background-color: #ea9d23;
 }
 .dropbox-pricing-area .dropbox-pricing-wrapper .pricing-checkbox.active-switcher .checkbox-label-after h4 {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(-12.76%, #89a3ff), color-stop(60.94%, #5967ff), color-stop(139.29%, #443a96));

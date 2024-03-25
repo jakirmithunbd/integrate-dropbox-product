@@ -162,7 +162,7 @@
 // Dropbox Pricing Header Section Start //
 .dropbox-pricing-hero {
     overflow: hidden;
-    padding: 80px 0 430px;
+    padding: 80px 0 400px;
     background-image: url(../images/hero-bg.svg);
     background-position: 39% 39%;
     animation: bgposition 20s linear infinite alternate;
@@ -181,10 +181,10 @@
     border-radius: 150px 150px 0 0;
 
     .dropbox-pricing-wrapper {
-        transform: translateY(-300px);
+        transform: translateY(-400px);
 
         .pricing-checkbox {
-            margin: 50px auto;
+            margin: 70px auto;
             gap: 20px;
 
             @include breakpoint(575) {
@@ -194,6 +194,7 @@
             .checkbox-label-after {
                 color: $text;
                 -webkit-text-fill-color: $text;
+                left: 0;
             }
 
             .checkbox-label-before {
@@ -207,33 +208,18 @@
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                 }
+                right: 0;
             }
 
-            .dusky-checkbox-button {
-                width: 63px;
-                height: 33px;
+            .dropbox-checkbox-button {
+                width: 250px;
+                height: 55px;
                 border-radius: 50px;
                 background-color: #443a96;
-
-                &::after {
-                    content: "";
-                    position: absolute;
-                    height: 25px;
-                    width: 25px;
-                    border-radius: 50%;
-                    background-color: $text;
-                    top: 4px;
-                    left: 4px;
-                    transition: all 0.5s ease;
-                }
             }
             &.active-switcher {
                 .dusky-checkbox-button {
                     background-color: #6b34e2;
-                    &::after {
-                        transform: translateX(30px);
-                        background-color: #ea9d23;
-                    }
                 }
 
                 .checkbox-label-after {
