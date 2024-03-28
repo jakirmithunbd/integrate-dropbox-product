@@ -74,11 +74,47 @@ function DropboxPopupSection() {
     console.log(iFrameIntro);
 }
 
+// function PriceAmountSite() {
+//     const amountFillpricingAmount = document.querySelector(
+//         ".pro-pricing-site-btn .site-amount-fill"
+//     );
+//     const amountFillDropdown = document.querySelectorAll(
+//         ".pro-pricing-site-btn .amount-dropdown unstyle li"
+//     );
+//     amountFillDropdown.addEventListener("click", function () {
+//         this.classList.add("active");
+//     });
+
+//     console.log(amountFillDropdown);
+// }
+
+function PriceAmountSite() {
+    const amountFillpricingAmount = document.querySelector(
+        ".pro-pricing-site-btn .site-amount-fill"
+    );
+
+    const amountFillDropdownItems = document.querySelectorAll(
+        ".pro-pricing-site-btn .amount-dropdown ul.unstyle li"
+    );
+
+    amountFillDropdownItems.forEach((item) => {
+        item.addEventListener("click", function () {
+            // Remove 'active' class from all dropdown items
+            amountFillDropdownItems.forEach((item) => {
+                item.classList.remove("active");
+            });
+            // Add 'active' class to the clicked item
+            this.classList.add("active");
+        });
+    });
+}
+
 function codeConfigOnLoad() {
     Toggler();
     HeaderGutter();
     DropboxPopupSection();
     DropBoxSwitcher();
+    PriceAmountSite();
 }
 
 window.addEventListener("load", codeConfigOnLoad);

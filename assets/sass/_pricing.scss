@@ -378,7 +378,7 @@
                             .site-amount-fill {
                                 padding: 2px 13px;
                                 border-radius: 30px;
-                                border: 1px solid black;
+
                                 background: linear-gradient(
                                     142.51deg,
                                     #0061fe 10.59%,
@@ -392,7 +392,7 @@
                                     position: absolute;
                                     height: 7px;
                                     width: 7px;
-                                    border: 2px solid black;
+                                    border: 2px solid;
                                     border-color: white white transparent
                                         transparent;
                                     right: 10px;
@@ -408,6 +408,7 @@
                                 position: absolute;
                                 z-index: 9;
                                 width: 100%;
+                                height: 100px;
                                 transform: translateY(0px);
                                 visibility: hidden;
                                 opacity: 0;
@@ -417,9 +418,28 @@
                                     width: 100%;
                                     padding: 2px 13px;
                                     border-radius: 30px;
-                                    border: 1px solid black;
+                                    border: 1px solid #99adf7;
                                     transition: all 0.3s ease;
                                     background: white;
+                                    text-align: center;
+                                    &:hover {
+                                        // border: inherit;
+                                        background: linear-gradient(
+                                            142.51deg,
+                                            #0061fe 10.59%,
+                                            #5f96ff 81.5%
+                                        );
+                                        color: white;
+                                    }
+
+                                    &.active {
+                                        background: linear-gradient(
+                                            142.51deg,
+                                            #0061fe 10.59%,
+                                            #5f96ff 81.5%
+                                        );
+                                        color: white;
+                                    }
                                 }
                             }
 
