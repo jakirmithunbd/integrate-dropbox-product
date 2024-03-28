@@ -184,70 +184,75 @@
         transform: translateY(-400px);
 
         .pricing-checkbox {
-            margin: 70px auto;
+            margin: 50px auto;
             gap: 20px;
 
             @include breakpoint(575) {
                 margin: 30px auto;
             }
 
-            .checkbox-label-after {
-                color: $text;
-                -webkit-text-fill-color: $text;
-                left: 0;
-            }
-
-            .checkbox-label-before {
-                h4 {
-                    background: linear-gradient(
-                        180deg,
-                        #89a3ff -12.76%,
-                        #5967ff 60.94%,
-                        #443a96 139.29%
-                    );
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                }
-                right: 0;
-            }
-
             .dropbox-checkbox-button {
-                width: 250px;
-                height: 55px;
+                width: 200px;
+                height: 50px;
+                padding: 10px;
                 border-radius: 50px;
-                background-color: #443a96;
-            }
-            &.active-switcher {
-                .dusky-checkbox-button {
-                    background-color: #6b34e2;
+                background-color: white;
+                justify-content: space-between;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    height: 70%;
+                    width: 90px;
+                    border-radius: 50px;
+                    transition: all 0.4s ease;
+                    background: linear-gradient(
+                        142.51deg,
+                        #0061fe 10.59%,
+                        #5f96ff 81.5%
+                    );
                 }
 
+                .checkbox-label-before,
                 .checkbox-label-after {
-                    h4 {
-                        background: linear-gradient(
-                            180deg,
-                            #89a3ff -12.76%,
-                            #5967ff 60.94%,
-                            #443a96 139.29%
-                        );
-                        -webkit-background-clip: text;
-                        -webkit-text-fill-color: transparent;
-                    }
+                    width: 90px;
+                    padding: 4px 9px;
+                    @extend .p-relative;
+                    z-index: 11;
                 }
 
                 .checkbox-label-before {
-                    h4 {
+                    h5 {
                         color: $text;
-                        -webkit-text-fill-color: $text;
+                    }
+                }
+            }
+
+            &.active-switcher {
+                .dropbox-checkbox-button {
+                    &::after {
+                        transform: translateX(90px);
+                    }
+                    .checkbox-label-before {
+                        h5 {
+                            color: black;
+                        }
+                    }
+                    .checkbox-label-after {
+                        h5 {
+                            color: white;
+                        }
                     }
                 }
             }
         }
 
         .plan-option-wrapper {
-            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             justify-items: center;
             gap: 30px;
+            max-width: 90%;
+            margin: 0 auto;
 
             .planing-section {
                 height: 1124px;
@@ -260,8 +265,11 @@
                 .features-meta {
                     gap: 2px;
                     padding: 20px 55px;
-                    @include breakpoint(768) {
+                    @include breakpoint(1100) {
                         padding: 30px 40px;
+                    }
+                    @include breakpoint(768) {
+                        padding: 20px;
                     }
                     .plan-header {
                         h4 {
@@ -354,19 +362,91 @@
                                     }
                                 }
                             }
+
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                width: 100%;
+                                height: 3px;
+                                background-color: #99adf7;
+                                border-radius: 3px;
+                                bottom: -12px;
+                            }
                         }
-                        .pro-pricing-button-wrapper {
-                            gap: 10px;
-                            .license-btn {
-                                flex-grow: 1;
+                        .pro-pricing-site-btn {
+                            width: 90px;
+                            .site-amount-fill {
+                                padding: 2px 13px;
+                                border-radius: 30px;
+                                border: 1px solid black;
+                                background: linear-gradient(
+                                    142.51deg,
+                                    #0061fe 10.59%,
+                                    #5f96ff 81.5%
+                                );
+                                h5 {
+                                    color: $text;
+                                }
+                                &::after {
+                                    content: "";
+                                    position: absolute;
+                                    height: 7px;
+                                    width: 7px;
+                                    border: 2px solid black;
+                                    border-color: white white transparent
+                                        transparent;
+                                    right: 10px;
+                                    transform: rotate(-45deg);
+                                    margin: auto;
+                                    top: 5px;
+                                    bottom: 0;
+                                    right: 12px;
+                                    @include transition;
+                                }
+                            }
+                            .amount-dropdown {
+                                position: absolute;
+                                z-index: 9;
+                                width: 100%;
+                                transform: translateY(0px);
+                                visibility: hidden;
+                                opacity: 0;
+                                transition: all 0.3s ease;
+                                li {
+                                    position: absolute;
+                                    width: 100%;
+                                    padding: 2px 13px;
+                                    border-radius: 30px;
+                                    border: 1px solid black;
+                                    transition: all 0.3s ease;
+                                    background: white;
+                                }
                             }
 
-                            @include breakpoint(575) {
-                                .license-btn {
-                                    padding: 3px 25px;
+                            &:hover {
+                                .site-amount-fill {
+                                    &::after {
+                                        top: -5px;
+                                        transform: rotate(135deg);
+                                    }
+                                }
+                                .amount-dropdown {
+                                    transform: translateY(3px);
+                                    visibility: visible;
+                                    opacity: 1;
+
+                                    li {
+                                        &:nth-child(2) {
+                                            transform: translateY(34px);
+                                        }
+                                        &:nth-child(3) {
+                                            transform: translateY(68px);
+                                        }
+                                    }
                                 }
                             }
                         }
+
                         .plan-features {
                             gap: 10px;
                         }

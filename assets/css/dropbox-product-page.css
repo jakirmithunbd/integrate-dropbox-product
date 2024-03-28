@@ -158,7 +158,8 @@ img {
   cursor: pointer;
 }
 
-.p-relative, .dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-arrow, .cc-dropbox-header .container .header-menu-wrap .main-header-menu li .menu-link {
+.p-relative, .dropbox-pricing-area .dropbox-pricing-wrapper .pricing-checkbox .dropbox-checkbox-button .checkbox-label-before,
+.dropbox-pricing-area .dropbox-pricing-wrapper .pricing-checkbox .dropbox-checkbox-button .checkbox-label-after, .dropbox-review-area .dropbox-review-slider-area .dropbox-review-wrapper .slick-arrow, .cc-dropbox-header .container .header-menu-wrap .main-header-menu li .menu-link {
   position: relative;
 }
 
@@ -2170,7 +2171,7 @@ p {
           transform: translateY(-400px);
 }
 .dropbox-pricing-area .dropbox-pricing-wrapper .pricing-checkbox {
-  margin: 70px auto;
+  margin: 50px auto;
   gap: 20px;
 }
 @media only screen and (max-width: 575px) {
@@ -2178,43 +2179,51 @@ p {
     margin: 30px auto;
   }
 }
-.dropbox-pricing-area .dropbox-pricing-wrapper .pricing-checkbox .checkbox-label-after {
-  color: #fff;
-  -webkit-text-fill-color: #fff;
-  left: 0;
-}
-.dropbox-pricing-area .dropbox-pricing-wrapper .pricing-checkbox .checkbox-label-before {
-  right: 0;
-}
-.dropbox-pricing-area .dropbox-pricing-wrapper .pricing-checkbox .checkbox-label-before h4 {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(-12.76%, #89a3ff), color-stop(60.94%, #5967ff), color-stop(139.29%, #443a96));
-  background: linear-gradient(180deg, #89a3ff -12.76%, #5967ff 60.94%, #443a96 139.29%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 .dropbox-pricing-area .dropbox-pricing-wrapper .pricing-checkbox .dropbox-checkbox-button {
-  width: 250px;
-  height: 55px;
+  width: 200px;
+  height: 50px;
+  padding: 10px;
   border-radius: 50px;
-  background-color: #443a96;
+  background-color: white;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
-.dropbox-pricing-area .dropbox-pricing-wrapper .pricing-checkbox.active-switcher .dusky-checkbox-button {
-  background-color: #6b34e2;
+.dropbox-pricing-area .dropbox-pricing-wrapper .pricing-checkbox .dropbox-checkbox-button::after {
+  content: "";
+  position: absolute;
+  height: 70%;
+  width: 90px;
+  border-radius: 50px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  background: linear-gradient(142.51deg, #0061fe 10.59%, #5f96ff 81.5%);
 }
-.dropbox-pricing-area .dropbox-pricing-wrapper .pricing-checkbox.active-switcher .checkbox-label-after h4 {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(-12.76%, #89a3ff), color-stop(60.94%, #5967ff), color-stop(139.29%, #443a96));
-  background: linear-gradient(180deg, #89a3ff -12.76%, #5967ff 60.94%, #443a96 139.29%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.dropbox-pricing-area .dropbox-pricing-wrapper .pricing-checkbox .dropbox-checkbox-button .checkbox-label-before,
+.dropbox-pricing-area .dropbox-pricing-wrapper .pricing-checkbox .dropbox-checkbox-button .checkbox-label-after {
+  width: 90px;
+  padding: 4px 9px;
+  z-index: 11;
 }
-.dropbox-pricing-area .dropbox-pricing-wrapper .pricing-checkbox.active-switcher .checkbox-label-before h4 {
+.dropbox-pricing-area .dropbox-pricing-wrapper .pricing-checkbox .dropbox-checkbox-button .checkbox-label-before h5 {
   color: #fff;
-  -webkit-text-fill-color: #fff;
+}
+.dropbox-pricing-area .dropbox-pricing-wrapper .pricing-checkbox.active-switcher .dropbox-checkbox-button::after {
+  -webkit-transform: translateX(90px);
+          transform: translateX(90px);
+}
+.dropbox-pricing-area .dropbox-pricing-wrapper .pricing-checkbox.active-switcher .dropbox-checkbox-button .checkbox-label-before h5 {
+  color: black;
+}
+.dropbox-pricing-area .dropbox-pricing-wrapper .pricing-checkbox.active-switcher .dropbox-checkbox-button .checkbox-label-after h5 {
+  color: white;
 }
 .dropbox-pricing-area .dropbox-pricing-wrapper .plan-option-wrapper {
-  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   justify-items: center;
   gap: 30px;
+  max-width: 90%;
+  margin: 0 auto;
 }
 .dropbox-pricing-area .dropbox-pricing-wrapper .plan-option-wrapper .planing-section {
   height: 1124px;
@@ -2229,9 +2238,14 @@ p {
   gap: 2px;
   padding: 20px 55px;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1100px) {
   .dropbox-pricing-area .dropbox-pricing-wrapper .plan-option-wrapper .planing-section .features-meta {
     padding: 30px 40px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .dropbox-pricing-area .dropbox-pricing-wrapper .plan-option-wrapper .planing-section .features-meta {
+    padding: 20px;
   }
 }
 .dropbox-pricing-area .dropbox-pricing-wrapper .plan-option-wrapper .planing-section .features-meta .plan-header h4 {
@@ -2334,18 +2348,83 @@ p {
   font-size: 15px;
   line-height: 24px;
 }
-.dropbox-pricing-area .dropbox-pricing-wrapper .plan-option-wrapper .planing-section .features-meta .priceing-wrapper .pro-pricing-button-wrapper {
-  gap: 10px;
+.dropbox-pricing-area .dropbox-pricing-wrapper .plan-option-wrapper .planing-section .features-meta .priceing-wrapper .plan-priceing::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #99adf7;
+  border-radius: 3px;
+  bottom: -12px;
 }
-.dropbox-pricing-area .dropbox-pricing-wrapper .plan-option-wrapper .planing-section .features-meta .priceing-wrapper .pro-pricing-button-wrapper .license-btn {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+.dropbox-pricing-area .dropbox-pricing-wrapper .plan-option-wrapper .planing-section .features-meta .priceing-wrapper .pro-pricing-site-btn {
+  width: 90px;
 }
-@media only screen and (max-width: 575px) {
-  .dropbox-pricing-area .dropbox-pricing-wrapper .plan-option-wrapper .planing-section .features-meta .priceing-wrapper .pro-pricing-button-wrapper .license-btn {
-    padding: 3px 25px;
-  }
+.dropbox-pricing-area .dropbox-pricing-wrapper .plan-option-wrapper .planing-section .features-meta .priceing-wrapper .pro-pricing-site-btn .site-amount-fill {
+  padding: 2px 13px;
+  border-radius: 30px;
+  border: 1px solid black;
+  background: linear-gradient(142.51deg, #0061fe 10.59%, #5f96ff 81.5%);
+}
+.dropbox-pricing-area .dropbox-pricing-wrapper .plan-option-wrapper .planing-section .features-meta .priceing-wrapper .pro-pricing-site-btn .site-amount-fill h5 {
+  color: #fff;
+}
+.dropbox-pricing-area .dropbox-pricing-wrapper .plan-option-wrapper .planing-section .features-meta .priceing-wrapper .pro-pricing-site-btn .site-amount-fill::after {
+  content: "";
+  position: absolute;
+  height: 7px;
+  width: 7px;
+  border: 2px solid black;
+  border-color: white white transparent transparent;
+  right: 10px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  margin: auto;
+  top: 5px;
+  bottom: 0;
+  right: 12px;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+.dropbox-pricing-area .dropbox-pricing-wrapper .plan-option-wrapper .planing-section .features-meta .priceing-wrapper .pro-pricing-site-btn .amount-dropdown {
+  position: absolute;
+  z-index: 9;
+  width: 100%;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.dropbox-pricing-area .dropbox-pricing-wrapper .plan-option-wrapper .planing-section .features-meta .priceing-wrapper .pro-pricing-site-btn .amount-dropdown li {
+  position: absolute;
+  width: 100%;
+  padding: 2px 13px;
+  border-radius: 30px;
+  border: 1px solid black;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background: white;
+}
+.dropbox-pricing-area .dropbox-pricing-wrapper .plan-option-wrapper .planing-section .features-meta .priceing-wrapper .pro-pricing-site-btn:hover .site-amount-fill::after {
+  top: -5px;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+.dropbox-pricing-area .dropbox-pricing-wrapper .plan-option-wrapper .planing-section .features-meta .priceing-wrapper .pro-pricing-site-btn:hover .amount-dropdown {
+  -webkit-transform: translateY(3px);
+          transform: translateY(3px);
+  visibility: visible;
+  opacity: 1;
+}
+.dropbox-pricing-area .dropbox-pricing-wrapper .plan-option-wrapper .planing-section .features-meta .priceing-wrapper .pro-pricing-site-btn:hover .amount-dropdown li:nth-child(2) {
+  -webkit-transform: translateY(34px);
+          transform: translateY(34px);
+}
+.dropbox-pricing-area .dropbox-pricing-wrapper .plan-option-wrapper .planing-section .features-meta .priceing-wrapper .pro-pricing-site-btn:hover .amount-dropdown li:nth-child(3) {
+  -webkit-transform: translateY(68px);
+          transform: translateY(68px);
 }
 .dropbox-pricing-area .dropbox-pricing-wrapper .plan-option-wrapper .planing-section .features-meta .priceing-wrapper .plan-features {
   gap: 10px;

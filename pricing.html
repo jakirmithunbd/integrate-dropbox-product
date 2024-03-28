@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Dusky Product Page</title>
+        <title>Dropbox Pricing Page</title>
         <link rel="stylesheet" href="./assets/fonts/google-fonts.css" />
         <link rel="stylesheet" href="./assets/css/dropbox-product-page.css" />
     </head>
@@ -156,20 +156,21 @@
                 <div class="dropbox-pricing-wrapper">
                     <div class="pricing-checkbox flex-center">
                         <button
-                            class="dropbox-checkbox-button p-relative cursor-pointer p-relative"
+                            class="dropbox-checkbox-button p-relative cursor-pointer d-flex align-center"
                             id="checkbox-button"
                         >
                             <label
-                                class="checkbox-label-before cursor-pointer margin-0 p-absolute"
+                                class="checkbox-label-before cursor-pointer margin-0"
                                 for="checkbox-button"
                             >
-                                <h4>Annual</h4></label
+                                <h5>Annual</h5></label
                             >
 
                             <label
-                                class="checkbox-label-after cursor-pointer margin-0 p-absolute"
+                                class="checkbox-label-after cursor-pointer margin-0"
                                 for="checkbox-button"
-                                ><h4>Lifetime</h4></label
+                            >
+                                <h5>Lifetime</h5></label
                             >
                         </button>
                     </div>
@@ -181,7 +182,7 @@
                                 </div>
                                 <div class="priceing-wrapper d-flex flex-col">
                                     <div
-                                        class="plan-priceing d-flex flex-col margin-0"
+                                        class="plan-priceing d-flex flex-col margin-0 p-relative"
                                     >
                                         <div
                                             class="db-free-price price-title d-flex align-center margin-0"
@@ -227,70 +228,73 @@
                                 </div>
                                 <div class="priceing-wrapper d-flex flex-col">
                                     <div
-                                        class="plan-priceing d-flex flex-col margin-0"
+                                        class="plan-priceing d-flex flex-col margin-0 p-relative"
                                     >
                                         <div
-                                            class="db-pro-price price-title d-flex"
+                                            class="db-pro-price-wrap d-flex space-between align-center"
                                         >
-                                            <h2>Pro</h2>
-                                            <div class="regular-price-wrapper">
+                                            <div
+                                                class="db-pro-price price-title d-flex"
+                                            >
+                                                <h2>Pro</h2>
                                                 <div
-                                                    class="regular-price d-flex align-center margin-0"
+                                                    class="regular-price-wrapper"
                                                 >
-                                                    <h3>$34</h3>
-                                                </div>
-                                                <!-- <div
-                                                        class="regular-price d-flex align-center margin-0"
-                                                    >
-                                                        <h3>$45</h3>
-                                                    </div>
                                                     <div
                                                         class="regular-price d-flex align-center margin-0"
                                                     >
-                                                        <h3>$54</h3>
-                                                    </div> -->
-                                            </div>
+                                                        <h3>$34</h3>
+                                                    </div>
+                                                    <!-- <div
+                                                            class="regular-price d-flex align-center margin-0"
+                                                        >
+                                                            <h3>$45</h3>
+                                                        </div>
+                                                        <div
+                                                            class="regular-price d-flex align-center margin-0"
+                                                        >
+                                                            <h3>$54</h3>
+                                                        </div> -->
+                                                </div>
 
-                                            <div class="price-off">
-                                                <h5>30% OFF</h5>
-                                            </div>
+                                                <div class="price-off">
+                                                    <h5>30% OFF</h5>
+                                                </div>
 
-                                            <div class="offer-price-wrapper">
                                                 <div
-                                                    class="offer-price d-flex align-center margin-0"
+                                                    class="offer-price-wrapper"
                                                 >
-                                                    <h2>$2</h2>
-                                                    <h5>/ year</h5>
+                                                    <div
+                                                        class="offer-price d-flex align-center margin-0"
+                                                    >
+                                                        <h2>$2</h2>
+                                                        <h5>/ year</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div
+                                                class="pro-pricing-site-btn p-relative"
+                                            >
+                                                <div class="site-amount-fill">
+                                                    <h5>5 site</h5>
+                                                </div>
+                                                <div class="amount-dropdown">
+                                                    <ul class="unstyle">
+                                                        <li>5 site</li>
+                                                        <li>5 site</li>
+                                                        <li>5 site</li>
+                                                    </ul>
                                                 </div>
                                             </div>
                                         </div>
+
                                         <h5>
                                             Advanced Features with More
                                             Flexibility
                                         </h5>
                                     </div>
-                                    <div
-                                        class="pro-pricing-button-wrapper d-flex flex-wrap"
-                                    >
-                                        <button
-                                            class="license-btn"
-                                            data-license="single"
-                                        >
-                                            Single Site License
-                                        </button>
-                                        <button
-                                            class="license-btn"
-                                            data-license="site5"
-                                        >
-                                            5 Site
-                                        </button>
-                                        <button
-                                            class="license-btn"
-                                            data-license="site10"
-                                        >
-                                            10 Site
-                                        </button>
-                                    </div>
+
                                     <div class="plan-features d-flex flex-col">
                                         <div class="features d-flex margin-0">
                                             <div

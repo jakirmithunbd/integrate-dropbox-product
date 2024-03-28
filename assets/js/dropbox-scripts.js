@@ -22,35 +22,45 @@ function HeaderGutter() {
     headerGutter.style.height = header.clientHeight + "px";
 }
 
-function DuskySwitcher() {
-    const duskyCheckbox = document.querySelector(
-        ".pricing-checkbox .dusky-checkbox-button"
+function DropBoxSwitcher() {
+    const priceClass = document.querySelector(".pricing-checkbox");
+
+    const dropBoxCheckbox = document.querySelector(
+        ".pricing-checkbox .dropbox-checkbox-button"
+    );
+    const dropBoxCheckBefore = document.querySelector(
+        ".pricing-checkbox .dropbox-checkbox-button .checkbox-label-before"
+    );
+    const dropBoxCheckAfter = document.querySelector(
+        ".pricing-checkbox .dropbox-checkbox-button .checkbox-label-after"
     );
 
-    if (duskyCheckbox) {
-        duskyCheckbox.addEventListener("click", function () {
-            this.parentElement.classList.toggle("active-switcher");
+    if (dropBoxCheckbox) {
+        dropBoxCheckAfter.addEventListener("click", function () {
+            priceClass.classList.add("active-switcher");
+        });
+        dropBoxCheckBefore.addEventListener("click", function () {
+            priceClass.classList.remove("active-switcher");
         });
     }
 }
 
 function DropboxPopupSection() {
-    const popupIframe = document.querySelector(
-        ".hero-canvas-dropbox .canvas-dropbox .play-button .icon"
-    );
+    const popUpIframe = document.getElementById("icon");
     const parentElement = document.querySelector(".cc-dropbox-hero");
-
-    const closeElement = document.querySelector(
-        ".cc-dropbox-hero .db-popup-wrapper .db-hero-popup .close-logo"
-    );
-
+    const closeElement = document.querySelector(".cc-dropbox-hero .close-logo");
     const iFrameIntro = document.querySelector(
-        ".cc-dropbox-hero .db-popup-wrapper .db-hero-popup .popup-content iframe"
+        ".cc-dropbox-hero .popup-content iframe"
     );
 
-    popupIframe.addEventListener("click", function () {
+    if (!popUpIframe || !parentElement || !closeElement || !iFrameIntro) {
+        console.error("One or more required elements not found.");
+        return;
+    }
+
+    popUpIframe.addEventListener("click", function () {
         parentElement.classList.add("active-popup");
-        window.scroll(0, 0);
+        window.scrollTo(0, 0);
     });
 
     closeElement.addEventListener("click", function () {
@@ -67,13 +77,13 @@ function DropboxPopupSection() {
 function codeConfigOnLoad() {
     Toggler();
     HeaderGutter();
-    DuskySwitcher();
     DropboxPopupSection();
+    DropBoxSwitcher();
 }
 
 window.addEventListener("load", codeConfigOnLoad);
 
-const LenthNumber = document.querySelectorAll(".direction-manual-part");
+// const LenthNumber = document.querySelectorAll(".direction-manual-part");
 
 // document.querySelectorAll(".plan-pro .license-btn").forEach((button, index) => {
 //     button.addEventListener("click", () => {
