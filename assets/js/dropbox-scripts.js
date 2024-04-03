@@ -70,33 +70,15 @@ function DropboxPopupSection() {
             iFrameIntro.src = iFrameIntro.src;
         }
     });
-
-    console.log(iFrameIntro);
 }
-
-// function PriceAmountSite() {
-//     const amountFillpricingAmount = document.querySelector(
-//         ".pro-pricing-site-btn .site-amount-fill"
-//     );
-//     const amountFillDropdown = document.querySelectorAll(
-//         ".pro-pricing-site-btn .amount-dropdown unstyle li"
-//     );
-//     amountFillDropdown.addEventListener("click", function () {
-//         this.classList.add("active");
-//     });
-
-//     console.log(amountFillDropdown);
-// }
 
 function PriceAmountSite() {
     const amountFillpricingAmount = document.querySelector(
-        ".pro-pricing-site-btn .site-amount-fill"
+        ".pro-pricing-site-btn .site-amount-fill h6"
     );
-
     const amountFillDropdownItems = document.querySelectorAll(
         ".pro-pricing-site-btn .amount-dropdown ul.unstyle li"
     );
-
     amountFillDropdownItems.forEach((item) => {
         item.addEventListener("click", function () {
             // Remove 'active' class from all dropdown items
@@ -105,9 +87,51 @@ function PriceAmountSite() {
             });
             // Add 'active' class to the clicked item
             this.classList.add("active");
+            amountFillpricingAmount.innerHTML = `${this.innerText}`;
         });
     });
 }
+
+// function hightSat(pushClass) {
+//     const questionBox = Array.from(document.querySelectorAll(pushClass));
+//     let maxHight = 0;
+
+//     if (questionBox) {
+//         questionBox.forEach(function (items) {
+//             const enteredValue = items.offsetHeight;
+//             if (enteredValue > maxHight) {
+//                 maxHight = enteredValue;
+//             }
+//             console.log(enteredValue);
+//         });
+//         questionBox.forEach(function (items) {
+//             items.style.height = maxHight + "px";
+//         });
+//     }
+// }
+
+// hightSat(
+//     ".plan-option-wrapper .planing-section .features-meta .priceing-wrapper"
+// );
+
+// function heightSet(pushClass) {
+//     const questionBox = Array.from(document.querySelectorAll(pushClass));
+//     let maxHeight = 0;
+
+//     if (questionBox.length > 0) {
+//         questionBox.forEach(function (items) {
+//             const itemHeight = items.offsetHeight;
+//             if (itemHeight > maxHeight) {
+//                 maxHeight = itemHeight;
+//             }
+//         });
+//         questionBox.forEach(function (items) {
+//             items.style.height = maxHeight + "px";
+//         });
+//     }
+// }
+
+// heightSet(".features-meta");
 
 function codeConfigOnLoad() {
     Toggler();
@@ -115,30 +139,33 @@ function codeConfigOnLoad() {
     DropboxPopupSection();
     DropBoxSwitcher();
     PriceAmountSite();
+    calculatePrice(0);
 }
 
 window.addEventListener("load", codeConfigOnLoad);
 
-// const LenthNumber = document.querySelectorAll(".direction-manual-part");
-
-// document.querySelectorAll(".plan-pro .license-btn").forEach((button, index) => {
-//     button.addEventListener("click", () => {
-//         document
-//             .querySelectorAll(".plan-pro .regular-price")
-//             .forEach((price) => price.classList.remove("active"));
-//         document
-//             .querySelectorAll(".plan-pro .license-btn")
-//             .forEach((btn) => btn.classList.remove("active"));
-//         document
-//             .querySelectorAll(".plan-pro .regular-price")
-//             [index].classList.add("active");
-//         button.classList.add("active");
+// (function ($) {
+//     $(document).ready(function () {
+//         if (innerWidth <= 768) {
+//             $(".pro-pricing-site-btn").click(function () {
+//                 $(
+//                     ".pro-pricing-site-btn .amount-dropdown .unstyle"
+//                 ).slideToggle();
+//             });
+//         }
 //     });
-// });
+// })(jQuery);
+const cards = document.querySelectorAll(
+    ".compare-feature-wrap .features-title"
+);
+const cardDetails = document.querySelectorAll(".compare-feature-wrap h5");
 
-// // Initially show the first price
-// document.querySelector(".plan-pro .regular-price").classList.add("active");
-// document.querySelector(".plan-pro .license-btn").classList.add("active");
+cards.forEach((card, i) => {
+    $(card).click(function () {
+        $(cardDetails[i]).slideToggle();
+        $(this).parent().toggleClass("actives");
+    });
+});
 
 (function ($) {
     $(document).ready(function () {
@@ -160,3 +187,75 @@ window.addEventListener("load", codeConfigOnLoad);
         });
     });
 })(jQuery);
+
+function calculatePrice(packageIndex) {
+    // Get selected package, discount percentage, and plan options
+    let discount = 30;
+    const pricing = document
+        .querySelector(".pricing-checkbox")
+        .classList.contains("active-switcher");
+    const packages = document.querySelector(
+        ".amount-dropdown .unstyle"
+    ).children;
+
+    // Calculate discounted price based on selected plan
+    let price;
+    switch (packageIndex) {
+        case 0:
+            price = 14.99;
+            break;
+        case 1:
+            price = 49.99;
+            break;
+        case 2:
+            price = 89.99;
+            break;
+        default:
+            price = 0;
+    }
+
+    function calculateDiscountedPrice(price) {
+        let discountedPrice;
+        let regularPrice;
+        if (pricing) {
+            // Lifetime plan selected
+            discountedPrice = price * 5;
+            regularPrice = price * 5;
+        } else {
+            // No plan selected, use original price
+            discountedPrice = price;
+            regularPrice = price;
+        }
+
+        // Apply discount
+        discountedPrice -= discountedPrice * (discount / 100);
+
+        // Display the result
+        document.querySelector(".regular-price h3").innerText =
+            "$" + regularPrice.toFixed(2);
+        document.querySelector(".offer-price h2").innerText =
+            "$" + discountedPrice.toFixed(2);
+        console.log(discountedPrice);
+    }
+
+    // Reset all packages to remove "active" class
+    for (let j = 0; j < packages.length; j++) {
+        packages[j].classList.remove("active");
+    }
+    // Add "active" class to the clicked package
+    packages[packageIndex].classList.add("active");
+
+    // Calculate and display the discounted price
+    calculateDiscountedPrice(price);
+}
+
+const packages = document.querySelector(".amount-dropdown .unstyle").children;
+for (let i = 0; i < packages.length; i++) {
+    packages[i].addEventListener("click", () => {
+        calculatePrice(i);
+    });
+}
+const pricingBox = document.querySelector(".pricing-checkbox");
+pricingBox.addEventListener("click", () => {
+    calculatePrice(0);
+});
