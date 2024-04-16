@@ -140,21 +140,52 @@ function codeConfigOnLoad() {
     DropBoxSwitcher();
     PriceAmountSite();
     calculatePrice(0);
+    askingQuestion();
 }
 
 window.addEventListener("load", codeConfigOnLoad);
 
 // (function ($) {
 //     $(document).ready(function () {
-//         if (innerWidth <= 768) {
-//             $(".pro-pricing-site-btn").click(function () {
-//                 $(
-//                     ".pro-pricing-site-btn .amount-dropdown .unstyle"
-//                 ).slideToggle();
-//             });
-//         }
+//         $(".single-questions .single-questions-title").click(function () {
+//             $("single-questions h5").slideToggle();
+//         });
 //     });
 // })(jQuery);
+
+function askingQuestion() {
+    const frequentlyQs = document.querySelectorAll(
+        ".questions-wrapper .single-questions"
+    );
+
+    const questionTitle = document.querySelectorAll(
+        ".single-questions .single-questions-title"
+    );
+
+    const answerTitle = document.querySelectorAll(".single-questions h5");
+
+    frequentlyQs.forEach((item, i) => {
+        $(questionTitle[i]).click(function () {
+            // Slide up all answers first
+            answerTitle.forEach((answer, index) => {
+                if (i !== index && $(answer).is(":visible")) {
+                    $(answer).slideUp(300);
+                    $(frequentlyQs[index]).removeClass("open-answer");
+                }
+            });
+
+            // Slide down the selected answer
+            if ($(answerTitle[i]).is(":hidden")) {
+                $(answerTitle[i]).slideDown(300);
+                $(item).addClass("open-answer");
+            } else {
+                $(answerTitle[i]).slideUp(300);
+                $(item).removeClass("open-answer");
+            }
+        });
+    });
+}
+
 const cards = document.querySelectorAll(
     ".compare-feature-wrap .features-title"
 );

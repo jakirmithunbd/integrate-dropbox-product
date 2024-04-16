@@ -15,6 +15,7 @@
 
 .section-margin-bottom {
     margin-bottom: 170px;
+
     @include breakpoint(880) {
         margin-bottom: 100px;
     }
@@ -139,15 +140,35 @@
 // Dropbox Pricing Header Section Start //
 .dropbox-pricing-hero {
     overflow: hidden;
-    padding: 80px 0 400px;
+    padding-top: 80px;
     background-image: url(../images/hero-bg.svg);
     background-position: 39% 39%;
     animation: bgposition 20s linear infinite alternate;
+
+    @include breakpoint(768) {
+        padding-top: 30px;
+    }
 
     .section-title {
         h2,
         h4 {
             color: $text;
+            display: inherit;
+        }
+        h2 {
+            @include breakpoint(700) {
+                flex-direction: column;
+                display: flex;
+
+                .gradent-text {
+                    font-size: 62px;
+                }
+            }
+            @include breakpoint(575) {
+                .gradent-text {
+                    font-size: 52px;
+                }
+            }
         }
     }
 }
@@ -155,11 +176,21 @@
 
 //Dropbox Pricing-Plan Section Start //
 .dropbox-pricing-area {
-    border-radius: 150px 150px 0 0;
-
+    .dropbox-pricing-bg {
+        width: 100%;
+        height: 60%;
+        bottom: 0;
+        background: $text;
+        z-index: -11;
+        border-radius: 150px 150px 0 0;
+        @include breakpoint(1024) {
+            border-radius: 100px 100px 0 0;
+        }
+        @include breakpoint(768) {
+            height: 80%;
+        }
+    }
     .dropbox-pricing-wrapper {
-        transform: translateY(-400px);
-
         .pricing-checkbox {
             margin: 50px auto;
             gap: 20px;
@@ -230,6 +261,7 @@
             gap: 30px;
             max-width: 90%;
             margin: 0 auto;
+            padding-bottom: 30px;
             @include breakpoint(1024) {
                 max-width: 100%;
             }
@@ -238,7 +270,7 @@
                 width: 100%;
                 border-radius: 20px;
                 background: $text;
-                box-shadow: 1px 10px 20px $body;
+                box-shadow: 1px 5px 20px $body;
 
                 .features-meta {
                     height: 100%;
@@ -501,6 +533,11 @@
                         color: #5f96ff;
                         background: $text;
 
+                        @include breakpoint(575) {
+                            margin-top: 20px;
+                            padding: 6px 25px;
+                        }
+
                         &:hover {
                             background: #5f96ff;
                             color: $text;
@@ -527,14 +564,15 @@
 // Compare Plans Section Start //
 
 .compare-plans {
+    padding: 50px 0;
+
     .compare-area {
         width: 100%;
         max-width: 980px;
-        height: 900px;
         margin: 15px auto 0;
-        border-radius: 20px;
+        border-radius: 12px;
         box-shadow: 0 0 50px rgb(170, 167, 167);
-
+        overflow: hidden;
         h3 {
             margin: 0;
             @include font(32, 32);
@@ -553,13 +591,17 @@
                 #5f96ff 100%
             );
             padding: 30px 40px;
-            border-radius: 20px 20px 0 0;
+            border-radius: 12px 12px 0 0;
 
             @include breakpoint(768) {
                 padding: 20px 30px;
             }
             @include breakpoint(575) {
-                padding: 15px 30px;
+                padding: 15px 20px;
+                grid-template-columns: minmax(90px, 1fr) repeat(
+                        2,
+                        minmax(60px, 120px)
+                    );
             }
 
             &::before {
@@ -623,32 +665,21 @@
                     }
                 }
             }
-            // .crown-logo {
-            //     height: 20px;
-            //     width: 20px;
-            //     background-image: url("../images/crown-logo.svg");
-            //     background-repeat: no-repeat;
-            //     background-size: cover;
-            // }
         }
         .compare-area-features {
-            padding: 0 40px;
-            @include breakpoint(768) {
-                padding: 0 30px;
-            }
-            .fratures-category {
+            .features-category {
                 .compare-feature {
-                    border-bottom: 2px solid #f3f3f380;
-                    @include breakpoint(768) {
-                        padding: 10px 0;
+                    &:not(:last-child) {
+                        border-bottom: 2px solid #f3f3f380;
                     }
+
                     &:first-child {
                         border-top: 2px solid #f3f3f380;
                     }
                     .compare-feature-wrap {
                         transition: margin 2s ease-out;
                         .features-title {
-                            padding: 20px 0;
+                            padding: 20px 40px;
                             align-items: center;
                             border-radius: 10px;
                             grid-template-columns: 35px minmax(80px, 1fr) repeat(
@@ -656,40 +687,64 @@
                                     minmax(60px, 170px)
                                 );
 
+                            @include breakpoint(575) {
+                                padding: 20px 20px;
+                                grid-template-columns: 35px minmax(80px, 1fr) repeat(
+                                        2,
+                                        minmax(60px, 120px)
+                                    );
+                            }
+
                             h4 {
                                 margin: 0;
                                 @include breakpoint(768) {
-                                    font-size: 15px;
+                                    font-size: 16px;
                                     line-height: 20px;
                                 }
+                            }
+
+                            &::after {
+                                content: "";
+                                height: 1px;
+                                width: 90%;
+                                border-radius: 10px;
+                                background-color: #a8adb3;
+                                position: absolute;
+                                bottom: 0;
+                                right: 5%;
+                                scale: 0.5;
+                                opacity: 0;
+                                transition: all 0.5s
+                                    cubic-bezier(0, 1.73, 0.58, 1);
+                                transition-delay: 0.3s;
                             }
                         }
 
                         h5 {
                             display: none;
-
-                            margin: 15px 0;
+                            padding: 20px 40px;
                             @include breakpoint(768) {
-                                font-size: 11px;
+                                font-size: 14px;
                                 line-height: 20px;
                             }
                         }
 
                         &.actives {
                             .features-title {
+                                &::after {
+                                    scale: 1;
+                                    opacity: 1;
+                                }
                                 .togol {
                                     transform: rotate(90deg);
                                 }
                             }
                         }
 
-                        &:hover {
-                            .right-checkbox {
-                                transform: rotate(-360deg);
-                            }
-                            .wrong-checkbox {
-                                transform: rotate(360deg);
-                            }
+                        &:hover,
+                        :focus {
+                            @include transition;
+                            background-color: rgba(242, 204, 243, 0.315);
                         }
                     }
                 }
@@ -734,24 +789,48 @@
 // Live Demo Section End //
 // Frequently asked questions Section Start //
 .asked-question {
+    padding: 70px 0;
+    z-index: 99;
+    &::before {
+        content: "";
+        @extend .background-circle;
+        z-index: -1;
+    }
+    @include breakpoint(575) {
+        padding: 20px 0;
+    }
     .questions-wrapper {
         max-width: 980px;
         width: 100%;
         margin: auto;
         gap: 20px;
-        .single-questions {
-            summary {
-                grid-template-columns: 1fr 30px;
-            }
-            padding: 20px 40px;
-            background-color: #28225c;
-            border-radius: 6px;
-            @include breakpoint(768) {
-                padding: 20px;
-            }
 
-            &[open] {
-                summary {
+        .single-questions {
+            background-color: $text;
+            border-radius: 6px;
+            box-shadow: 0 0 40px rgb(236, 233, 233);
+
+            .single-questions-title {
+                grid-template-columns: 1fr 30px;
+                padding: 20px 40px;
+                @include breakpoint(768) {
+                    padding: 20px;
+                }
+                &::after {
+                    content: "";
+                    height: 1px;
+                    width: 90%;
+                    border-radius: 10px;
+                    background-color: #a8adb3;
+                    position: absolute;
+                    bottom: 0;
+                    right: 5%;
+                    scale: 0.5;
+                    opacity: 0;
+                    transition: all 0.5s cubic-bezier(0, 1.73, 0.58, 1);
+                    transition-delay: 0.3s;
+                }
+                &:hover {
                     background: -webkit-linear-gradient(
                         270deg,
                         #ea9d23 16.44%,
@@ -760,18 +839,101 @@
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                 }
+            }
+            h5 {
+                padding: 15px 40px;
+                display: none;
+                @include breakpoint(768) {
+                    padding: 20px;
+                }
+            }
+
+            &.open-answer {
+                .single-questions-title {
+                    background: -webkit-linear-gradient(
+                        270deg,
+                        #ea9d23 16.44%,
+                        #d7d7d7 103.5%
+                    );
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+
+                    &::after {
+                        scale: 1;
+                        opacity: 1;
+                    }
+                }
                 .togol {
                     transform: rotate(90deg);
-                }
-                h5 {
-                    margin-top: 20px;
-                    padding-right: 100px;
-                    @include breakpoint(768) {
-                        padding-right: 10px;
-                    }
                 }
             }
         }
     }
 }
 // Frequently asked questions Section End //
+
+// Call To Action Start //
+
+.call-to-action-section {
+    padding: 50px 0;
+    z-index: 1;
+    &::before {
+        content: "";
+        @extend .background-circle;
+        z-index: -1;
+    }
+    @include breakpoint(575) {
+        padding: 20px 0;
+    }
+    .container {
+        .call-to-action {
+            padding: 40px 20px;
+            border-radius: 30px;
+            box-shadow: 1px 1px 20px #616161;
+            @include breakpoint(768) {
+                .section-title {
+                    padding: 0 0 20px 0;
+
+                    h2 {
+                        font-size: 35px;
+                        line-height: 42px;
+                    }
+                }
+            }
+
+            .call-to-action-wrapper {
+                gap: 10px;
+                margin-top: 10px;
+                .btn {
+                    width: 200px;
+                    border: 1px solid #5f96ff;
+                    color: #5f96ff;
+                    background: #fff;
+                    &:hover {
+                        background-color: #5f96ff;
+                        color: $text;
+                    }
+                    &:last-child {
+                        color: $text;
+                        background: #5f96ff;
+                        &:hover {
+                            color: #5f96ff;
+                            background: #fff;
+                        }
+                    }
+
+                    @include breakpoint(575) {
+                        width: 180px;
+                        padding: 10px 10px;
+                        @include font(18, 20);
+                    }
+                }
+                @include breakpoint(425) {
+                    flex-wrap: wrap;
+                }
+            }
+        }
+    }
+}
+
+// Call To Action End //

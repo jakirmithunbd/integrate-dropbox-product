@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Dropbox Pricing Page</title>
         <link rel="stylesheet" href="./assets/fonts/google-fonts.css" />
+        <link rel="stylesheet" href="./assets/css/slick.css" />
         <link rel="stylesheet" href="./assets/css/dropbox-product-page.css" />
     </head>
     <body>
@@ -147,223 +148,288 @@
                     </h4>
                 </div>
             </div>
-        </section>
-        <!-- Dropbox Pricing Header Section End -->
 
-        <!--Dropbox pricing-plan Section Start -->
-        <section class="dropbox-pricing-area white-bg">
-            <div class="container">
-                <div class="dropbox-pricing-wrapper">
-                    <div class="pricing-checkbox flex-center">
-                        <button
-                            class="dropbox-checkbox-button p-relative cursor-pointer d-flex align-center"
-                            id="checkbox-button"
-                        >
-                            <label
-                                class="checkbox-label-before cursor-pointer margin-0"
-                                for="checkbox-button"
+            <div class="dropbox-pricing-area p-relative">
+                <div class="dropbox-pricing-bg p-absolute"></div>
+                <div class="container">
+                    <div class="dropbox-pricing-wrapper">
+                        <div class="pricing-checkbox flex-center">
+                            <button
+                                class="dropbox-checkbox-button p-relative cursor-pointer d-flex align-center"
+                                id="checkbox-button"
                             >
-                                <h5>Annual</h5></label
-                            >
+                                <label
+                                    class="checkbox-label-before cursor-pointer margin-0"
+                                    for="checkbox-button"
+                                >
+                                    <h5>Annual</h5></label
+                                >
 
-                            <label
-                                class="checkbox-label-after cursor-pointer margin-0"
-                                for="checkbox-button"
-                            >
-                                <h5>Lifetime</h5></label
-                            >
-                        </button>
-                    </div>
-                    <div class="plan-option-wrapper d-grid space-between">
-                        <div class="plan-free planing-section">
-                            <div
-                                class="features-meta d-flex flex-col space-between"
-                            >
-                                <div class="features-title-wrap">
-                                    <div class="plan-header margin-0">
-                                        <h4>Basic</h4>
-                                    </div>
-                                    <div
-                                        class="priceing-wrapper d-flex flex-col"
-                                    >
-                                        <div
-                                            class="plan-priceing d-flex flex-col margin-0 p-relative"
-                                        >
-                                            <div
-                                                class="db-free-price price-title d-flex align-center margin-0"
-                                            >
-                                                <h2>Free</h2>
-                                                <h5>/ forever</h5>
-                                            </div>
-                                            <h5>
-                                                Basic Features to Start and Test
-                                            </h5>
-                                        </div>
-                                        <div
-                                            class="plan-features d-flex flex-col"
-                                        >
-                                            <div
-                                                class="features d-flex align-center margin-0"
-                                            >
-                                                <div
-                                                    class="feature-mark-logo"
-                                                ></div>
-                                                <h5>
-                                                    AI-Powered Color Generator
-                                                </h5>
-                                            </div>
-                                            <div
-                                                class="features d-flex align-center margin-0"
-                                            >
-                                                <div
-                                                    class="feature-mark-logo"
-                                                ></div>
-                                                <h5>
-                                                    AI-Powered Color Generator
-                                                </h5>
-                                            </div>
-                                            <div
-                                                class="features d-flex align-center margin-0"
-                                            >
-                                                <div
-                                                    class="feature-mark-logo"
-                                                ></div>
-                                                <h5>
-                                                    AI-Powered Color Generator
-                                                </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button class="btn" href="#">
-                                    Purchase Now
-                                </button>
-                            </div>
+                                <label
+                                    class="checkbox-label-after cursor-pointer margin-0"
+                                    for="checkbox-button"
+                                >
+                                    <h5>Lifetime</h5></label
+                                >
+                            </button>
                         </div>
-
-                        <div class="plan-pro planing-section">
-                            <div
-                                class="features-meta d-flex flex-col space-between"
-                            >
-                                <div class="features-title-wrap">
-                                    <div class="plan-header margin-0">
-                                        <h4>Premium</h4>
-                                    </div>
-                                    <div
-                                        class="priceing-wrapper d-flex flex-col"
-                                    >
+                        <div class="plan-option-wrapper d-grid space-between">
+                            <div class="plan-free planing-section">
+                                <div
+                                    class="features-meta d-flex flex-col space-between"
+                                >
+                                    <div class="features-title-wrap">
+                                        <div class="plan-header margin-0">
+                                            <h4>Basic</h4>
+                                        </div>
                                         <div
-                                            class="plan-priceing d-flex flex-col margin-0 p-relative"
+                                            class="priceing-wrapper d-flex flex-col"
                                         >
                                             <div
-                                                class="db-pro-price-wrap d-flex space-between align-center"
+                                                class="plan-priceing d-flex flex-col margin-0 p-relative"
                                             >
                                                 <div
-                                                    class="db-pro-price price-title d-flex flex-wrap"
+                                                    class="db-free-price price-title d-flex align-center margin-0"
                                                 >
-                                                    <h2>Pro</h2>
-                                                    <div
-                                                        class="regular-price-wrapper"
-                                                    >
-                                                        <div
-                                                            class="regular-price d-flex align-center margin-0"
-                                                        >
-                                                            <h3>$34</h3>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="price-off">
-                                                        <h5>30% OFF</h5>
-                                                    </div>
-
-                                                    <div
-                                                        class="offer-price-wrapper"
-                                                    >
-                                                        <div
-                                                            class="offer-price d-flex align-center margin-0"
-                                                        >
-                                                            <h2>$2</h2>
-                                                            <h5>/ year</h5>
-                                                        </div>
-                                                    </div>
+                                                    <h2>Free</h2>
+                                                    <h5>/ forever</h5>
                                                 </div>
-
+                                                <h5>
+                                                    Basic Features to Start and
+                                                    Test
+                                                </h5>
+                                            </div>
+                                            <div
+                                                class="plan-features d-flex flex-col"
+                                            >
                                                 <div
-                                                    class="pro-pricing-site-btn p-relative"
+                                                    class="features d-flex align-center margin-0"
                                                 >
                                                     <div
-                                                        class="site-amount-fill"
-                                                    >
-                                                        <h6>01 site</h6>
-                                                    </div>
-                                                    <div
-                                                        class="amount-dropdown"
-                                                    >
-                                                        <ul class="unstyle">
-                                                            <li>01 site</li>
-                                                            <li>05 site</li>
-                                                            <li>10 site</li>
-                                                        </ul>
-                                                    </div>
+                                                        class="feature-mark-logo"
+                                                    ></div>
+                                                    <h5>
+                                                        AI-Powered Color
+                                                        Generator
+                                                    </h5>
                                                 </div>
-                                            </div>
-
-                                            <h5>
-                                                Advanced Features with More
-                                                Flexibility
-                                            </h5>
-                                        </div>
-
-                                        <div
-                                            class="plan-features d-flex flex-col"
-                                        >
-                                            <div
-                                                class="features d-flex align-center margin-0"
-                                            >
                                                 <div
-                                                    class="feature-mark-logo"
-                                                ></div>
-                                                <h5>
-                                                    AI-Powered Color Generator
-                                                </h5>
-                                            </div>
-                                            <div
-                                                class="features d-flex align-center margin-0"
-                                            >
+                                                    class="features d-flex align-center margin-0"
+                                                >
+                                                    <div
+                                                        class="feature-mark-logo"
+                                                    ></div>
+                                                    <h5>
+                                                        AI-Powered Color
+                                                        Generator
+                                                    </h5>
+                                                </div>
                                                 <div
-                                                    class="feature-mark-logo"
-                                                ></div>
-                                                <h5>
-                                                    AI-Powered Color Generator
-                                                </h5>
-                                            </div>
-                                            <div
-                                                class="features d-flex align-center margin-0"
-                                            >
+                                                    class="features d-flex align-center margin-0"
+                                                >
+                                                    <div
+                                                        class="feature-mark-logo"
+                                                    ></div>
+                                                    <h5>
+                                                        AI-Powered Color
+                                                        Generator
+                                                    </h5>
+                                                </div>
                                                 <div
-                                                    class="feature-mark-logo"
-                                                ></div>
-                                                <h5>
-                                                    AI-Powered Color Generator
-                                                </h5>
+                                                    class="features d-flex align-center margin-0"
+                                                >
+                                                    <div
+                                                        class="feature-mark-logo"
+                                                    ></div>
+                                                    <h5>
+                                                        AI-Powered Color
+                                                        Generator
+                                                    </h5>
+                                                </div>
+                                                <div
+                                                    class="features d-flex align-center margin-0"
+                                                >
+                                                    <div
+                                                        class="feature-mark-logo"
+                                                    ></div>
+                                                    <h5>
+                                                        AI-Powered Color
+                                                        Generator
+                                                    </h5>
+                                                </div>
+                                                <div
+                                                    class="features d-flex align-center margin-0"
+                                                >
+                                                    <div
+                                                        class="feature-mark-logo"
+                                                    ></div>
+                                                    <h5>
+                                                        AI-Powered Color
+                                                        Generator
+                                                    </h5>
+                                                </div>
+                                                <div
+                                                    class="features d-flex align-center margin-0"
+                                                >
+                                                    <div
+                                                        class="feature-mark-logo"
+                                                    ></div>
+                                                    <h5>
+                                                        AI-Powered Color
+                                                        Generator
+                                                    </h5>
+                                                </div>
+                                                <div
+                                                    class="features d-flex align-center margin-0"
+                                                >
+                                                    <div
+                                                        class="feature-mark-logo"
+                                                    ></div>
+                                                    <h5>
+                                                        AI-Powered Color
+                                                        Generator
+                                                    </h5>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <button class="btn" href="#">
+                                        Try Live Demo
+                                    </button>
                                 </div>
+                            </div>
 
-                                <button class="btn" href="#">
-                                    Purchase Now
-                                </button>
+                            <div class="plan-pro planing-section">
+                                <div
+                                    class="features-meta d-flex flex-col space-between"
+                                >
+                                    <div class="features-title-wrap">
+                                        <div class="plan-header margin-0">
+                                            <h4>Premium</h4>
+                                        </div>
+                                        <div
+                                            class="priceing-wrapper d-flex flex-col"
+                                        >
+                                            <div
+                                                class="plan-priceing d-flex flex-col margin-0 p-relative"
+                                            >
+                                                <div
+                                                    class="db-pro-price-wrap d-flex space-between align-center"
+                                                >
+                                                    <div
+                                                        class="db-pro-price price-title d-flex flex-wrap"
+                                                    >
+                                                        <h2>Pro</h2>
+                                                        <div
+                                                            class="regular-price-wrapper"
+                                                        >
+                                                            <div
+                                                                class="regular-price d-flex align-center margin-0"
+                                                            >
+                                                                <h3>$34</h3>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="price-off">
+                                                            <h5>30% OFF</h5>
+                                                        </div>
+
+                                                        <div
+                                                            class="offer-price-wrapper"
+                                                        >
+                                                            <div
+                                                                class="offer-price d-flex align-center margin-0"
+                                                            >
+                                                                <h2>$2</h2>
+                                                                <h5>/ year</h5>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div
+                                                        class="pro-pricing-site-btn p-relative"
+                                                    >
+                                                        <div
+                                                            class="site-amount-fill"
+                                                        >
+                                                            <h6>01 site</h6>
+                                                        </div>
+                                                        <div
+                                                            class="amount-dropdown"
+                                                        >
+                                                            <ul class="unstyle">
+                                                                <li>01 site</li>
+                                                                <li>05 site</li>
+                                                                <li>10 site</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <h5>
+                                                    Advanced Features with More
+                                                    Flexibility
+                                                </h5>
+                                            </div>
+
+                                            <div
+                                                class="plan-features d-flex flex-col"
+                                            >
+                                                <div
+                                                    class="features d-flex align-center margin-0"
+                                                >
+                                                    <div
+                                                        class="feature-mark-logo"
+                                                    ></div>
+                                                    <h5>
+                                                        AI-Powered Color
+                                                        Generator
+                                                    </h5>
+                                                </div>
+                                                <div
+                                                    class="features d-flex align-center margin-0"
+                                                >
+                                                    <div
+                                                        class="feature-mark-logo"
+                                                    ></div>
+                                                    <h5>
+                                                        AI-Powered Color
+                                                        Generator
+                                                    </h5>
+                                                </div>
+                                                <div
+                                                    class="features d-flex align-center margin-0"
+                                                >
+                                                    <div
+                                                        class="feature-mark-logo"
+                                                    ></div>
+                                                    <h5>
+                                                        AI-Powered Color
+                                                        Generator
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <button class="btn" href="#">
+                                        Purchase Now
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        <!-- Dropbox Pricing Header Section End -->
+
+        <!--Dropbox pricing-plan Section Start -->
+
         <!-- pricing-plan Section Start -->
 
         <!-- Compare Plans Section Start -->
-        <section class="compare-plans section-margin-bottom white-bg">
+        <section class="compare-plans white-bg">
             <div class="container">
                 <div class="section-title">
                     <h2>Integrate Dropbox <span>Wins Hearts</span></h2>
@@ -386,7 +452,7 @@
                         </div>
                     </div>
                     <div class="compare-area-features">
-                        <div class="fratures-category">
+                        <div class="features-category">
                             <div class="compare-feature">
                                 <div class="compare-feature-wrap">
                                     <div
@@ -460,7 +526,8 @@
         </section>
         <!-- Compare Plans Section End -->
         <!-- Live Demo Section Start -->
-        <section class="live-demo section-margin-bottom">
+
+        <!-- <section class="live-demo white-bg">
             <div class="container">
                 <div class="live-demo-wrapper">
                     <div class="live-demo-title">
@@ -479,198 +546,164 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
+
         <!-- Live Demo Section End -->
         <!-- Frequently asked questions Section Start -->
-        <section class="asked-question section-margin-bottom">
+        <section class="asked-question white-bg p-relative">
             <div class="container">
                 <div class="section-title">
                     <h2>Frequently asked <span>questions</span></h2>
                 </div>
                 <div class="questions-wrapper d-flex flex-col">
-                    <details class="single-questions margin-0">
-                        <summary class="d-grid align-center">
+                    <div class="single-questions margin-0">
+                        <div
+                            class="single-questions-title d-grid align-center p-relative cursor-pointer"
+                        >
                             <h4>
                                 Is Dracula Dark Mode compatible with all
                                 WordPress themes?
                             </h4>
                             <div class="togol p-relative"></div>
-                        </summary>
+                        </div>
                         <h5>
                             Absolutely! Dusky Dark Mode seamlessly integrates
                             with popular themes such as Divi, Avada, Astra,
                             Generatepress, and virtually all
                             WordPress-compatible themes.
                         </h5>
-                    </details>
-                    <details class="single-questions margin-0">
-                        <summary class="d-grid align-center">
+                    </div>
+                    <div class="single-questions margin-0">
+                        <div
+                            class="single-questions-title d-grid align-center p-relative cursor-pointer"
+                        >
                             <h4>
                                 Is Dracula Dark Mode compatible with all
                                 WordPress themes?
                             </h4>
                             <div class="togol p-relative"></div>
-                        </summary>
+                        </div>
                         <h5>
                             Absolutely! Dusky Dark Mode seamlessly integrates
                             with popular themes such as Divi, Avada, Astra,
                             Generatepress, and virtually all
                             WordPress-compatible themes.
                         </h5>
-                    </details>
-                    <details class="single-questions margin-0">
-                        <summary class="d-grid align-center">
-                            <h4>
-                                Is Dracula Dark Mode compatible with all
-                                WordPress themes?
-                            </h4>
-                            <div class="togol p-relative"></div>
-                        </summary>
-                        <h5>
-                            Absolutely! Dusky Dark Mode seamlessly integrates
-                            with popular themes such as Divi, Avada, Astra,
-                            Generatepress, and virtually all
-                            WordPress-compatible themes.
-                        </h5>
-                    </details>
+                    </div>
                 </div>
             </div>
         </section>
         <!-- Frequently asked questions Section End -->
-        <!-- Dusky Review Section Start -->
-        <section class="dusky-review-section section-margin-bottom">
-            <div class="container">
+        <!-- Dropbox Review Section Start -->
+        <section class="dropbox-review-area white-bg p-relative">
+            <div class="container p-relative">
                 <div class="section-title">
-                    <h2>
-                        <span>Unlock</span> the <span>Brilliance</span> of Our
-                        Dark Mode <span>plugin.</span>
-                    </h2>
+                    <h2>Integrate Dropbox <span>Wins Hearts</span></h2>
+                    <h5>
+                        You can check how our Integrate Dropbox plugin wins
+                        users' hearts and discover its core. Let's take a look
+                        below at the user opinions.
+                    </h5>
                 </div>
-                <div class="dusky-review-itam-wrepper">
-                    <div
-                        class="dusky-review-item text-center flex-center flex-col"
-                    >
-                        <div class="dusky-review-parson flex-center">
-                            <img
-                                src="./assets/images/dusky-review-parson.jpeg"
-                                alt="Review"
-                            />
-                        </div>
-                        <h4>Mehedy Hasan</h4>
-                        <p class="review-quot p-relative">
-                            Yes, simply put, the plugin works and I’m very
-                            happy. I’m using it with Blocksy theme and elementor
-                            plugin.best dark mode plugin, best tea… plugin, best
-                            tea…
-                        </p>
-                    </div>
+                <div class="dropbox-review-slider-area">
+                    <div class="dropbox-review-wrapper">
+                        <div class="review-card">
+                            <div class="dropbox-reviewer-meta p-relative">
+                                <h5>
+                                    Integrate Dropbox has been a game-changer
+                                    for my business! As a photographer, I rely
+                                    on Dropbox to store and organize my large
+                                    image files. With this plugin, I can
+                                    seamlessly access and manage.
+                                </h5>
+                            </div>
 
-                    <div
-                        class="dusky-review-item revarse text-center flex-center flex-col"
-                    >
-                        <div class="dusky-review-parson flex-center">
-                            <img
-                                src="./assets/images/dusky-review-parson.jpeg"
-                                alt="Review"
-                            />
+                            <div class="reviewer-profile d-flex align-center">
+                                <div class="reviewer-title">
+                                    <img
+                                        class="rev-profile"
+                                        src="./assets/images/hero-boy.svg"
+                                        alt=""
+                                    />
+                                    <h5>John Doe</h5>
+                                </div>
+                                <div class="rev-divider"></div>
+                                <div class="reviewer-profession">
+                                    <h6>Photographer</h6>
+                                </div>
+                            </div>
                         </div>
-                        <h4>Mehedy Hasan</h4>
-                        <p class="review-quot p-relative">
-                            Yes, simply put, the plugin works and I’m very
-                            happy. I’m using it with Blocksy theme and elementor
-                            plugin.best dark mode plugin, best tea… plugin, best
-                            tea…
-                        </p>
-                    </div>
+                        <div class="review-card">
+                            <div class="dropbox-reviewer-meta p-relative">
+                                <h5>
+                                    Integrate Dropbox has been a game-changer
+                                    for my business! As a photographer, I rely
+                                    on Dropbox to store and organize my large
+                                    image files. With this plugin, I can
+                                    seamlessly access and manage.
+                                </h5>
+                            </div>
 
-                    <div
-                        class="dusky-review-item text-center flex-center flex-col"
-                    >
-                        <div class="dusky-review-parson flex-center">
-                            <img
-                                src="./assets/images/dusky-review-parson.jpeg"
-                                alt="Review"
-                            />
+                            <div class="reviewer-profile d-flex align-center">
+                                <div class="reviewer-title">
+                                    <img
+                                        class="rev-profile"
+                                        src="./assets/images/hero-boy.svg"
+                                        alt=""
+                                    />
+                                    <h5>John Doe</h5>
+                                </div>
+                                <div class="rev-divider"></div>
+                                <div class="reviewer-profession">
+                                    <h6>Photographer</h6>
+                                </div>
+                            </div>
                         </div>
-                        <h4>Mehedy Hasan</h4>
-                        <p class="review-quot p-relative">
-                            Yes, simply put, the plugin works and I’m very
-                            happy. I’m using it with Blocksy theme and elementor
-                            plugin.best dark mode plugin, best tea… plugin, best
-                            tea…
-                        </p>
-                    </div>
+                        <div class="review-card">
+                            <div class="dropbox-reviewer-meta p-relative">
+                                <h5>
+                                    Integrate Dropbox has been a game-changer
+                                    for my business! As a photographer, I rely
+                                    on Dropbox to store and organize my large
+                                    image files. With this plugin, I can
+                                    seamlessly access and manage.
+                                </h5>
+                            </div>
 
-                    <div
-                        class="dusky-review-item text-center flex-center flex-col"
-                    >
-                        <div class="dusky-review-parson flex-center">
-                            <img
-                                src="./assets/images/dusky-review-parson.jpeg"
-                                alt="Review"
-                            />
+                            <div class="reviewer-profile d-flex align-center">
+                                <div class="reviewer-title">
+                                    <img
+                                        class="rev-profile"
+                                        src="./assets/images/hero-boy.svg"
+                                        alt=""
+                                    />
+                                    <h5>John Doe</h5>
+                                </div>
+                                <div class="rev-divider"></div>
+                                <div class="reviewer-profession">
+                                    <h6>Photographer</h6>
+                                </div>
+                            </div>
                         </div>
-                        <h4>Mehedy Hasan</h4>
-                        <p class="review-quot p-relative">
-                            Yes, simply put, the plugin works and I’m very
-                            happy. I’m using it with Blocksy theme and elementor
-                            plugin.best dark mode plugin, best tea… plugin, best
-                            tea…
-                        </p>
-                    </div>
-
-                    <div
-                        class="dusky-review-item text-center flex-center flex-col revarse"
-                    >
-                        <div class="dusky-review-parson flex-center">
-                            <img
-                                src="./assets/images/dusky-review-parson.jpeg"
-                                alt="Review"
-                            />
-                        </div>
-                        <h4>Mehedy Hasan</h4>
-                        <p class="review-quot p-relative">
-                            Yes, simply put, the plugin works and I’m very
-                            happy. I’m using it with Blocksy theme and elementor
-                            plugin.best dark mode plugin, best tea… plugin, best
-                            tea…
-                        </p>
-                    </div>
-
-                    <div
-                        class="dusky-review-item text-center flex-center flex-col"
-                    >
-                        <div class="dusky-review-parson flex-center">
-                            <img
-                                src="./assets/images/dusky-review-parson.jpeg"
-                                alt="Review"
-                            />
-                        </div>
-                        <h4>Mehedy Hasan</h4>
-                        <p class="review-quot p-relative">
-                            Yes, simply put, the plugin works and I’m very
-                            happy. I’m using it with Blocksy theme and elementor
-                            plugin.best dark mode plugin, best tea… plugin, best
-                            tea…
-                        </p>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Dusky Review Section End  -->
+        <!-- Dropbox Review Section End -->
         <!-- Call To Action Start -->
-        <section class="call-to-action-section section-margin-bottom">
+        <section class="call-to-action-section white-bg p-relative">
             <div class="container">
                 <div class="call-to-action">
                     <div class="section-title">
                         <h2>
-                            <span>Elevate</span> Your Website's
-                            <span>Accessibility!</span>
+                            Boost Website Accessibility with
+                            <span> Dropbox! </span>
                         </h2>
                         <h5>
-                            Revitalize your website's accessibility with Dusky
-                            Dark Mode. Elevate user experience effortlessly.
-                            Upgrade now for the ultimate Dracula Dark Mode!
+                            Elevate your website's accessibility with effortless
+                            Dropbox integration. Enhance user experience and
+                            ensure compliance with accessibility standards,
+                            effortlessly boosting engagement and inclusivity.
                         </h5>
                     </div>
                     <div class="call-to-action-wrapper flex-center">
@@ -682,9 +715,188 @@
         </section>
         <!-- Call To Action End -->
 
-        <!-- Dusky Footer Sectiom Start -->
-        <footer class="dusky-footer"></footer>
-        <!-- Dusky Footer Sectiom End -->
+        <!-- Dropbox Footer Section Start -->
+        <footer class="dropbox-footer-area white-bg">
+            <div class="container">
+                <div class="footer-top p-relative">
+                    <div
+                        class="top-content-area d-flex flex-col align-center text-center"
+                    >
+                        <h3>Meet Your WordPress With Dropbox</h3>
+                        <h5>
+                            It's time to explore WordPress from a different
+                            perspective by integrating the Dropbox Plugin. Make
+                            your file management system easier by integrating
+                            this plugin into WordPress.
+                        </h5>
+                        <div class="btn">Let’s Explore</div>
+                    </div>
+                </div>
+            </div>
+            <div class="carved-bg">
+                <div class="container">
+                    <div class="footer-main">
+                        <div class="d-flex space-between flex-wrap">
+                            <div class="left-side">
+                                <a href="index.html" class="footer-logo"
+                                    ><img
+                                        src="./assets/images/cc-color-logo.svg"
+                                        alt=""
+                                /></a>
+                                <h4 class="subscribe-title">
+                                    <strong>Subscribe </strong>to our newslatter
+                                </h4>
+                                <div class="subscribe-form">
+                                    <form
+                                        action=""
+                                        method="post"
+                                        class="wpcf7-form init"
+                                        aria-label="Contact form"
+                                        novalidate="novalidate"
+                                        data-status="init"
+                                    >
+                                        <div
+                                            class="d-flex space-between align-center"
+                                        >
+                                            <div class="email">
+                                                <p>
+                                                    <span data-name="your-email"
+                                                        ><input
+                                                            aria-required="true"
+                                                            aria-invalid="false"
+                                                            value=""
+                                                            type="email"
+                                                            name="your-email"
+                                                            placeholder="Email Address" /></span
+                                                    ><br />
+                                                </p>
+                                            </div>
+                                            <div class="submit-btn">
+                                                <p>
+                                                    <input
+                                                        type="submit"
+                                                        value="Send"
+                                                    />
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="social-icons">
+                                    <ul class="unstyle d-flex">
+                                        <li>
+                                            <a
+                                                class="flex-center transition"
+                                                href="#"
+                                                ><img
+                                                    src="./assets/images/socal-logo-f.svg"
+                                                    alt=""
+                                            /></a>
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="flex-center transition"
+                                                href="#"
+                                                ><img
+                                                    src="./assets/images/socal-logo-f.svg"
+                                                    alt=""
+                                            /></a>
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="flex-center transition"
+                                                href="#"
+                                                ><img
+                                                    src="./assets/images/socal-logo-f.svg"
+                                                    alt=""
+                                            /></a>
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="flex-center transition"
+                                                href="#"
+                                                ><img
+                                                    src="./assets/images/socal-logo-f.svg"
+                                                    alt=""
+                                            /></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="right-side d-flex space-between">
+                                <div class="footer-menu company">
+                                    <h4>Company</h4>
+                                    <ul>
+                                        <li><a href="#">About Us</a></li>
+                                        <li><a href="#">Testomonial</a></li>
+                                        <li><a href="#">Affiliates</a></li>
+                                        <li>
+                                            <a href="#">Affiliate Policy</a>
+                                        </li>
+                                        <li><a href="#">Contact Us</a></li>
+                                        <li>
+                                            <a href="#">Life at CodeConfig</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="footer-menu resources">
+                                    <h4>Resources</h4>
+                                    <ul>
+                                        <li><a href="#">About Us</a></li>
+                                        <li><a href="#">Testomonial</a></li>
+                                        <li><a href="#">Affiliates</a></li>
+                                        <li>
+                                            <a href="#">Affiliate Policy</a>
+                                        </li>
+                                        <li><a href="#">Contact Us</a></li>
+                                        <li>
+                                            <a href="#">Life at CodeConfig</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="footer-menu products">
+                                    <h4>Products</h4>
+                                    <ul>
+                                        <li>
+                                            <a href="#"
+                                                ><span
+                                                    ><img
+                                                        src="./assets/images/dusky-color-logo.svg"
+                                                        alt="" /></span
+                                                >Dusky Dark Mode</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a href="#"
+                                                ><span
+                                                    ><img
+                                                        src="./assets/images/dusky-color-logo.svg"
+                                                        alt="" /></span
+                                                >Dusky Dark Mode</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a href="#"
+                                                ><span
+                                                    ><img
+                                                        src="./assets/images/dusky-color-logo.svg"
+                                                        alt="" /></span
+                                                >Dusky Dark Mode</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright white-bg">
+                <p>© 2024 CodeConfig . All Right Reserved.</p>
+            </div>
+        </footer>
+        <!-- Dropbox Footer Section End -->
 
         <script
             type="text/javascript"
@@ -694,6 +906,8 @@
             type="text/javascript"
             src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
         ></script>
+        <script type="text/javascript" src="./assets/js/slick.min.js"></script>
+
         <script src="./assets/js/dropbox-scripts.js"></script>
     </body>
 </html>
