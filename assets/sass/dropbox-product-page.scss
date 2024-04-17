@@ -53,7 +53,7 @@ img {
     max-width: 1356px;
     padding: 0 25px;
     @include breakpoint(575) {
-        padding: 0 15px;
+        padding: 0 18px;
     }
 }
 
@@ -95,7 +95,7 @@ img {
     &:hover,
     &:focus {
         background: $text;
-        color: $secondary;
+        color: $primary;
     }
 }
 
@@ -248,7 +248,7 @@ img {
         @include breakpoint(575) {
             padding: inherit;
             margin: 0;
-            @include font(35, 42);
+            @include font(33, 42);
         }
     }
     h5 {
@@ -622,7 +622,7 @@ p {
             .mobile-menu-wrapper {
                 @include breakpoint(768) {
                     width: 100%;
-                    padding: 0 20px;
+                    padding: 0 30px;
                 }
 
                 .logo-wrapper {
@@ -867,6 +867,7 @@ p {
     animation: bgposition 20s linear infinite alternate;
     @include breakpoint(575) {
         padding-top: 40px;
+        animation-duration: 25s;
     }
     .dropbox-hero-content {
         gap: 45px;
@@ -880,10 +881,10 @@ p {
         @include breakpoint(575) {
             gap: 20px;
             h1 {
-                @include font(40, 45);
+                @include font(40, 52);
             }
             h5 {
-                padding: 0 20px;
+                padding: 0;
             }
         }
         .hero-button-wrapper {
@@ -1040,6 +1041,10 @@ p {
     }
     .motion-logo {
         animation: dancing 9s infinite alternate;
+
+        @include breakpoint(575) {
+            display: none;
+        }
 
         &:nth-child(2) {
             right: 7%;
@@ -1249,11 +1254,14 @@ p {
                                 #5f96ff 81.5%
                             );
                             border-radius: 50px;
+                            @include breakpoint(575) {
+                                @include height-width(50, 50);
+                            }
                         }
                         h2 {
                             color: $secondary;
                             @include breakpoint(575) {
-                                @include font(35, 42);
+                                @include font(32, 42);
                             }
                         }
                     }
@@ -1283,7 +1291,7 @@ p {
         padding: 50px 20px;
 
         @include breakpoint(820) {
-            padding: 30px 10px;
+            padding: 30px 0;
         }
         .feature-card {
             gap: 20px;

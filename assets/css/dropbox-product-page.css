@@ -45,7 +45,7 @@ img {
 }
 @media only screen and (max-width: 575px) {
   .container {
-    padding: 0 15px;
+    padding: 0 18px;
   }
 }
 
@@ -100,7 +100,7 @@ img {
 }
 .btn:hover, .btn:focus {
   background: #fff;
-  color: #2e2e2e;
+  color: #3573ff;
 }
 
 .f-btn {
@@ -276,7 +276,7 @@ img {
   .section-title h2 {
     padding: inherit;
     margin: 0;
-    font-size: 35px;
+    font-size: 33px;
     line-height: 42px;
   }
 }
@@ -753,7 +753,7 @@ p {
 @media only screen and (max-width: 768px) {
   .cc-dropbox-header .container .header-menu-wrap .mobile-menu-wrapper {
     width: 100%;
-    padding: 0 20px;
+    padding: 0 30px;
   }
 }
 .cc-dropbox-header .container .header-menu-wrap .mobile-menu-wrapper .logo-wrapper .logo {
@@ -1011,6 +1011,8 @@ p {
 @media only screen and (max-width: 575px) {
   .cc-dropbox-hero {
     padding-top: 40px;
+    -webkit-animation-duration: 25s;
+            animation-duration: 25s;
   }
 }
 .cc-dropbox-hero .dropbox-hero-content {
@@ -1029,10 +1031,10 @@ p {
   }
   .cc-dropbox-hero .dropbox-hero-content h1 {
     font-size: 40px;
-    line-height: 45px;
+    line-height: 52px;
   }
   .cc-dropbox-hero .dropbox-hero-content h5 {
-    padding: 0 20px;
+    padding: 0;
   }
 }
 .cc-dropbox-hero .dropbox-hero-content .hero-button-wrapper {
@@ -1198,6 +1200,11 @@ p {
 .cc-dropbox-hero .motion-logo {
   -webkit-animation: dancing 9s infinite alternate;
           animation: dancing 9s infinite alternate;
+}
+@media only screen and (max-width: 575px) {
+  .cc-dropbox-hero .motion-logo {
+    display: none;
+  }
 }
 .cc-dropbox-hero .motion-logo:nth-child(2) {
   right: 7%;
@@ -1467,12 +1474,20 @@ p {
   background: linear-gradient(142.51deg, #0061fe 10.59%, #5f96ff 81.5%);
   border-radius: 50px;
 }
+@media only screen and (max-width: 575px) {
+  .dropbox-features-area .integration-features-area .dropbox-features-section .feature-wrap .feature-meta .feature-title .fe-logo {
+    max-width: 50px;
+    width: 100%;
+    height: 50px;
+    max-height: 100%;
+  }
+}
 .dropbox-features-area .integration-features-area .dropbox-features-section .feature-wrap .feature-meta .feature-title h2 {
   color: #2e2e2e;
 }
 @media only screen and (max-width: 575px) {
   .dropbox-features-area .integration-features-area .dropbox-features-section .feature-wrap .feature-meta .feature-title h2 {
-    font-size: 35px;
+    font-size: 32px;
     line-height: 42px;
   }
 }
@@ -1495,7 +1510,7 @@ p {
 }
 @media only screen and (max-width: 820px) {
   .dropbox-extra-features-area .extra-feature-wrapper {
-    padding: 30px 10px;
+    padding: 30px 0;
   }
 }
 .dropbox-extra-features-area .extra-feature-wrapper .feature-card {
@@ -1905,6 +1920,8 @@ p {
 @media only screen and (max-width: 768px) {
   .dropbox-footer-area .footer-top {
     padding: 30px;
+    -webkit-animation-duration: 22s;
+            animation-duration: 22s;
   }
 }
 .dropbox-footer-area .footer-top .top-content-area {
@@ -1918,9 +1935,6 @@ p {
 }
 .dropbox-footer-area .footer-top .top-content-area .btn {
   margin-top: 10px;
-}
-.dropbox-footer-area .footer-top .top-content-area .btn:hover {
-  color: #3573ff;
 }
 .dropbox-footer-area .carved-bg {
   border-radius: 60px 60px 0px 0px;
@@ -2964,6 +2978,7 @@ p {
   border-radius: 30px;
   -webkit-box-shadow: 1px 1px 20px #616161;
           box-shadow: 1px 1px 20px #616161;
+  background: #fff;
 }
 @media only screen and (max-width: 768px) {
   .call-to-action-section .container .call-to-action .section-title {

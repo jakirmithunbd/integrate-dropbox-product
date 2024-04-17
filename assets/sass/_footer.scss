@@ -85,6 +85,7 @@
 
         @include breakpoint(768) {
             padding: 30px;
+            animation-duration: 22s;
         }
 
         .top-content-area {
@@ -97,9 +98,6 @@
             }
             .btn {
                 margin-top: 10px;
-                &:hover {
-                    color: $primary;
-                }
             }
         }
     }

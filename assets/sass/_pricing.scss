@@ -890,6 +890,7 @@
             padding: 40px 20px;
             border-radius: 30px;
             box-shadow: 1px 1px 20px #616161;
+            background: $text;
             @include breakpoint(768) {
                 .section-title {
                     padding: 0 0 20px 0;

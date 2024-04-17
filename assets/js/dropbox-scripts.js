@@ -133,6 +133,20 @@ function PriceAmountSite() {
 
 // heightSet(".features-meta");
 
+function serollSection() {
+    const pricingSelect = document.getElementById("checkbox-button");
+    const proPlanCard = document.getElementById("pro-section");
+
+    pricingSelect.addEventListener("click", function () {
+        if (window.innerWidth <= 770) {
+            proPlanCard.scrollIntoView({
+                block: "center",
+                inline: "nearest",
+            });
+        }
+    });
+}
+
 function codeConfigOnLoad() {
     Toggler();
     HeaderGutter();
@@ -141,6 +155,7 @@ function codeConfigOnLoad() {
     PriceAmountSite();
     calculatePrice(0);
     askingQuestion();
+    serollSection();
 }
 
 window.addEventListener("load", codeConfigOnLoad);
