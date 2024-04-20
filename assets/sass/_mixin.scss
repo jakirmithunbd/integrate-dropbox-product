@@ -30,6 +30,6 @@
 @mixin height-width($height, $width: null) {
     max-width: #{$width + px};
     width: 100%;
-    height: #{$height + px};
-    max-height: 100%;
+    max-height: #{$height + px};
+    height: 100%;
 }

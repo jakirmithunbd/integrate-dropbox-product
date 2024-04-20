@@ -1,0 +1,81 @@
+//Dropbox Priceing page global //
+
+.margin-0 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span {
+        margin: 0;
+    }
+}
+html,
+body {
+    height: 100%;
+    background-color: white !important;
+}
+
+.gt-content {
+    max-width: 880px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+// <!-- Dropbox GT Page Hero Start -->
+
+.dropbox-getting-hero {
+    background-color: $primary;
+    padding: 70px 0 130px;
+    .getting-logo {
+        margin: 0 auto;
+        .icon {
+            background: white;
+            border-radius: 50px;
+            @include height-width(60, 60);
+            padding: 12px;
+        }
+    }
+    .getting-title {
+        max-width: 880px;
+        width: 100%;
+        margin: 20px auto 0;
+        h2 {
+            color: white;
+            padding: 0 40px;
+            margin-bottom: 20px;
+        }
+        h5 {
+            color: white;
+            padding: 0 20px;
+        }
+    }
+}
+
+// <!-- Dropbox GT Page Hero End -->
+
+// <!-- Dropbox GT Page Feature's Section Start -->
+.getting-tab-section {
+    .getting-tab-menu {
+        border: 1px solid gray;
+        padding: 0 40px;
+        border-radius: 20px;
+        background: white;
+        .tab-wrapper {
+            .tabs {
+                .tabs-meta {
+                    gap: 5px;
+                    padding: 20px 0;
+                    .icon {
+                        height: 35px;
+                        width: 35px;
+                    }
+                }
+            }
+        }
+    }
+}
+// <!-- Dropbox GT Page Feature's Section End -->
