@@ -28,11 +28,34 @@
     margin: 0 auto;
 }
 
+.section-title {
+    @include breakpoint(575) {
+        h2 {
+            padding-bottom: 10px;
+        }
+    }
+}
+.fe-heading {
+    color: black;
+    margin-bottom: 30px;
+    @include breakpoint(575) {
+        @include font(35, 42);
+        margin-bottom: 10px;
+    }
+}
 // <!-- Dropbox GT Page Hero Start -->
 
 .dropbox-getting-hero {
-    background-color: $primary;
+    overflow: hidden;
+    background-image: url(../images/getting-hero-bg.svg);
+    background-position: 39% 39%;
+    animation: bgposition 20s linear infinite alternate;
     padding: 70px 0 130px;
+    background-size: cover;
+    @include breakpoint(768) {
+        padding: 30px 0 100px;
+        animation-duration: 25s;
+    }
     .getting-logo {
         margin: 0 auto;
         .icon {
@@ -40,6 +63,21 @@
             border-radius: 50px;
             @include height-width(60, 60);
             padding: 12px;
+            @include breakpoint(768) {
+                @include height-width(55, 55);
+            }
+            @include breakpoint(768) {
+                padding: 10px;
+                @include height-width(45, 45);
+            }
+        }
+        .title {
+            @include breakpoint(768) {
+                @include font(34, 45);
+            }
+            @include breakpoint(375) {
+                @include font(24, 32);
+            }
         }
     }
     .getting-title {
@@ -49,10 +87,19 @@
             color: white;
             padding: 0 40px;
             margin-bottom: 20px;
+            @include breakpoint(768) {
+                padding: 0;
+                @include font(42, 50);
+            }
         }
         h5 {
             color: white;
             padding: 0 20px;
+
+            @include breakpoint(768) {
+                padding: 0;
+                @include font(16, 27);
+            }
         }
     }
 }
@@ -68,8 +115,15 @@
         box-shadow: 0 2px 10px rgba(109, 108, 108, 0.39);
         transform: translateY(-50px);
         overflow: hidden;
+        @include breakpoint(768) {
+            padding: 0 20px;
+        }
+        @include breakpoint(575) {
+            padding: 0 5px;
+        }
         .tab-wrapper {
             .tabs {
+                min-width: 50px;
                 .tabs-meta {
                     gap: 2px;
                     padding: 20px 0;
@@ -91,6 +145,9 @@
                     }
                     p {
                         color: $secondary;
+                        @include breakpoint(768) {
+                            display: none;
+                        }
                     }
                 }
                 &::after {
@@ -99,11 +156,11 @@
                     height: 4px;
                     width: 90%;
                     border-radius: 50px;
-
                     bottom: -9px;
                     left: 0;
                     right: 0;
                     margin: 0 auto;
+                    transition: all 0.3s ease;
                     background: linear-gradient(
                         142.51deg,
                         #0061fe 10.59%,
@@ -111,14 +168,13 @@
                     );
                 }
 
-                &:hover {
+                &:hover,
+                :active {
                     .tabs-meta {
                         .icon {
                             transform: translateY(-2px);
                         }
                     }
-                }
-                &:active {
                     &::after {
                         bottom: -1px;
                     }
@@ -130,20 +186,17 @@
 // <!-- Dropbox GT Page Feature's Tab End -->
 
 // <!-- Dropbox GT Page Tab Feature's Start -->
-
-.getting-tab-featurs {
+.getting-tab-features {
     .db-overview {
         .section-title {
-            padding: 10px 0;
+            padding: 0 0 50px;
         }
-        .fe-heading {
-            color: black;
-            margin: 70px 0 30px;
-        }
+
         .overview-features {
             .features-wrapper {
                 gap: 25px;
                 justify-content: center;
+                padding: 10px 0;
 
                 .feature-card {
                     max-width: 425px;
@@ -151,8 +204,10 @@
                     padding: 50px 25px 25px;
                     border-radius: 20px;
                     gap: 10px;
-
                     box-shadow: 0 0 30px rgba(109, 108, 108, 0.39);
+                    @include breakpoint(575) {
+                        padding: 35px 20px 20px;
+                    }
                     .feature-image {
                         padding: 0 40px;
                         filter: drop-shadow(
@@ -174,6 +229,11 @@
                         h3 {
                             color: $secondary;
                             margin-bottom: 20px;
+
+                            @include breakpoint(575) {
+                                font-size: 32px;
+                                margin-bottom: 5px;
+                            }
                         }
                     }
                 }
@@ -181,9 +241,16 @@
         }
 
         .db-explore-feature {
+            padding: 80px 0;
             .explore-feature-wrapper {
                 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
                 gap: 25px;
+                @include breakpoint(768) {
+                    gap: 15px;
+                }
+                @include breakpoint(375) {
+                    gap: 5px;
+                }
                 .single-fe-card {
                     border-radius: 12px;
                     overflow: hidden;
@@ -224,5 +291,82 @@
         }
     }
 }
-
 // <!-- Dropbox GT Page Tab Feature's End -->
+
+// <!-- Dropbox GT Basic Usage Page Start -->
+
+.getting-user-manual {
+    h5 {
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    h6 {
+        margin-bottom: 20px;
+    }
+
+    strong {
+        font-weight: 600;
+        @include transition;
+    }
+    &:hover {
+        strong {
+            text-decoration: underline;
+        }
+    }
+
+    a {
+        color: #0a2472;
+        font-weight: 500;
+        position: relative;
+        &::before {
+            content: "";
+            width: 0;
+            height: 1px;
+            transition: all 1s ease;
+            position: absolute;
+            background-color: #0a2472;
+            bottom: 0;
+        }
+        &:hover {
+            color: black;
+            &::before {
+                width: 100%;
+            }
+        }
+    }
+    ol {
+        padding: 0 40px;
+        margin-bottom: 20px;
+
+        li {
+            @include font(20, 38);
+            &::marker {
+                font-weight: bold;
+                color: #476df4;
+            }
+        }
+    }
+
+    ul {
+        padding: 0 40px;
+        margin-bottom: 20px;
+        list-style: none;
+        li {
+            @include font(20, 38);
+            position: relative;
+            &::before {
+                content: url(./../icons/ul-pointer.svg);
+                position: absolute;
+                left: -25px;
+                bottom: -4px;
+            }
+        }
+    }
+
+    img {
+        margin: 20px 0;
+        width: 100%;
+    }
+}
+// <!-- Dropbox GT Basic Usage Page End -->

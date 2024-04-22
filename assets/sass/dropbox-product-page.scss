@@ -324,10 +324,6 @@ img {
     padding: 18px;
     z-index: 1;
 
-    @include breakpoint(375) {
-        margin: inherit;
-    }
-
     &::after,
     &::before {
         content: "";
