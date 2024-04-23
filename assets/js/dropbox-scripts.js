@@ -94,12 +94,12 @@ function PriceAmountSite() {
 
 function scrollSection() {
     const pricingSelect = document.getElementById("checkbox-button");
-    const proPlanCard = document.getElementById("pro-section");
+    const proPlanCard = document.getElementById("live-demo-btn");
 
     pricingSelect.addEventListener("click", function () {
         if (window.innerWidth <= 770) {
             proPlanCard.scrollIntoView({
-                block: "center",
+                block: "start",
                 inline: "nearest",
             });
         }

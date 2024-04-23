@@ -3338,6 +3338,9 @@ p {
           animation: dropup 1s infinite alternate;
 }
 
+.getting-user-manual .gt-manual {
+  padding: 10px 0 50px;
+}
 .getting-user-manual .gt-manual .user-manual-wrapper {
   gap: 25px;
 }
