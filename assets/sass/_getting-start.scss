@@ -47,11 +47,14 @@
 
 .dropbox-getting-hero {
     overflow: hidden;
-    background-image: url(../images/getting-hero-bg.svg);
+    background: url(../images/getting-hero-bg.svg),
+        linear-gradient(180deg, #0061fe 0%, #5f96ff 100%);
     background-position: 39% 39%;
-    animation: bgposition 20s linear infinite alternate;
+    animation: bgposition 25s linear infinite alternate;
     padding: 70px 0 130px;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+
     @include breakpoint(768) {
         padding: 30px 0 100px;
         animation-duration: 25s;
@@ -296,77 +299,106 @@
 // <!-- Dropbox GT Basic Usage Page Start -->
 
 .getting-user-manual {
-    h5 {
-        font-weight: 600;
-        margin-bottom: 20px;
-    }
+    .gt-manual {
+        .user-manual-wrapper {
+            gap: 25px;
+            .user-manuals {
+                border-radius: 10px;
+                border: 1px solid #ecebf5;
+                overflow: hidden;
+                gap: 10px;
+                .manual-header {
+                    padding: 20px;
+                    background: #ecebf5;
+                    border-radius: 0 0 10px 10px;
+                }
+                .manual-content {
+                    padding: 10px 20px 20px;
 
-    h6 {
-        margin-bottom: 20px;
-    }
+                    display: none;
 
-    strong {
-        font-weight: 600;
-        @include transition;
-    }
-    &:hover {
-        strong {
-            text-decoration: underline;
-        }
-    }
+                    .content-meta {
+                        h5 {
+                            font-weight: 600;
+                            margin-bottom: 20px;
+                        }
 
-    a {
-        color: #0a2472;
-        font-weight: 500;
-        position: relative;
-        &::before {
-            content: "";
-            width: 0;
-            height: 1px;
-            transition: all 1s ease;
-            position: absolute;
-            background-color: #0a2472;
-            bottom: 0;
-        }
-        &:hover {
-            color: black;
-            &::before {
-                width: 100%;
+                        h6 {
+                            margin-bottom: 20px;
+                        }
+
+                        strong {
+                            font-weight: 600;
+                            @include transition;
+                            background: linear-gradient(
+                                180deg,
+                                #0061fe 0%,
+                                #5f96ff 100%
+                            );
+                            background-clip: text;
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                        }
+
+                        a {
+                            color: $primary;
+                            font-weight: 600;
+                            position: relative;
+                            &::before {
+                                content: "";
+                                width: 0;
+                                height: 1px;
+                                transition: all 1s ease;
+                                position: absolute;
+                                background-color: $primary;
+                                bottom: 0;
+                            }
+                            &:hover {
+                                &::before {
+                                    width: 100%;
+                                }
+                            }
+                        }
+                        ol {
+                            padding: 0 40px;
+                            margin-bottom: 20px;
+
+                            li {
+                                @include font(20, 38);
+                                &::marker {
+                                    font-weight: bold;
+                                    color: #476df4;
+                                }
+                            }
+                        }
+
+                        ul {
+                            padding: 0 40px;
+                            margin-bottom: 20px;
+                            list-style: none;
+                            li {
+                                @include font(20, 38);
+                                position: relative;
+                                padding-left: 10px;
+                                &::before {
+                                    content: url(../images/ul-pointer.svg);
+                                    position: absolute;
+                                    left: -25px;
+                                    bottom: -4px;
+                                }
+                            }
+                        }
+
+                        img {
+                            margin: 20px 0;
+                            width: 100%;
+                            aspect-ratio: 16/9;
+                            border-radius: 12px;
+                        }
+                    }
+                }
             }
         }
-    }
-    ol {
-        padding: 0 40px;
-        margin-bottom: 20px;
-
-        li {
-            @include font(20, 38);
-            &::marker {
-                font-weight: bold;
-                color: #476df4;
-            }
-        }
-    }
-
-    ul {
-        padding: 0 40px;
-        margin-bottom: 20px;
-        list-style: none;
-        li {
-            @include font(20, 38);
-            position: relative;
-            &::before {
-                content: url(./../icons/ul-pointer.svg);
-                position: absolute;
-                left: -25px;
-                bottom: -4px;
-            }
-        }
-    }
-
-    img {
-        margin: 20px 0;
-        width: 100%;
     }
 }
 // <!-- Dropbox GT Basic Usage Page End -->

@@ -3086,12 +3086,14 @@ p {
 
 .dropbox-getting-hero {
   overflow: hidden;
-  background-image: url(../images/getting-hero-bg.svg);
+  background: url(../images/getting-hero-bg.svg), -webkit-gradient(linear, left top, left bottom, from(#0061fe), to(#5f96ff));
+  background: url(../images/getting-hero-bg.svg), linear-gradient(180deg, #0061fe 0%, #5f96ff 100%);
   background-position: 39% 39%;
-  -webkit-animation: bgposition 20s linear infinite alternate;
-          animation: bgposition 20s linear infinite alternate;
+  -webkit-animation: bgposition 25s linear infinite alternate;
+          animation: bgposition 25s linear infinite alternate;
   padding: 70px 0 130px;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 @media only screen and (max-width: 768px) {
   .dropbox-getting-hero {
@@ -3336,71 +3338,91 @@ p {
           animation: dropup 1s infinite alternate;
 }
 
-.getting-user-manual h5 {
+.getting-user-manual .gt-manual .user-manual-wrapper {
+  gap: 25px;
+}
+.getting-user-manual .gt-manual .user-manual-wrapper .user-manuals {
+  border-radius: 10px;
+  border: 1px solid #ecebf5;
+  overflow: hidden;
+  gap: 10px;
+}
+.getting-user-manual .gt-manual .user-manual-wrapper .user-manuals .manual-header {
+  padding: 20px;
+  background: #ecebf5;
+  border-radius: 0 0 10px 10px;
+}
+.getting-user-manual .gt-manual .user-manual-wrapper .user-manuals .manual-content {
+  padding: 10px 20px 20px;
+  display: none;
+}
+.getting-user-manual .gt-manual .user-manual-wrapper .user-manuals .manual-content .content-meta h5 {
   font-weight: 600;
   margin-bottom: 20px;
 }
-.getting-user-manual h6 {
+.getting-user-manual .gt-manual .user-manual-wrapper .user-manuals .manual-content .content-meta h6 {
   margin-bottom: 20px;
 }
-.getting-user-manual strong {
+.getting-user-manual .gt-manual .user-manual-wrapper .user-manuals .manual-content .content-meta strong {
   font-weight: 600;
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+  background: -webkit-gradient(linear, left top, left bottom, from(#0061fe), to(#5f96ff));
+  background: linear-gradient(180deg, #0061fe 0%, #5f96ff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-.getting-user-manual:hover strong {
-  text-decoration: underline;
-}
-.getting-user-manual a {
-  color: #0a2472;
-  font-weight: 500;
+.getting-user-manual .gt-manual .user-manual-wrapper .user-manuals .manual-content .content-meta a {
+  color: #3573ff;
+  font-weight: 600;
   position: relative;
 }
-.getting-user-manual a::before {
+.getting-user-manual .gt-manual .user-manual-wrapper .user-manuals .manual-content .content-meta a::before {
   content: "";
   width: 0;
   height: 1px;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
   position: absolute;
-  background-color: #0a2472;
+  background-color: #3573ff;
   bottom: 0;
 }
-.getting-user-manual a:hover {
-  color: black;
-}
-.getting-user-manual a:hover::before {
+.getting-user-manual .gt-manual .user-manual-wrapper .user-manuals .manual-content .content-meta a:hover::before {
   width: 100%;
 }
-.getting-user-manual ol {
+.getting-user-manual .gt-manual .user-manual-wrapper .user-manuals .manual-content .content-meta ol {
   padding: 0 40px;
   margin-bottom: 20px;
 }
-.getting-user-manual ol li {
+.getting-user-manual .gt-manual .user-manual-wrapper .user-manuals .manual-content .content-meta ol li {
   font-size: 20px;
   line-height: 38px;
 }
-.getting-user-manual ol li::marker {
+.getting-user-manual .gt-manual .user-manual-wrapper .user-manuals .manual-content .content-meta ol li::marker {
   font-weight: bold;
   color: #476df4;
 }
-.getting-user-manual ul {
+.getting-user-manual .gt-manual .user-manual-wrapper .user-manuals .manual-content .content-meta ul {
   padding: 0 40px;
   margin-bottom: 20px;
   list-style: none;
 }
-.getting-user-manual ul li {
+.getting-user-manual .gt-manual .user-manual-wrapper .user-manuals .manual-content .content-meta ul li {
   font-size: 20px;
   line-height: 38px;
   position: relative;
+  padding-left: 10px;
 }
-.getting-user-manual ul li::before {
-  content: url(./../icons/ul-pointer.svg);
+.getting-user-manual .gt-manual .user-manual-wrapper .user-manuals .manual-content .content-meta ul li::before {
+  content: url(../images/ul-pointer.svg);
   position: absolute;
   left: -25px;
   bottom: -4px;
 }
-.getting-user-manual img {
+.getting-user-manual .gt-manual .user-manual-wrapper .user-manuals .manual-content .content-meta img {
   margin: 20px 0;
   width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 12px;
 }

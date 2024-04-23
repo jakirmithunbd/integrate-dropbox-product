@@ -92,48 +92,7 @@ function PriceAmountSite() {
     });
 }
 
-// function hightSat(pushClass) {
-//     const questionBox = Array.from(document.querySelectorAll(pushClass));
-//     let maxHight = 0;
-
-//     if (questionBox) {
-//         questionBox.forEach(function (items) {
-//             const enteredValue = items.offsetHeight;
-//             if (enteredValue > maxHight) {
-//                 maxHight = enteredValue;
-//             }
-//             console.log(enteredValue);
-//         });
-//         questionBox.forEach(function (items) {
-//             items.style.height = maxHight + "px";
-//         });
-//     }
-// }
-
-// hightSat(
-//     ".plan-option-wrapper .planing-section .features-meta .priceing-wrapper"
-// );
-
-// function heightSet(pushClass) {
-//     const questionBox = Array.from(document.querySelectorAll(pushClass));
-//     let maxHeight = 0;
-
-//     if (questionBox.length > 0) {
-//         questionBox.forEach(function (items) {
-//             const itemHeight = items.offsetHeight;
-//             if (itemHeight > maxHeight) {
-//                 maxHeight = itemHeight;
-//             }
-//         });
-//         questionBox.forEach(function (items) {
-//             items.style.height = maxHeight + "px";
-//         });
-//     }
-// }
-
-// heightSet(".features-meta");
-
-function serollSection() {
+function scrollSection() {
     const pricingSelect = document.getElementById("checkbox-button");
     const proPlanCard = document.getElementById("pro-section");
 
@@ -147,7 +106,33 @@ function serollSection() {
     });
 }
 
+function basicUsegePage() {
+    const userManualHeaders = document.querySelectorAll(
+        ".user-manuals .manual-header"
+    );
+    const manualContents = document.querySelectorAll(
+        ".user-manuals .manual-content"
+    );
+
+    userManualHeaders.forEach((header, index) => {
+        header.addEventListener("click", function () {
+            const content = manualContents[index];
+
+            // Slide up all other manual contents except for the clicked one
+            manualContents.forEach((manualContent, i) => {
+                if (i !== index && manualContent.style.display !== "none") {
+                    $(manualContent).slideUp();
+                }
+            });
+
+            // Slide toggle the clicked manual content
+            $(content).slideToggle();
+        });
+    });
+}
+
 function codeConfigOnLoad() {
+    basicUsegePage();
     Toggler();
     HeaderGutter();
     DropboxPopupSection();
@@ -155,18 +140,10 @@ function codeConfigOnLoad() {
     PriceAmountSite();
     calculatePrice(0);
     askingQuestion();
-    serollSection();
+    scrollSection();
 }
 
 window.addEventListener("load", codeConfigOnLoad);
-
-// (function ($) {
-//     $(document).ready(function () {
-//         $(".single-questions .single-questions-title").click(function () {
-//             $("single-questions h5").slideToggle();
-//         });
-//     });
-// })(jQuery);
 
 function askingQuestion() {
     const frequentlyQs = document.querySelectorAll(
