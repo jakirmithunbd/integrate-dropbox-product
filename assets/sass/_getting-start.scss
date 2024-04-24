@@ -116,7 +116,7 @@
         padding: 0 40px;
         border-radius: 20px;
         background: white;
-        box-shadow: 0 2px 10px rgba(109, 108, 108, 0.39);
+        box-shadow: 0 2px 20px #7fa1ed9e;
         transform: translateY(-50px);
         overflow: hidden;
         @include breakpoint(768) {
@@ -208,7 +208,7 @@
                     padding: 50px 25px 25px;
                     border-radius: 20px;
                     gap: 10px;
-                    box-shadow: 0 0 30px rgba(109, 108, 108, 0.39);
+                    box-shadow: 0 0 20px #7fa1ed9e;
                     @include breakpoint(575) {
                         padding: 35px 20px 20px;
                     }
