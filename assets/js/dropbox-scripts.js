@@ -122,17 +122,41 @@ function basicUsegePage() {
             manualContents.forEach((manualContent, i) => {
                 if (i !== index && manualContent.style.display !== "none") {
                     $(manualContent).slideUp();
+                    $(manualContent).parent().removeClass("answer-slideshow");
                 }
             });
 
             // Slide toggle the clicked manual content
             $(content).slideToggle();
+            $(content).parent().toggleClass("answer-slideshow");
+        });
+    });
+}
+
+function gettingTopBar() {
+    const tabsMenuOption = document.querySelectorAll(".tab-wrapper .tabs");
+
+    // Default to open the first tab
+    tabsMenuOption[0].classList.add("tab-active");
+
+    tabsMenuOption.forEach((header, index) => {
+        header.addEventListener("click", function () {
+            // Toggle the "hello" class for the clicked tab
+            this.classList.add("tab-active");
+
+            // Close other tabs and remove the "hello" class
+            tabsMenuOption.forEach((tab, i) => {
+                if (i !== index && tab.classList.contains("tab-active")) {
+                    tab.classList.remove("tab-active");
+                }
+            });
         });
     });
 }
 
 function codeConfigOnLoad() {
     basicUsegePage();
+    gettingTopBar();
     Toggler();
     HeaderGutter();
     DropboxPopupSection();
