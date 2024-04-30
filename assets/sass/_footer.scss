@@ -93,6 +93,11 @@
             max-width: 950px;
             margin: auto;
             gap: 25px;
+            h3 {
+                @include breakpoint(575) {
+                    @include font(35, 42);
+                }
+            }
             h5 {
                 color: #e9e9e9;
             }

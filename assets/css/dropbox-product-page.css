@@ -1925,6 +1925,12 @@ p {
   margin: auto;
   gap: 25px;
 }
+@media only screen and (max-width: 575px) {
+  .dropbox-footer-area .footer-top .top-content-area h3 {
+    font-size: 35px;
+    line-height: 42px;
+  }
+}
 .dropbox-footer-area .footer-top .top-content-area h5 {
   color: #e9e9e9;
 }
